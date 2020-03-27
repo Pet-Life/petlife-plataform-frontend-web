@@ -41,6 +41,9 @@ const GlobalStyles = createGlobalStyle`
   ol, ul {
     list-style: none;
   }
+  a, a:hover {
+    text-decoration: none;
+  }
   blockquote, q {
     quotes: none;
   }

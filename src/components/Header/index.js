@@ -1,11 +1,13 @@
 import React from 'react';
 
-import { HeaderWrapper, Title } from './styles';
+import Logo from '../Logo';
 
-function Header() {
+import { HeaderWrapper} from './styles';
+
+const Header = () => {
   return (
     <HeaderWrapper class="header-wrapper">
-      <Title>Home</Title>
+      <Logo />
     </HeaderWrapper>
   );
 }
