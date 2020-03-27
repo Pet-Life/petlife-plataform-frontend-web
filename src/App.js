@@ -1,8 +1,15 @@
 import React from 'react';
 
+import GlobalStyle from './styles/globalStyle';
+import Header from './components/Header';
+
 function App() {
-  const element = <h1>Home</h1>;
-  return <div className="App">{element}</div>;
+  return (
+    <>
+      <GlobalStyle />
+      <Header />
+    </>
+  );
 }
 
 export default App;
