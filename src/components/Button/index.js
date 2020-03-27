@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ButtonStyle } from './styles';
+import { ButtonStyle } from './styled';
 
 const Button = () => {
   return (

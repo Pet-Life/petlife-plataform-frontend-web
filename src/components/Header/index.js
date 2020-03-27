@@ -1,20 +1,20 @@
 import React from 'react';
 
 import Logo from '../Logo';
-import Button from '../Button';
+import Menu from '../Menu';
+import MenuBurguer from '../MenuBurguer';
 
-import { HeaderWrapper, HeaderContent, LinkMenu} from './styles';
+import { HeaderWrapper, HeaderContent } from './styled';
 
 const Header = () => {
   return (
-    <HeaderWrapper class="header-wrapper">
+    <HeaderWrapper className="header-wrapper">
       <HeaderContent>
         <Logo />
       </HeaderContent>
       <HeaderContent secondary>
-        <LinkMenu href="#">Como funciona</LinkMenu>
-        <LinkMenu href="#">Pet Shop</LinkMenu>
-        <Button />
+        <Menu />
+        <MenuBurguer />
       </HeaderContent>
     </HeaderWrapper>
   );
