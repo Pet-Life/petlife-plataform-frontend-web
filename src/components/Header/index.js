@@ -3,7 +3,7 @@ import React from 'react';
 import Logo from '../Logo';
 import Button from '../Button';
 
-import { HeaderWrapper, HeaderContent} from './styles';
+import { HeaderWrapper, HeaderContent, LinkMenu} from './styles';
 
 const Header = () => {
   return (
@@ -12,6 +12,8 @@ const Header = () => {
         <Logo />
       </HeaderContent>
       <HeaderContent secondary>
+        <LinkMenu href="#">Como funciona</LinkMenu>
+        <LinkMenu href="#">Pet Shop</LinkMenu>
         <Button />
       </HeaderContent>
     </HeaderWrapper>

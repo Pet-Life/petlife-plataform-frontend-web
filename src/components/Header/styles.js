@@ -13,4 +13,11 @@ export const HeaderContent = styled.div`
   width: 50%;
   display: flex;
   justify-content: ${props => props.secondary ? "flex-end" : "flex-start" };
+  align-items: center;
+`;
+
+export const LinkMenu = styled.a`
+  margin-right: 2.1875em;
+  font-size: 1em;
+  color: #3C3B3B;
 `;
