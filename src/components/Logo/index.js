@@ -8,7 +8,7 @@ const Logo = () => {
   return (
     <LogoWrapper>
       <Link href='/'>
-        <LogoImage src={logo} />
+        <LogoImage src={logo} alt="Logo Petlife"/>
       </Link>
     </LogoWrapper>
   );
