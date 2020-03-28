@@ -23,7 +23,7 @@ export const MenuIcon = styled(Menu)`
   color: #3C3B3B;
 `;
 
-export const MenuContent = styled.div`
+export const MenuContent = styled.nav`
   position: fixed;
   width: 100%;
   height: 100vh;

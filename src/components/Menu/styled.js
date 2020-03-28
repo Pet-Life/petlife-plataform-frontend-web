@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MenuWrapper = styled.div`
+export const MenuWrapper = styled.nav`
   display: flex;
   align-items: center;
 `;
