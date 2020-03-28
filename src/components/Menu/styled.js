@@ -10,7 +10,7 @@ export const LinkMenu = styled.a`
   font-size: 1em;
   color: #3C3B3B;
 
-  @media (max-width: 767px) {
+  @media (max-width: 952px) {
     display: none;
   }
 `;
