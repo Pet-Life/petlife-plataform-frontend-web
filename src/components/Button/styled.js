@@ -19,7 +19,7 @@ export const ButtonStyle = styled.button.attrs({
     color: ${props => props.primary ? "#219653" : "#FFF"};    
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 952px) {
     display: none;
   }
 `;

@@ -4,7 +4,7 @@ import { Menu } from '@styled-icons/material';
 export const MenuWrapper = styled.div`
   display: none;
   
-  @media (max-width: 767px) {
+  @media (max-width: 952px) {
     display: flex;
   }
 `;
