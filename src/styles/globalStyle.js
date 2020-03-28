@@ -23,7 +23,6 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
   }
   /* HTML5 display-role reset for older browsers */
@@ -37,6 +36,7 @@ const GlobalStyles = createGlobalStyle`
     font-size: 16px;
     color: #3C3B3B;
     line-height: 1;
+    outline: none;
   }
   ol, ul {
     list-style: none;

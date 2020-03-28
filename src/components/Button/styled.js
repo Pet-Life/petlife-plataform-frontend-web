@@ -12,7 +12,7 @@ export const ButtonStyle = styled.button.attrs({
   border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: all 0.2s;
 
   &:hover {
     background: ${props => props.primary ? "#FFF" : "#219653"};
