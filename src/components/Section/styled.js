@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import theme from '../../styles/theme';
+import { theme } from '../../styles/theme';
 
 export const SectionWrapper = styled.section`
-  height: 390px;
   padding: 45px 60px;
   display: flex;
 
@@ -71,7 +70,7 @@ export const Input = styled.input`
   width: 341px;
   height: 42px;
   margin-right: 1em;
-  text-align: center;
+  padding: 0 20px;
   background: #FFF;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -81,7 +80,9 @@ export const Input = styled.input`
   @media (max-width: 952px) {
     width: 100%;
     margin-right: 0;
+    padding: 0;
     margin-bottom: 2em;
+    text-align: center;
   }
 `;
 
@@ -89,12 +90,19 @@ export const Button = styled.button`
   width: 150px;
   height: 42px;
   background: #219653;
-  border: 1px solid #219653;
+  border: 2px solid #219653;
   border-radius: 4px;
   font-size: 16px;
   color: #FFF;
   font-weight: bold;
+  transition: all 0.3s;
   cursor: pointer;
+
+  &:hover {
+    background: ${theme.bgSecondary};
+    color: ${theme.colorTertiary};
+    border-color: ${theme.colorTertiary};
+  }
 
   @media (max-width: 952px) {
     width: 100%;
@@ -107,4 +115,9 @@ export const Links = styled.a`
   font-size: 14px;
   text-align: center;
   color: #3C3B3B;
+  transition: all 0.3s;
+
+  &:hover {
+    font-weight: bold;
+  }
 `;
