@@ -12,6 +12,7 @@ const Login = () => {
     <>
       <S.LoginWrapper>
         <S.LoginContent>
+          <Logo />
           <S.Image src={image} />
         </S.LoginContent>
         <S.LoginContent>
