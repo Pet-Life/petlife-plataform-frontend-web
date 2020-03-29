@@ -6,5 +6,6 @@ module.exports = {
     bgSecondary: '#FFF',
     colorPrimary: '#3C3B3B',
     colorSecondary: '#FFF',
+    colorTertiary: '#219653',
   }
 }
