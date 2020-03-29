@@ -2,7 +2,7 @@ import React from 'react';
 
 import * as S from './styled';
 
-import image from '../../assets/imagem-1.jpg';
+import image from '../../assets/image-1.jpg';
 
 const SectionCep = () => {
   return (
