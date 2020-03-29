@@ -7,8 +7,6 @@ import iconMedicine from '../../assets/medicine.png';
 import iconToys from '../../assets/toys.png';
 import iconHygiene from '../../assets/hygiene.png';
 
-import Title from '../Title';
-
 const SectionCategory = () => {
   return (
     <S.Section>

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { theme } from '../../styles/theme'
+import { theme } from '../../styles/theme';
 
 export const Section = styled.section`
    padding: 45px 60px;
@@ -44,7 +44,9 @@ export const Image = styled.img`
   margin-bottom: 1.5em;
 `;
 
-export const TitleCategory = styled.h3`
+export const TitleWork = styled.h3`
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
   font-size: 1.1em;
   color: ${theme.colorPrimary};
   transition: all 0.3s;
@@ -52,4 +54,11 @@ export const TitleCategory = styled.h3`
   &:hover {
     color: ${theme.colorTertiary};
   }
+`;
+
+export const Text = styled.p`
+  font-size: 15px;
+  color: ${theme.colorPrimary};
+  text-align: center;
+  line-height: 1.5em;
 `;
