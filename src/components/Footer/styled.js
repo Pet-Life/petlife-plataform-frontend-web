@@ -44,6 +44,11 @@ export const Links = styled.a`
   font-size: 14px;
   color: ${theme.colorPrimary};
   line-height: 1.9em;
+  transition: all 0.3s;
+
+  &:hover {
+    color: ${theme.colorTertiary};
+  }
 `;
 
 export const Text = styled.p`
@@ -51,10 +56,6 @@ export const Text = styled.p`
   font-size: 14px;
   color: ${theme.colorPrimary};
   line-height: 1.9em;
-`;
-
-export const Br = styled.br`
-
 `;
 
 export const SocialWrapper = styled.div`
@@ -67,24 +68,44 @@ export const FacebookIcon = styled(Facebook)`
   width: 28px;
   height: 28px;
   color: ${theme.colorPrimary};
+  transition: all 0.3s;
+
+  &:hover {
+    color: ${theme.colorTertiary};
+  }
 `;
 
 export const InstagramIcon = styled(Instagram)`
   width: 28px;
   height: 28px;
   color: ${theme.colorPrimary};
+  transition: all 0.3s;
+
+  &:hover {
+    color: ${theme.colorTertiary};
+  }
 `;
 
 export const TwitterIcon = styled(Twitter)`
   width: 28px;
   height: 28px;
   color: ${theme.colorPrimary};
+  transition: all 0.3s;
+
+  &:hover {
+    color: ${theme.colorTertiary};
+  }
 `;
 
 export const YoutubeIcon = styled(Youtube)`
   width: 28px;
   height: 28px;
   color: ${theme.colorPrimary};
+  transition: all 0.3s;
+
+  &:hover {
+    color: ${theme.colorTertiary};
+  }
 `;
 
 export const HeartIcon = styled(Heart)`
