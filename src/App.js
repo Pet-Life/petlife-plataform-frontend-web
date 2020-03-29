@@ -1,17 +1,13 @@
 import React from 'react';
 
-import GlobalStyle from './styles/globalStyle';
-import Header from './components/Header';
-import Section from './components/Section';
-import Footer from './components/Footer';
+import GlobalStyles from './styles/globalStyle';
+import Routes from './routes';
 
 function App() {
   return (
     <>
-      <GlobalStyle />
-      <Header />
-      <Section />
-      <Footer />
+      <GlobalStyles />
+      <Routes />
     </>
   );
 }

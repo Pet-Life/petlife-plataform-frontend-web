@@ -4,7 +4,7 @@ import * as S from './styled';
 
 import image from '../../assets/imagem-1.jpg';
 
-const Section = () => {
+const SectionCep = () => {
   return (
     <S.SectionWrapper>
       <S.SectionContent>
@@ -28,4 +28,4 @@ const Section = () => {
   );
 }
 
-export default Section;
+export default SectionCep;
