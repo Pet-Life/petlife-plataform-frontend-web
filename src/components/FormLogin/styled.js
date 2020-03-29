@@ -10,6 +10,10 @@ export const FormWrapper = styled.form`
   background: ${theme.bgSecondary};
   border-radius: 8px;
   box-shadow: 9px 9px 12px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 952px) {
+    width: 85%;
+  }
 `;
 
 export const Title = styled.h2`
