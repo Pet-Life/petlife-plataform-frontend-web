@@ -27,7 +27,7 @@ export const SectionContent = styled.div`
 
   @media (max-width: 952px) {
     width: 100%;
-    margin-bottom: 1.8em;
+    margin-bottom: 2.3em;
   }
 `;
 
