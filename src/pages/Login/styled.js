@@ -9,7 +9,7 @@ export const LoginWrapper = styled.div`
   align-items: center;
 
   @media (max-width: 952px) {
-    padding: 15px ${theme.spaceSmall};
+    padding: 15px 20px;
     flex-direction: column;
   }
 `;
@@ -38,7 +38,7 @@ export const Image = styled.img`
 
 export const Form = styled.form`
   width: 55%;
-  padding: 30px 50px 10px 50px;
+  padding: 30px 40px 10px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,6 +68,10 @@ export const Input = styled.input`
   color: ${theme.colorPrimary};
   border: 1px solid ${theme.colorQuinary};
   border-radius: 4px;
+
+  @media (max-width: 767px) {
+    width: 85%;
+  }
 `;
 
 export const Link = styled.a`
