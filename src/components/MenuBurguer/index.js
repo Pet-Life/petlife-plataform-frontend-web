@@ -1,6 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import { MenuWrapper, Button, MenuIcon, MenuContent, LinksWrapper, CloseIcon, Links } from './styled';
+import {
+  MenuWrapper,
+  Button,
+  MenuIcon,
+  MenuContent,
+  LinksWrapper,
+  CloseIcon,
+  Links
+} from "./styled";
 
 const MenuBurguer = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -13,17 +21,17 @@ const MenuBurguer = () => {
         <MenuIcon />
       </Button>
       <MenuContent open={openMenu}>
-          <LinksWrapper open={openMenu}>
+        <LinksWrapper open={openMenu}>
           <Button onClick={() => setOpenMenu(false)}>
             <CloseIcon />
           </Button>
           <Links href="#">Como funciona</Links>
           <Links href="#">Pet Shop</Links>
-          <Links href="#">Entrar</Links>
+          <Links href="/entrar">Entrar</Links>
         </LinksWrapper>
       </MenuContent>
     </MenuWrapper>
   );
-}
+};
 
 export default MenuBurguer;
