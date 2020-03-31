@@ -3,7 +3,7 @@ import { theme } from "../../styles/theme";
 
 export const RegisterWrapper = styled.div`
   height: 100vh;
-  padding: 20px ${theme.spaceBig};
+  padding: 25px ${theme.spaceBig};
   background: ${theme.colorQuaternary};
   display: flex;
   align-items: center;
@@ -39,7 +39,7 @@ export const Image = styled.img`
 
 export const Form = styled.form`
   width: 55%;
-  padding: 30px 40px 10px 40px;
+  padding: 30px 25px 10px 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,7 +49,7 @@ export const Form = styled.form`
   box-shadow: 9px 9px 12px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 767px) {
-    width: 70%;
+    width: 85%;
   }
 `;
 
