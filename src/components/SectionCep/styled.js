@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { theme } from '../../styles/theme';
+import styled from "styled-components";
+import { theme } from "../../styles/theme";
 
 export const SectionWrapper = styled.section`
   padding: 45px 60px;
@@ -15,7 +15,7 @@ export const SectionContent = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: ${props => props.secondary ? 'center' : 'none'};
+  align-items: ${props => (props.secondary ? "center" : "none")};
 
   @media (max-width: 952px) {
     width: 100%;
@@ -62,7 +62,6 @@ export const Form = styled.form`
 
   @media (max-width: 952px) {
     flex-direction: column;
-    
   }
 `;
 
@@ -71,7 +70,7 @@ export const Input = styled.input`
   height: 42px;
   margin-right: 1em;
   padding: 0 20px;
-  background: #FFF;
+  background: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
@@ -93,16 +92,10 @@ export const Button = styled.button`
   border: 2px solid #219653;
   border-radius: 4px;
   font-size: 16px;
-  color: #FFF;
+  color: #fff;
   font-weight: bold;
   transition: all 0.3s;
   cursor: pointer;
-
-  &:hover {
-    background: ${theme.bgSecondary};
-    color: ${theme.colorTertiary};
-    border-color: ${theme.colorTertiary};
-  }
 
   @media (max-width: 952px) {
     width: 100%;
@@ -114,7 +107,7 @@ export const Links = styled.a`
   margin-bottom: 2em;
   font-size: 14px;
   text-align: center;
-  color: #3C3B3B;
+  color: #3c3b3b;
   transition: all 0.3s;
 
   &:hover {
