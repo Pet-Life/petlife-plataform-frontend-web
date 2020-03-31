@@ -3,13 +3,14 @@ import { theme } from "../../styles/theme";
 
 export const LoginWrapper = styled.div`
   height: 100vh;
-  padding: 0 ${theme.spaceBig};
+  padding: 25px ${theme.spaceBig};
   background: ${theme.colorQuaternary};
   display: flex;
   align-items: center;
 
   @media (max-width: 952px) {
-    padding: 15px 20px;
+    height: 100%;
+    padding: 15px 15px;
     flex-direction: column;
   }
 `;
@@ -38,7 +39,7 @@ export const Image = styled.img`
 
 export const Form = styled.form`
   width: 55%;
-  padding: 30px 40px 10px 40px;
+  padding: 30px 25px 10px 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,7 +49,7 @@ export const Form = styled.form`
   box-shadow: 9px 9px 12px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 767px) {
-    width: 70%;
+    width: 85%;
   }
 `;
 
