@@ -1,18 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import * as S from './styled';
+import * as S from "./styled";
 
-import Logo from '../Logo';
+import Logo from "../Logo";
 
 const Footer = () => {
   return (
     <S.FooterWrapper>
       <S.FooterContent>
         <Logo />
-        <S.Text>
-          Petlife é uma plataforma de e-commerce 
-          para Pet Shops.
-        </S.Text>
+        <S.Text>Petlife é uma plataforma de e-commerce para Pet Shops.</S.Text>
         <S.SocialWrapper>
           <S.Links href="#">
             <S.FacebookIcon />
@@ -46,20 +43,17 @@ const Footer = () => {
         <S.Links href="#">contato@petlife.com.br</S.Links>
         <S.Links href="#">+55 (11) 99999-9999</S.Links>
         <S.Links href="#">
-          R. Nossa Sra. da Lapa, 270/284 - Lapa,
-          São Paulo - SP, 02675-031
+          R. Nossa Sra. da Lapa, 270/284 - Lapa, São Paulo - SP, 02675-031
         </S.Links>
       </S.FooterContent>
       <S.Copyright>
-        <S.Text>
-          © 2020 Petlife. Todos os direitos reservados.
-        </S.Text>
+        <S.Text>© 2020 Petlife. Todos os direitos reservados.</S.Text>
         <S.Text>
           Feito com <S.HeartIcon /> Petlife
         </S.Text>
       </S.Copyright>
     </S.FooterWrapper>
   );
-}
+};
 
 export default Footer;

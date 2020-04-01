@@ -1,18 +1,14 @@
-import styled from 'styled-components';
-import { theme } from '../../styles/theme';
-import { 
-  Facebook, 
-  Instagram, 
-  Twitter, 
-  Youtube, } from '@styled-icons/fa-brands';
+import styled from "styled-components";
+import { theme } from "../../styles/theme";
+import { Facebook, Instagram, Twitter, Youtube } from "@styled-icons/fa-brands";
 
-import { Heart } from '@styled-icons/fa-solid';
+import { Heart } from "@styled-icons/fa-solid";
 
 export const FooterWrapper = styled.footer`
   padding: 35px 60px;
-  background: #F5F5F5;
+  background: #f5f5f5;
   display: flex;
-  flex-wrap: wrap;    
+  flex-wrap: wrap;
   justify-content: space-between;
 
   @media (max-width: 920px) {
@@ -116,8 +112,10 @@ export const HeartIcon = styled(Heart)`
 
 export const Copyright = styled.div`
   width: 100%;
+  margin-top: 1em;
   display: flex;
   justify-content: space-between;
+  border-top: 1px solid #ddd;
 
   @media (max-width: 952px) {
     flex-direction: column;
