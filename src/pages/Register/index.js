@@ -19,7 +19,7 @@ const Register = () => {
           <S.Input type="text" placeholder="Sobrenome" />
           <S.Input type="email" placeholder="E-mail" />
           <S.Input type="password" placeholder="Senha" />
-          <S.Button type="submit">Cadastar</S.Button>
+          <S.Button type="submit">Cadastrar</S.Button>
           <S.Link href="/entrar">Já tenho uma conta. Entrar</S.Link>
         </S.Form>
       </S.RegisterContent>
