@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import * as S from "./styled";
 
 const ButtonSecondary = ({ text }) => {
-  return <S.ButtonStyles>{text}</S.ButtonStyles>;
+  return <S.ButtonStyles type="button">{text}</S.ButtonStyles>;
 };
 
 ButtonSecondary.propTypes = {
