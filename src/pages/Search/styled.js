@@ -62,6 +62,7 @@ export const InputForm3 = styled(Input).attrs({
 export const Button = styled.button`
   width: 60%;
   height: 42px;
+  margin-top: 1.5em;
   background: ${theme.colorTertiary};
   font-size: 1em;
   color: ${theme.colorSecondary};
@@ -69,4 +70,32 @@ export const Button = styled.button`
   border: 2px solid ${theme.colorTertiary};
   border-radius: 4px;
   cursor: pointer;
+`;
+
+export const ListPets = styled.div`
+  padding: 30px 60px;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 767px) {
+    padding: 30px 30px;
+  }
+`;
+
+export const ListContent = styled.div`
+  width: 35%;
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    flex-direction: column;
+  }
+`;
+
+export const Text = styled.p`
+  font-size: 1em;
+  color: ${theme.colorPrimary};
 `;
