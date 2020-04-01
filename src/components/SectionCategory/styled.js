@@ -1,15 +1,15 @@
-import styled from 'styled-components';
-import { theme } from '../../styles/theme'
+import styled from "styled-components";
+import { theme } from "../../styles/theme";
 
 export const Section = styled.section`
-   padding: 45px 60px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
+  padding: 45px 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
-   @media (max-width: 952px) {
-     padding: 45px 30px;
-   }
+  @media (max-width: 952px) {
+    padding: 45px 30px;
+  }
 `;
 
 export const TitleWrapper = styled.div`

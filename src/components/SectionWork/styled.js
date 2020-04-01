@@ -1,21 +1,22 @@
-import styled from 'styled-components';
-import { theme } from '../../styles/theme';
+import styled from "styled-components";
+import { theme } from "../../styles/theme";
 
 export const Section = styled.section`
-   padding: 45px 60px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
+  padding: 45px 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
-   @media (max-width: 952px) {
-     padding: 45px 30px;
-   }
+  @media (max-width: 952px) {
+    padding: 45px 30px;
+  }
 `;
 
 export const TitleWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  border-top: 1px solid ${theme.colorQuinary};
 `;
 
 export const SectionContent = styled.div`
@@ -32,6 +33,7 @@ export const SectionContent = styled.div`
 `;
 
 export const Title = styled.h2`
+  margin-top: 1.3em;
   margin-bottom: 2.3em;
   font-size: 1.6em;
   color: ${theme.colorPrimary};
