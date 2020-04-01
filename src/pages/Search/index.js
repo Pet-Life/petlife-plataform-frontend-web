@@ -5,6 +5,8 @@ import * as S from "./styled";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Title from "../../components/Title";
+import ButtonPrimary from "../../components/ButtonPrimary";
+import ButtonSecondary from "../../components/ButtonSecondary";
 
 const Search = () => {
   return (
@@ -50,6 +52,14 @@ const Search = () => {
           <S.Button type="submit">Buscar</S.Button>
         </S.Form>
       </S.ContentMain>
+      <S.ListPets>
+        <Title title="Selecione um Pet Shop" />
+        <S.ListContent>
+          <S.Text>Filtre por</S.Text>
+          <ButtonPrimary text="Entrega" />
+          <ButtonSecondary text="Retirada" />
+        </S.ListContent>
+      </S.ListPets>
       <Footer />
     </>
   );
