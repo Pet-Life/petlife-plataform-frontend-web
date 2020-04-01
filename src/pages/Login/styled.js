@@ -10,7 +10,7 @@ export const LoginWrapper = styled.div`
 
   @media (max-width: 952px) {
     height: 100%;
-    padding: 15px 15px;
+    padding: 15px 30px;
     flex-direction: column;
   }
 `;
@@ -39,7 +39,7 @@ export const Image = styled.img`
 
 export const Form = styled.form`
   width: 55%;
-  padding: 30px 25px 10px 25px;
+  padding: 30px 40px 10px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,7 +49,7 @@ export const Form = styled.form`
   box-shadow: 9px 9px 12px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 767px) {
-    width: 85%;
+    width: 80%;
   }
 `;
 
@@ -60,7 +60,7 @@ export const Title = styled.h2`
 `;
 
 export const Input = styled.input`
-  width: 100%;
+  width: 90%;
   height: 42px;
   padding: 0 20px;
   margin-bottom: 1.2em;
