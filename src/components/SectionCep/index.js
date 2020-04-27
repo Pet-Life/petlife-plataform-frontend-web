@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from "react";
 
-import * as S from './styled';
+import * as S from "./styled";
 
-import image from '../../assets/image-1.jpg';
+import Modal from "../Modal";
+
+import image from "../../assets/image-1.jpg";
 
 const SectionCep = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <S.SectionWrapper>
       <S.SectionContent>
@@ -12,20 +16,24 @@ const SectionCep = () => {
       </S.SectionContent>
       <S.SectionContent secondary>
         <S.TitleContent>
-          Encontrar um <S.Span>Pet Shop</S.Span> próximo 
-          a você ficou mais fácil!
+          Encontrar um <S.Span>Pet Shop</S.Span> próximo a você ficou mais
+          fácil!
         </S.TitleContent>
-        <S.Form>
-          <S.Input 
-            type="text"
-            placeholder="Digite seu CEP"
-          />
-          <S.Button type="submit">Buscar</S.Button>
-        </S.Form>
-        <S.Links href="#">Não sei o meu CEP</S.Links>
+        <S.SearchContainer>
+          <S.Button type="button" onClick={() => setOpen(true)}>
+            <S.SpanSecondary>
+              <S.SearchIcon />
+            </S.SpanSecondary>
+            <S.SpanSecondary>Buscar endereço</S.SpanSecondary>
+          </S.Button>
+          <S.ButtonSecondary type="button" onClick={() => setOpen(true)}>
+            Buscar
+          </S.ButtonSecondary>
+        </S.SearchContainer>
+        <Modal open={open} />
       </S.SectionContent>
     </S.SectionWrapper>
   );
-}
+};
 
 export default SectionCep;
