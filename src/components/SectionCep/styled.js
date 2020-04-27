@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../styles/theme";
+import { Search } from "@styled-icons/material";
 
 export const SectionWrapper = styled.section`
   padding: 45px 60px;
@@ -15,7 +16,7 @@ export const SectionContent = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: ${props => (props.secondary ? "center" : "none")};
+  align-items: ${(props) => (props.secondary ? "center" : "none")};
 
   @media (max-width: 952px) {
     width: 100%;
@@ -54,52 +55,51 @@ export const Span = styled.span`
   color: #219653;
 `;
 
-export const Form = styled.form`
-  width: 100%;
+export const SearchContainer = styled.div`
+  width: 75%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-
-  @media (max-width: 952px) {
-    flex-direction: column;
-  }
-`;
-
-export const Input = styled.input`
-  width: 341px;
-  height: 42px;
-  margin-right: 1em;
-  padding: 0 20px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-  color: ${theme.colorPrimary};
-
-  @media (max-width: 952px) {
-    width: 100%;
-    margin-right: 0;
-    padding: 0;
-    margin-bottom: 2em;
-    text-align: center;
-  }
 `;
 
 export const Button = styled.button`
-  width: 150px;
-  height: 42px;
-  background: #219653;
-  border: 2px solid #219653;
+  width: 350px;
+  height: 48px;
+  padding: 0 20px;
+  background: ${theme.colorSecondary};
+  border: 1px solid ${theme.colorQuinary};
   border-radius: 4px;
   font-size: 16px;
-  color: #fff;
-  font-weight: bold;
+  color: ${theme.colorPrimary};
+  text-align: left;
   transition: all 0.3s;
   cursor: pointer;
 
   @media (max-width: 952px) {
     width: 100%;
   }
+`;
+
+export const ButtonSecondary = styled.button`
+  width: 100px;
+  height: 48px;
+  background: ${theme.colorTertiary};
+  border: 1px solid ${theme.colorTertiary};
+  border-radius: 4px;
+  font-size: 16px;
+  color: ${theme.colorSecondary};
+  cursor: pointer;
+`;
+
+export const SpanSecondary = styled.span`
+  margin-right: 0.5em;
+  color: ${theme.colorPrimary};
+`;
+
+export const SearchIcon = styled(Search)`
+  width: 28px;
+  height: 28px;
+  color: ${theme.colorPrimary};
 `;
 
 export const Links = styled.a`

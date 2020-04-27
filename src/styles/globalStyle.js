@@ -37,6 +37,7 @@ const GlobalStyles = createGlobalStyle`
     color: #3C3B3B;
     line-height: 1;
     outline: none;
+    outline-color: transparent;
   }
   ol, ul {
     list-style: none;
