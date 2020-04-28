@@ -7,13 +7,11 @@ import {
   MenuContent,
   LinksWrapper,
   CloseIcon,
-  Links
+  Links,
 } from "./styled";
 
 const MenuBurguer = () => {
   const [openMenu, setOpenMenu] = useState(false);
-
-  console.log(openMenu);
 
   return (
     <MenuWrapper>
