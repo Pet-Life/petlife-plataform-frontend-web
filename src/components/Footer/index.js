@@ -29,8 +29,8 @@ const Footer = () => {
         <S.Title>Mapa do site</S.Title>
         <S.Links href="#">Sobre Nós</S.Links>
         <S.Links href="#">Como funciona</S.Links>
-        <S.Links href="#">Cadastra-se</S.Links>
-        <S.Links href="#">Entrar</S.Links>
+        <S.Links href="/cadastro">Cadastra-se</S.Links>
+        <S.Links href="/entrar">Entrar</S.Links>
         <S.Links href="#">Blog</S.Links>
       </S.FooterContent>
       <S.FooterContent>
