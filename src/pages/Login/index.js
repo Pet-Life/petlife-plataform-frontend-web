@@ -19,7 +19,7 @@ const Login = () => {
           <S.Input type="password" placeholder="Senha" />
           <S.Link href="#">Esqueceu sua senha?</S.Link>
           <S.Button type="submit">Entrar</S.Button>
-          <S.Link href="#">Não tem conta? Crie uma!</S.Link>
+          <S.Link href="/cadastro">Não tem conta? Crie uma!</S.Link>
         </S.Form>
       </S.LoginContent>
     </S.LoginWrapper>
