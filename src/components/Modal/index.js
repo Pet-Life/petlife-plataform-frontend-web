@@ -1,26 +1,36 @@
 import React from "react";
-import PropTypes from "prop-types";
+import ReactDom from "react-dom";
 
 import * as S from "./styled";
 
-import Title from "../Title";
+const Modal = ({ setIsOpen }) => {
+  function handleClose() {
+    setIsOpen(false);
+  }
 
-const Modal = ({ open }) => {
-  return (
-    <S.ModalWrapper id="modal-search" open={open}>
-      <S.ModalContent id="modal-content-search">
-        <Title title="Onde você que receber seu pedido?" />
-        <S.FormContent>
-          <S.SearchIcon />
-          <S.Input type="text" placeholder="Buscar endereço" />
-        </S.FormContent>
-      </S.ModalContent>
-    </S.ModalWrapper>
+  function submit() {
+    handleClose();
+  }
+
+  return ReactDom.createPortal(
+    <>
+      <S.ModalShadow onClick={handleClose} />
+      <S.Modal>
+        <S.ModalBanner>
+          <S.TitleModal>Onde você que receber seu pedido?</S.TitleModal>
+        </S.ModalBanner>
+        <S.ModalContent>
+          <S.Input type="text" name="zipcode" placeholder="Buscar endereço" />
+        </S.ModalContent>
+        <S.ModalFooter>
+          <S.ConfirmButton type="button" onClick={handleClose}>
+            Confirmar localização
+          </S.ConfirmButton>
+        </S.ModalFooter>
+      </S.Modal>
+    </>,
+    document.getElementById("modal-portal")
   );
-};
-
-Modal.propTypes = {
-  open: PropTypes.bool.isRequired,
 };
 
 export default Modal;

@@ -1,62 +1,75 @@
 import styled from "styled-components";
 import { theme } from "../../styles/theme";
-import { Search } from "@styled-icons/material";
 
-export const ModalWrapper = styled.div`
+export const Modal = styled.div`
+  width: 800px;
+  max-width: 600px;
+  background-color: white;
   position: fixed;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: ${(props) => (props.open ? "flex" : "none")};
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.6);
-  overflow: hidden;
-  z-index: 1;
-  min-height: 100%;
-`;
-
-export const ModalContent = styled.div`
-  width: 35em;
-  height: 20em;
-  padding: 2.5em 2em;
-  background: ${theme.colorSecondary};
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 5;
+  max-height: calc(100% - 200px);
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 `;
 
-export const FormContent = styled.div`
-  width: 380px;
-  height: 42px;
-  margin: 2em 0;
+export const ModalBanner = styled.div`
+  margin-bottom: 1em;
   background: ${theme.colorSecondary};
-  border: 1px solid ${theme.colorQuinary};
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
+  padding: 10px;
 `;
 
-export const SearchIcon = styled(Search)`
-  width: 32px;
-  height: 32px;
-  margin-right: 1em;
-  margin-left: 1em;
+export const TitleModal = styled.h2`
   color: ${theme.colorPrimary};
+  font-size: 1.3em;
+`;
+
+export const ModalContent = styled.div`
+  overflow: hidden;
+  max-height: 400px;
+  padding: 20px 40px;
+`;
+
+export const ModalFooter = styled.div`
+  height: 60px;
+  display: flex;
+  justify-content: center;
+`;
+
+export const ModalShadow = styled.div`
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  background-color: black;
+  opacity: 0.7;
+  z-index: 4;
+  overflow: hidden;
 `;
 
 export const Input = styled.input`
-  width: 100%;
-  height: 100%;
-  padding: 0 1em;
-  border: transparent;
+  width: 400px;
+  height: 48px;
+  padding: 0 20px;
+  background: ${theme.colorSecondary};
   color: ${theme.colorPrimary};
   font-size: 1em;
+  border: 1px solid ${theme.colorQuinary};
+  border-radius: 4px;
+`;
 
-  &:focus {
-    outline-color: transparent;
-  }
+export const ConfirmButton = styled.button`
+  width: 220px;
+  height: 48px;
+  background: ${theme.colorTertiary};
+  color: ${theme.colorSecondary};
+  font-size: 1em;
+  border: 2px solid ${theme.colorTertiary};
+  border-radius: 4px;
+  cursor: pointer;
 `;

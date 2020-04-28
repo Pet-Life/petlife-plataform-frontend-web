@@ -7,7 +7,7 @@ import Modal from "../Modal";
 import image from "../../assets/image-1.jpg";
 
 const SectionCep = () => {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <S.SectionWrapper>
@@ -20,17 +20,17 @@ const SectionCep = () => {
           fácil!
         </S.TitleContent>
         <S.SearchContainer>
-          <S.Button type="button" onClick={() => setOpen(true)}>
+          <S.Button type="button" onClick={() => setIsOpen(true)}>
             <S.SpanSecondary>
               <S.SearchIcon />
             </S.SpanSecondary>
             <S.SpanSecondary>Buscar endereço</S.SpanSecondary>
           </S.Button>
-          <S.ButtonSecondary type="button" onClick={() => setOpen(true)}>
+          <S.ButtonSecondary type="button" onClick={() => setIsOpen(true)}>
             Buscar
           </S.ButtonSecondary>
         </S.SearchContainer>
-        <Modal open={open} />
+        {isOpen && <Modal setIsOpen={setIsOpen} />}
       </S.SectionContent>
     </S.SectionWrapper>
   );
