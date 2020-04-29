@@ -1,12 +1,23 @@
 import React from "react";
 
-import LayoutDashboard from "../../components/LayoutDashboard";
+import * as S from "../../components/LayoutDashboard/styled";
+
+import DashboardHeader from "../../components/DashboardHeader";
+import DashboardSideBar from "../../components/DashboardSideBar";
+import Footer from "../../components/Footer";
 
 const DashboardProfile = () => {
   return (
-    <LayoutDashboard>
-      <h1>Meus dados</h1>
-    </LayoutDashboard>
+    <S.LayoutWrapper>
+      <DashboardHeader />
+      <S.LayoutContent>
+        <DashboardSideBar />
+        <S.LayoutMain>
+          <h1>Meus dados</h1>
+        </S.LayoutMain>
+      </S.LayoutContent>
+      <Footer />
+    </S.LayoutWrapper>
   );
 };
 
