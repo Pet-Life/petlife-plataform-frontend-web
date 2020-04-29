@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactDom from "react-dom";
-import api from "../../services/api";
+//import api from "../../services/api";
 
 import logo from "../../assets/logo.png";
 
@@ -34,7 +34,7 @@ const Modal = ({ setIsOpen }) => {
     });*/
     setTimeout(() => {
       setVisi(false);
-    }, 2000);
+    }, 2500);
   }
 
   if (!street <= 0) {

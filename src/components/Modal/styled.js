@@ -3,9 +3,8 @@ import { theme } from "../../styles/theme";
 
 export const Modal = styled.div`
   width: 870px;
-  height: 600px;
+  height: 540px;
   max-width: 890px;
-
   background-color: white;
   position: fixed;
   top: 50%;
@@ -113,7 +112,7 @@ export const StoreDetalh = styled.div`
   border: 1px solid ${theme.colorQuinary};
   border-radius: 4px;
   display: grid;
-  grid-template-columns: 8em 1fr;
+  grid-template-columns: 6em 1fr;
   grid-gap: 0.1em;
 `;
 
