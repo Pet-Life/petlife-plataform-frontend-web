@@ -29,7 +29,7 @@ export const HeaderContent = styled.div`
 `;
 
 export const FormWrapper = styled.div`
-  width: 40%;
+  width: 30%;
   height: 42px;
   margin-right: 1em;
   margin-left: 1em;
@@ -88,20 +88,20 @@ export const IconsWrapper = styled.div`
 `;
 
 export const NotificationIcon = styled(Notifications)`
-  width: 28px;
-  height: 28px;
+  width: 25px;
+  height: 25px;
   color: ${theme.colorPrimary};
 `;
 
 export const BasketIcon = styled(ShoppingBasket)`
-  width: 28px;
-  height: 28px;
+  width: 25px;
+  height: 25px;
   color: ${theme.colorPrimary};
 `;
 
 export const StoreIcon = styled(Store)`
-  width: 28px;
-  height: 28px;
+  width: 25px;
+  height: 25px;
   color: ${theme.colorPrimary};
 `;
 
@@ -114,8 +114,8 @@ export const ProfileWrapper = styled.div`
 `;
 
 export const ProfileAvatar = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   background: ${theme.colorPrimary};
   border: 1px solid ${theme.colorPrimary};
   border-radius: 50%;

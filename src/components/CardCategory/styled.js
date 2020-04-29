@@ -8,6 +8,7 @@ export const CardWrapper = styled.aside`
   flex-direction: column;
   padding: 2rem 1em;
   width: 15%;
+  height: 200px;
 `;
 
 export const Title = styled.h3`
