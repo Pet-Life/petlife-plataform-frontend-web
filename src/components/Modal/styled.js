@@ -68,7 +68,7 @@ export const SpanError = styled.span`
 `;
 
 export const Input = styled.input`
-  height: 42px;
+  height: 38px;
   margin-bottom: 0.3em;
   padding: 0 20px;
   background: ${theme.colorSecondary};
@@ -79,7 +79,7 @@ export const Input = styled.input`
 `;
 
 export const ConfirmButton = styled.button`
-  height: 48px;
+  height: 38px;
   background: ${theme.colorTertiary};
   color: ${theme.colorSecondary};
   font-size: 1em;
