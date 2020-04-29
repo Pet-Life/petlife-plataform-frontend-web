@@ -9,5 +9,6 @@ module.exports = {
     colorQuaternary: "#ACD6BE",
     colorQuinary: "#DDD",
     colorSixth: "#EBEAEA",
+    colorSeventh: "#E7BD52",
   },
 };
