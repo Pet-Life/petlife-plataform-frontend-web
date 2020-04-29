@@ -6,7 +6,10 @@ export const SectionMain = styled.section`
 `;
 
 export const MainContent = styled.main`
-  padding: 0 30px;
-  border: 1px solid black;
-  width: 77%;
+  margin-left: 0.4em;
+  padding: 0 15px;
+  width: 85%;
+  display: grid;
+  grid-column-gap: 0.5em;
+  grid-template-columns: auto auto auto auto;
 `;

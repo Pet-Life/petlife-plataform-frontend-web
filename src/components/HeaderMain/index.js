@@ -16,7 +16,7 @@ const HeaderMain = () => {
           <S.AddressTitle>Local de Entrega</S.AddressTitle>
           <S.Span>
             <S.LocationIcon />
-            Rua Nossa Senhora da Lapa
+            Rua Nossa Senhora...
             <S.ArrowDropIcon />
           </S.Span>
         </S.AddressWrapper>
@@ -27,8 +27,6 @@ const HeaderMain = () => {
         </S.IconsWrapper>
         <S.ProfileWrapper>
           <S.ProfileAvatar />
-          <S.Span>João</S.Span>
-          <S.ArrowDropIcon />
         </S.ProfileWrapper>
       </S.HeaderContent>
     </S.HeaderWrapper>
