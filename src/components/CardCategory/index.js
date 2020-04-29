@@ -7,10 +7,18 @@ const CardCategory = () => {
     <S.CardWrapper>
       <S.Title>Categorias</S.Title>
       <S.List>
-        <S.ListItem>Ração e Alimentos</S.ListItem>
-        <S.ListItem>Medicamentos</S.ListItem>
-        <S.ListItem>Briquedos</S.ListItem>
-        <S.ListItem>Higiene</S.ListItem>
+        <S.Link href="#">
+          <S.ListItem>Ração e Alimentos</S.ListItem>
+        </S.Link>
+        <S.Link href="#">
+          <S.ListItem>Medicamentos</S.ListItem>
+        </S.Link>
+        <S.Link href="#">
+          <S.ListItem>Briquedos</S.ListItem>
+        </S.Link>
+        <S.Link href="#">
+          <S.ListItem>Higiene</S.ListItem>
+        </S.Link>
       </S.List>
     </S.CardWrapper>
   );

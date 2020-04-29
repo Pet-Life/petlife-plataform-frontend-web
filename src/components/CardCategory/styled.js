@@ -22,6 +22,8 @@ export const List = styled.ul`
   flex-direction: column;
 `;
 
+export const Link = styled.a``;
+
 export const ListItem = styled.li`
   margin-bottom: 1em;
   color: ${theme.colorPrimary};

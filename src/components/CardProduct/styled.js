@@ -43,6 +43,6 @@ export const CardTitle = styled.h2`
 `;
 
 export const Span = styled.span`
-  font-size: 14px;
+  font-size: 1em;
   color: ${theme.colorPrimary};
 `;
