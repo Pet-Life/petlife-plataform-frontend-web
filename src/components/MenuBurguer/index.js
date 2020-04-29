@@ -24,7 +24,7 @@ const MenuBurguer = () => {
             <CloseIcon />
           </Button>
           <Links href="#">Como funciona</Links>
-          <Links href="#">Pet Shop</Links>
+          <Links href="/petshop/cadastro">Pet Shop</Links>
           <Links href="/entrar">Entrar</Links>
         </LinksWrapper>
       </MenuContent>
