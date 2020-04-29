@@ -2,16 +2,16 @@ import styled from "styled-components";
 import { theme } from "../../styles/theme";
 
 export const Modal = styled.div`
-  width: 800px;
+  width: 870px;
   height: 600px;
-  max-width: 600px;
+  max-width: 890px;
+
   background-color: white;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   z-index: 5;
-  max-height: 400px;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -30,45 +30,13 @@ export const TitleModal = styled.h2`
 `;
 
 export const ModalContent = styled.div`
-  padding: 20px;
+  width: 85%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const List = styled.ul`
-  width: 100%;
-  padding: 0 0 20px 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-`;
-
-export const ListItem = styled.li`
-  padding: 1em;
-  color: ${theme.colorPrimary};
-  font-size: 1em;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  cursor: pointer;
-
-  &:hover {
-    border: 1px solid ${theme.colorQuinary};
-  }
-`;
-
-export const Link = styled.a``;
-
-export const Span = styled.span`
-  color: ${theme.colorPrimary};
-  font-size: 14px;
 `;
 
 export const ModalFooter = styled.div`
   padding: 20px;
-  bottom: 0;
-  position: fixed;
   display: flex;
   justify-content: center;
 `;
@@ -83,10 +51,26 @@ export const ModalShadow = styled.div`
   z-index: 4;
 `;
 
+export const FormWrapper = styled.form`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0.4em;
+`;
+
+export const FormContent = styled.div`
+  display: ${(props) => (props.visi ? "none" : "grid")};
+  grid-template-columns: ${(props) => (props.secondary ? "1fr 1fr" : "1fr")};
+  grid-gap: 0.2em;
+`;
+
+export const SpanError = styled.span`
+  color: red;
+  font-size: 12px;
+`;
+
 export const Input = styled.input`
-  width: 400px;
-  height: 48px;
-  margin-bottom: 1em;
+  height: 42px;
+  margin-bottom: 0.3em;
   padding: 0 20px;
   background: ${theme.colorSecondary};
   color: ${theme.colorPrimary};
@@ -96,7 +80,6 @@ export const Input = styled.input`
 `;
 
 export const ConfirmButton = styled.button`
-  width: 220px;
   height: 48px;
   background: ${theme.colorTertiary};
   color: ${theme.colorSecondary};
@@ -104,4 +87,43 @@ export const ConfirmButton = styled.button`
   border: 2px solid ${theme.colorTertiary};
   border-radius: 4px;
   cursor: pointer;
+`;
+
+export const StoreWrapper = styled.div`
+  margin-top: 1em;
+  display: ${(props) => (props.visi ? "none" : "grid")};
+  grid-template-columns: 1fr;
+  grid-gap: 0.4em;
+`;
+
+export const StoreContent = styled.div`
+  padding: 1.2em 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.4em;
+`;
+
+export const Title = styled.h2`
+  font-size: 1.1em;
+  color: ${theme.colorPrimary};
+`;
+
+export const StoreDetalh = styled.div`
+  padding: 1em;
+  border: 1px solid ${theme.colorQuinary};
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 8em 1fr;
+  grid-gap: 0.1em;
+`;
+
+export const StoreLogo = styled.img`
+  width: 80px;
+  height: auto;
+`;
+
+export const StoreText = styled.p`
+  font-size: 16px;
+  color: ${theme.colorPrimary};
+  line-height: 1.2em;
 `;

@@ -12,6 +12,8 @@ const HeaderMain = () => {
         <S.FormWrapper>
           <S.Input type="text" placeholder="O que você procura?" />
         </S.FormWrapper>
+      </S.HeaderContent>
+      <S.HeaderContent>
         <S.AddressWrapper>
           <S.AddressTitle>Local de Entrega</S.AddressTitle>
           <S.Span>

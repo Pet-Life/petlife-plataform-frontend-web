@@ -22,14 +22,14 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const HeaderContent = styled.div`
-  width: 100%;
+  width: 50%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
 export const FormWrapper = styled.div`
-  width: 30%;
+  width: 100%;
   height: 42px;
   margin-right: 1em;
   margin-left: 1em;
@@ -50,7 +50,7 @@ export const Input = styled.input`
 `;
 
 export const AddressWrapper = styled.div`
-  width: 250px;
+  width: 100%;
   height: 42px;
   display: flex;
   flex-direction: column;
