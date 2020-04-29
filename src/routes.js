@@ -8,6 +8,8 @@ import Register from "./pages/Register";
 import ResetPassoword from "./pages/ResetPassword";
 import StoreRegister from "./pages/StoreRegister";
 import StoreLogin from "./pages/StoreLogin";
+import StoreDashboard from "./pages/StoreDashboard";
+import DashboardProfile from "./pages/DashboardProfile";
 
 import Main from "./pages/Main";
 
@@ -22,6 +24,8 @@ const Routes = () => {
         <Route path="/main" component={Main} />
         <Route path="/petshop/cadastro" component={StoreRegister} />
         <Route path="/petshop/entrar" component={StoreLogin} />
+        <Route path="/petshop/dashboard" component={StoreDashboard} />
+        <Route path="/petshop/dashboard/profile" component={DashboardProfile} />
       </Switch>
     </BrowserRouter>
   );

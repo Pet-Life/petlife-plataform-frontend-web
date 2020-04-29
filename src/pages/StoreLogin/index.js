@@ -13,7 +13,7 @@ const StoreLogin = () => {
       </S.HeaderWrapper>
       <S.LoginWrapper>
         <S.Form>
-          <S.TitleForm>Gerencie seu Pet Shop</S.TitleForm>
+          <S.TitleForm>Gerencie sua loja</S.TitleForm>
           <S.Input type="email" placeholder="Seu e-mail" />
           <S.Input type="senha" placeholder="Sua senha" />
           <S.Link href="#">Esqueceu sua senha?</S.Link>
