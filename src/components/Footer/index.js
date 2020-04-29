@@ -35,7 +35,7 @@ const Footer = () => {
       </S.FooterContent>
       <S.FooterContent>
         <S.Title>Tem um Pet Shop?</S.Title>
-        <S.Links href="#">Cadastre seu pet shop</S.Links>
+        <S.Links href="/petshop/cadastro">Cadastre seu pet shop</S.Links>
         <S.Links href="#">Quero saber mais informações</S.Links>
       </S.FooterContent>
       <S.FooterContent>
