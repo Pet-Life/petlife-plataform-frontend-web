@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import api from "../../services/api";
 
 import * as S from "../../components/LayoutDashboard/styled";
 
@@ -7,13 +8,29 @@ import DashboardSideBar from "../../components/DashboardSideBar";
 import Footer from "../../components/Footer";
 
 const DashboardProduct = () => {
+  const [users, setUsers] = React.useState({});
+  useEffect(() => {
+    async function loadUser() {
+      const user = localStorage.getItem("user");
+      console.log(user);
+      const response = await api.get("/users/shops", {
+        headers: { id: user },
+      });
+
+      console.log(response.data);
+
+      setUsers(response.data.shop);
+    }
+
+    loadUser();
+  }, []);
   return (
     <S.LayoutWrapper>
-      <DashboardHeader />
+      <DashboardHeader avatar={users.avatar} />
       <S.LayoutContent>
         <DashboardSideBar />
         <S.LayoutMain>
-          <h1>Produtos</h1>
+          <S.TitlePage>Produtos</S.TitlePage>
         </S.LayoutMain>
       </S.LayoutContent>
       <Footer />

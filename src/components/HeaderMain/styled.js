@@ -113,7 +113,7 @@ export const ProfileWrapper = styled.div`
   align-items: center;
 `;
 
-export const ProfileAvatar = styled.div`
+export const ProfileAvatar = styled.img`
   width: 35px;
   height: 35px;
   background: ${theme.colorPrimary};

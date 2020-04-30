@@ -4,7 +4,7 @@ import * as S from "./styled";
 
 import Logo from "../../components/Logo";
 
-const DashboardHeader = () => {
+const DashboardHeader = ({ avatar }) => {
   return (
     <>
       <S.HeaderWrapper>
@@ -12,7 +12,7 @@ const DashboardHeader = () => {
         <S.MenuWrapper>
           <S.Button type="button">Ver minha loja</S.Button>
           <S.NotificationIcon />
-          <S.AvatarProfile />
+          <S.AvatarProfile src={avatar} />
         </S.MenuWrapper>
       </S.HeaderWrapper>
     </>

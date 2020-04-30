@@ -36,9 +36,8 @@ export const NotificationIcon = styled(Notifications)`
   color: ${theme.colorPrimary};
 `;
 
-export const AvatarProfile = styled.div`
+export const AvatarProfile = styled.img`
   width: 60px;
   height: 60px;
-  background: ${theme.colorPrimary};
   border-radius: 50px;
 `;
