@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ReactDom from "react-dom";
 //import api from "../../services/api";
 
@@ -37,10 +37,6 @@ const Modal = ({ setIsOpen }) => {
     }, 2500);
   }
 
-  if (!street <= 0) {
-    console.log(state);
-  }
-
   return ReactDom.createPortal(
     <>
       <S.ModalShadow onClick={handleClose} />
@@ -56,6 +52,9 @@ const Modal = ({ setIsOpen }) => {
                 id="zipcode"
                 name="zipcode"
                 placeholder="CEP"
+                autoComplete="none"
+                autoCorrect="none"
+                autoSave="none"
                 value={zipcode}
                 onChange={(event) => setZipCode(event.target.value)}
               />
@@ -67,6 +66,7 @@ const Modal = ({ setIsOpen }) => {
                 id="street"
                 name="street"
                 placeholder="Logradouro"
+                autoComplete="none"
                 value={street}
                 onChange={(event) => setStreet(event.target.value)}
               />
@@ -75,6 +75,7 @@ const Modal = ({ setIsOpen }) => {
                 id="number"
                 name="number"
                 placeholder="Número"
+                autoComplete="none"
                 value={number}
                 onChange={(event) => setNumber(event.target.value)}
               />
@@ -83,6 +84,7 @@ const Modal = ({ setIsOpen }) => {
                 id="district"
                 name="district"
                 placeholder="Bairro"
+                autoComplete="none"
                 value={district}
                 onChange={(event) => setDistrict(event.target.value)}
               />
@@ -91,6 +93,7 @@ const Modal = ({ setIsOpen }) => {
                 id="complement"
                 name="complement"
                 placeholder="Complemento"
+                autoComplete="none"
                 value={complement}
                 onChange={(event) => setComplement(event.target.value)}
               />
@@ -99,6 +102,7 @@ const Modal = ({ setIsOpen }) => {
                 id="city"
                 name="city"
                 placeholder="Cidade"
+                autoComplete="none"
                 value={city}
                 onChange={(event) => setCity(event.target.value)}
               />
@@ -107,6 +111,7 @@ const Modal = ({ setIsOpen }) => {
                 id="state"
                 name="state"
                 placeholder="Estado"
+                autoComplete="none"
                 value={state}
                 onChange={(event) => steState(event.target.value)}
               />

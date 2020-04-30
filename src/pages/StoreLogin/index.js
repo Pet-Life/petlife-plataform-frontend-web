@@ -6,6 +6,9 @@ import Logo from "../../components/Logo";
 import Footer from "../../components/Footer";
 
 const StoreLogin = () => {
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
   return (
     <>
       <S.HeaderWrapper>
@@ -14,8 +17,18 @@ const StoreLogin = () => {
       <S.LoginWrapper>
         <S.Form>
           <S.TitleForm>Gerencie sua loja</S.TitleForm>
-          <S.Input type="email" placeholder="Seu e-mail" />
-          <S.Input type="senha" placeholder="Sua senha" />
+          <S.Input
+            type="email"
+            placeholder="Seu e-mail"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
+          <S.Input
+            type="senha"
+            placeholder="Sua senha"
+            value={password}
+            onChange={(event) => setPassword(event.target.valeu)}
+          />
           <S.Link href="#">Esqueceu sua senha?</S.Link>
           <S.ButtonRegister type="submit">Entrar</S.ButtonRegister>
           <S.Link href="/petshop/cadastro">

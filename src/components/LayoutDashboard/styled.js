@@ -16,3 +16,9 @@ export const LayoutMain = styled.main`
   background: ${theme.colorSecondary};
   padding: 2em 1.5em;
 `;
+
+export const TitlePage = styled.h3`
+  margin-bottom: 1.2em;
+  color: ${theme.colorPrimary};
+  font-size: 1.1em;
+`;
