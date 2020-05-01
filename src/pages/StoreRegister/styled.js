@@ -27,7 +27,7 @@ export const Link = styled.a`
 
 export const MainWrapper = styled.div`
   padding: 2.5em 60px;
-  background: ${theme.colorQuaternary};
+  background: rgba(33, 150, 83, 0.7);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2em;
