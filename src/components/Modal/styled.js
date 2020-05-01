@@ -1,10 +1,13 @@
 import styled from "styled-components";
 import { theme } from "../../styles/theme";
+import { LocationOn } from "@styled-icons/material";
 
 export const Modal = styled.div`
-  width: 870px;
-  height: 540px;
-  max-width: 890px;
+  width: 550px;
+  height: 370px;
+  max-width: 550px;
+  max-height: 400px;
+  padding: 0 2em;
   background-color: white;
   position: fixed;
   top: 50%;
@@ -15,12 +18,13 @@ export const Modal = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
+  overflow-y: initial;
 `;
 
 export const ModalBanner = styled.div`
-  margin-bottom: 1em;
+  padding: 1.2em 1.5em;
   background: ${theme.colorSecondary};
-  padding: 10px;
 `;
 
 export const TitleModal = styled.h2`
@@ -29,9 +33,10 @@ export const TitleModal = styled.h2`
 `;
 
 export const ModalContent = styled.div`
-  width: 85%;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  padding: 0 1em 0 1em;
+  display: grid;
+  grid-template-columns: 1fr;
 `;
 
 export const ModalFooter = styled.div`
@@ -62,11 +67,6 @@ export const FormContent = styled.div`
   grid-gap: 0.2em;
 `;
 
-export const SpanError = styled.span`
-  color: red;
-  font-size: 12px;
-`;
-
 export const Input = styled.input`
   height: 38px;
   margin-bottom: 0.3em;
@@ -88,15 +88,34 @@ export const ConfirmButton = styled.button`
   cursor: pointer;
 `;
 
+export const AddressInfo = styled.div`
+  padding: 0.5em 0;
+  display: grid;
+  grid-template-columns: 3em 1fr;
+  align-items: center;
+`;
+
+export const LocationIcon = styled(LocationOn)`
+  width: 28px;
+  height: 28px;
+  color: ${theme.colorPrimary};
+`;
+
+export const AddressText = styled.p`
+  font-size: 0.9em;
+  color: ${theme.colorPrimary};
+  line-height: 1.2em;
+`;
+
 export const StoreWrapper = styled.div`
-  margin-top: 1em;
+  padding: 1em 0;
   display: ${(props) => (props.visi ? "none" : "grid")};
   grid-template-columns: 1fr;
-  grid-gap: 0.4em;
+  grid-gap: 0.2em;
 `;
 
 export const StoreContent = styled.div`
-  padding: 1.2em 0;
+  padding: 1em 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.4em;
@@ -108,21 +127,22 @@ export const Title = styled.h2`
 `;
 
 export const StoreDetalh = styled.div`
-  padding: 1em;
+  padding: 1em 0.5em;
   border: 1px solid ${theme.colorQuinary};
   border-radius: 4px;
   display: grid;
-  grid-template-columns: 6em 1fr;
-  grid-gap: 0.1em;
+  grid-template-columns: auto auto;
+  grid-gap: 0.5em;
+  align-items: center;
 `;
 
 export const StoreLogo = styled.img`
-  width: 80px;
+  width: 70px;
   height: auto;
 `;
 
 export const StoreText = styled.p`
-  font-size: 16px;
+  font-size: 0.9em;
   color: ${theme.colorPrimary};
   line-height: 1.2em;
 `;
