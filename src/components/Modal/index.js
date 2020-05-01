@@ -58,65 +58,13 @@ const Modal = ({ setIsOpen }) => {
                 value={zipcode}
                 onChange={(event) => setZipCode(event.target.value)}
               />
-            </S.FormContent>
-
-            <S.FormContent secondary className="secondary" visi={visi}>
-              <S.Input
-                type="text"
-                id="street"
-                name="street"
-                placeholder="Logradouro"
-                autoComplete="none"
-                value={street}
-                onChange={(event) => setStreet(event.target.value)}
-              />
-              <S.Input
-                type="text"
-                id="number"
-                name="number"
-                placeholder="Número"
-                autoComplete="none"
-                value={number}
-                onChange={(event) => setNumber(event.target.value)}
-              />
-              <S.Input
-                type="text"
-                id="district"
-                name="district"
-                placeholder="Bairro"
-                autoComplete="none"
-                value={district}
-                onChange={(event) => setDistrict(event.target.value)}
-              />
-              <S.Input
-                type="text"
-                id="complement"
-                name="complement"
-                placeholder="Complemento"
-                autoComplete="none"
-                value={complement}
-                onChange={(event) => setComplement(event.target.value)}
-              />
-              <S.Input
-                type="text"
-                id="city"
-                name="city"
-                placeholder="Cidade"
-                autoComplete="none"
-                value={city}
-                onChange={(event) => setCity(event.target.value)}
-              />
-              <S.Input
-                type="text"
-                id="state"
-                name="state"
-                placeholder="Estado"
-                autoComplete="none"
-                value={state}
-                onChange={(event) => steState(event.target.value)}
-              />
-            </S.FormContent>
-            <S.FormContent>
+              <S.AddressInfo>
+                <S.LocationIcon />
+                <S.AddressText>
+                  Rua Lorenzo Latorre, Vila Aurora, São Paulo - São Paulo,
+                  Brasil - 05186120
+                </S.AddressText>
+              </S.AddressInfo>
               <S.ConfirmButton type="submit">Buscar</S.ConfirmButton>
             </S.FormContent>
           </S.FormWrapper>
