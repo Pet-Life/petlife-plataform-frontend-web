@@ -4,7 +4,7 @@ import api from "../../services/api";
 import * as S from "./styled";
 
 import Logo from "../../components/Logo";
-import Footer from "../../components/Footer";
+import FooterSecondary from "../../components/FooterSecondary";
 
 const StoreRegister = ({ history }) => {
   const [name, setName] = React.useState("");
@@ -76,7 +76,7 @@ const StoreRegister = ({ history }) => {
           <S.ButtonRegister type="submit">Realizar cadastro</S.ButtonRegister>
         </S.Form>
       </S.MainWrapper>
-      <Footer />
+      <FooterSecondary />
     </>
   );
 };

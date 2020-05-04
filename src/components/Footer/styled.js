@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../styles/theme";
 import { Facebook, Instagram, Twitter, Youtube } from "@styled-icons/fa-brands";
-
 import { Heart } from "@styled-icons/fa-solid";
 
 export const FooterWrapper = styled.footer`

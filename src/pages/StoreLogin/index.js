@@ -3,7 +3,7 @@ import React from "react";
 import * as S from "./styled";
 
 import Logo from "../../components/Logo";
-import Footer from "../../components/Footer";
+import FooterSecondary from "../../components/FooterSecondary";
 
 const StoreLogin = () => {
   const [email, setEmail] = React.useState("");
@@ -36,7 +36,7 @@ const StoreLogin = () => {
           </S.Link>
         </S.Form>
       </S.LoginWrapper>
-      <Footer />
+      <FooterSecondary />
     </>
   );
 };

@@ -10,18 +10,19 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const LoginWrapper = styled.div`
-  height: 100%;
-  padding: 30px 60px;
+  padding: 5em 60px;
   background: ${theme.colorQuaternary};
   display: grid;
-  grid-template-columns: auto;
-  justify-content: end;
+  grid-template-columns: 1fr;
+  justify-items: center;
 `;
 
 export const Form = styled.form`
   width: 450px;
   height: 300px;
-  padding: 1em 1.5em;
+  max-width: 450px;
+  max-height: 300px;
+  padding: 2em 2em;
   background: ${theme.colorSecondary};
   border-radius: 4px;
   display: grid;
