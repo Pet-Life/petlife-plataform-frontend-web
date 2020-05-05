@@ -1,20 +1,15 @@
 import React, { useState } from "react";
 import ReactDom from "react-dom";
-//import api from "../../services/api";
-
-import logo from "../../assets/logo.png";
+import api from "../../services/api";
 
 import * as S from "./styled";
 
+import CardStore from "../CardStore";
+
 const Modal = ({ setIsOpen }) => {
-  const [visi, setVisi] = useState(true);
+  const [visi, setVisi] = useState(false);
   const [zipcode, setZipCode] = useState("");
-  const [street, setStreet] = useState("");
-  const [number, setNumber] = useState("");
-  const [district, setDistrict] = useState("");
-  const [complement, setComplement] = useState("");
-  const [city, setCity] = useState("");
-  const [state, steState] = useState("");
+  const [shops, setShops] = useState([]);
 
   function handleClose() {
     setIsOpen(false);
@@ -23,18 +18,15 @@ const Modal = ({ setIsOpen }) => {
   async function handlerSubmit(event) {
     event.preventDefault();
 
-    /*await api.post("/adresses", { zipcode }).then((response) => {
-      const { address } = response.data.address;
-
-      setStreet(address.street);
-      setComplement(address.complement);
-      setDistrict(address.district);
-      setCity(address.city);
-      steState(address.state);
-    });*/
-    setTimeout(() => {
-      setVisi(false);
-    }, 2500);
+    await api
+      .post("/search", { zipcode })
+      .then((response) => {
+        setShops(response.data.shops);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    setVisi(true);
   }
 
   return ReactDom.createPortal(
@@ -58,32 +50,38 @@ const Modal = ({ setIsOpen }) => {
                 value={zipcode}
                 onChange={(event) => setZipCode(event.target.value)}
               />
-              <S.AddressInfo>
-                <S.LocationIcon />
-                <S.AddressText>
-                  Rua Lorenzo Latorre, Vila Aurora, São Paulo - São Paulo,
-                  Brasil - 05186120
-                </S.AddressText>
-              </S.AddressInfo>
               <S.ConfirmButton type="submit">Buscar</S.ConfirmButton>
             </S.FormContent>
           </S.FormWrapper>
+          <S.LinkText
+            href="http://www.buscacep.correios.com.br/sistemas/buscacep/"
+            target="_blank"
+          >
+            Nao sei meu CEP
+          </S.LinkText>
           <S.StoreWrapper visi={visi}>
-            <S.Title>Selecione um Pet Shop</S.Title>
-            <S.StoreContent>
-              <S.StoreDetalh>
-                <S.StoreLogo src={logo} />
-                <S.StoreText>
-                  Rua Nossa Senhora da Lapa, 270 São Paulo - SP
-                </S.StoreText>
-              </S.StoreDetalh>
-              <S.StoreDetalh>
-                <S.StoreLogo src={logo} />
-                <S.StoreText>
-                  Rua Nossa Senhora da Lapa, 270 São Paulo - SP
-                </S.StoreText>
-              </S.StoreDetalh>
-            </S.StoreContent>
+            <S.StoreTitle>Selecione um Petshop</S.StoreTitle>
+            <br />
+            {shops ? (
+              shops.map((shop) => (
+                <CardStore
+                  key={shop.id}
+                  logo={shop.avatar}
+                  name={shop.name}
+                  text={
+                    shop.street +
+                    ", " +
+                    shop.district +
+                    ", " +
+                    shop.city +
+                    " - " +
+                    shop.state
+                  }
+                />
+              ))
+            ) : (
+              <S.StoreTitle>Nenhum petshop encontrado.</S.StoreTitle>
+            )}
           </S.StoreWrapper>
         </S.ModalContent>
       </S.Modal>

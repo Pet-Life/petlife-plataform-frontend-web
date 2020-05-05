@@ -1,17 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import logo from '../../assets/logo.svg';
+import logo from "../../assets/logo.svg";
 
-import { LogoWrapper, LogoImage, Link } from './styled';
+import * as S from "./styled";
 
 const Logo = () => {
   return (
-    <LogoWrapper>
-      <Link href='/'>
-        <LogoImage src={logo} alt="Logo Petlife"/>
-      </Link>
-    </LogoWrapper>
+    <S.LogoWrapper>
+      <S.LogoImage src={logo} alt="Logo Petlife" />
+    </S.LogoWrapper>
   );
-}
+};
 
 export default Logo;

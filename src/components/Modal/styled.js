@@ -3,9 +3,9 @@ import { theme } from "../../styles/theme";
 import { LocationOn } from "@styled-icons/material";
 
 export const Modal = styled.div`
-  width: 550px;
+  width: 600px;
   height: 370px;
-  max-width: 550px;
+  max-width: 600px;
   max-height: 400px;
   padding: 0 2em;
   background-color: white;
@@ -34,7 +34,7 @@ export const TitleModal = styled.h2`
 
 export const ModalContent = styled.div`
   width: 100%;
-  padding: 0 1em 0 1em;
+  padding: 1em 1em;
   display: grid;
   grid-template-columns: 1fr;
 `;
@@ -88,6 +88,19 @@ export const ConfirmButton = styled.button`
   cursor: pointer;
 `;
 
+export const StoreWrapper = styled.div`
+  padding: 1em 0;
+  display: ${(props) => (props.visi ? "grid" : "none")};
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.2em;
+`;
+
+export const StoreTitle = styled.h4`
+  margin-bottom: 1em;
+  color: ${theme.colorPrimary};
+  font-size: 1em;
+`;
+
 export const AddressInfo = styled.div`
   padding: 0.5em 0;
   display: grid;
@@ -107,42 +120,15 @@ export const AddressText = styled.p`
   line-height: 1.2em;
 `;
 
-export const StoreWrapper = styled.div`
-  padding: 1em 0;
-  display: ${(props) => (props.visi ? "none" : "grid")};
-  grid-template-columns: 1fr;
-  grid-gap: 0.2em;
-`;
-
-export const StoreContent = styled.div`
-  padding: 1em 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 0.4em;
-`;
-
-export const Title = styled.h2`
-  font-size: 1.1em;
+export const LinkText = styled.a`
+  margin: 2em 0;
   color: ${theme.colorPrimary};
-`;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.6s;
 
-export const StoreDetalh = styled.div`
-  padding: 1em 0.5em;
-  border: 1px solid ${theme.colorQuinary};
-  border-radius: 4px;
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 0.5em;
-  align-items: center;
-`;
-
-export const StoreLogo = styled.img`
-  width: 70px;
-  height: auto;
-`;
-
-export const StoreText = styled.p`
-  font-size: 0.9em;
-  color: ${theme.colorPrimary};
-  line-height: 1.2em;
+  &:hover {
+    color: ${theme.colorTertiary};
+  }
 `;

@@ -27,14 +27,16 @@ export const Link = styled.a`
 
 export const MainWrapper = styled.div`
   padding: 2.5em 60px;
-  background: rgba(33, 150, 83, 0.7);
+  background: ${theme.colorQuaternary};
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 2em;
+  justify-items: center;
 `;
 
 export const Form = styled.form`
-  width: 80%;
+  width: 500px;
+  max-width: 500px;
   padding: 2em 1.5em;
   background: ${theme.colorSecondary};
   border-radius: 4px;
