@@ -7,6 +7,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
+      <div id="modal-portal" />
       <Routes />
     </>
   );

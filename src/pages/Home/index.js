@@ -9,7 +9,6 @@ import SectionWork from "../../components/SectionWork";
 const Home = () => {
   return (
     <>
-      <div id="modal-portal" />
       <Header />
       <SectionCep />
       <SectionCategory />

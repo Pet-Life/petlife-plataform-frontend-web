@@ -1,17 +1,20 @@
 import React from "react";
+import ReactDOM from "react-dom";
 
 import * as S from "./styled";
 
-const Loader = ({ isLoading }) => {
-  return (
+const Loader = ({ setIsLoading }) => {
+  return ReactDOM.createPortal(
     <>
-      <S.LaoderWrapper>
+      <S.ModalShadow setIsLoading={setIsLoading} />
+      <S.LaoderWrapper setIsLoading={setIsLoading}>
         <S.LoaderContent />
         <S.LoaderContent />
         <S.LoaderContent />
         <S.LoaderContent />
       </S.LaoderWrapper>
-    </>
+    </>,
+    document.getElementById("loading")
   );
 };
 

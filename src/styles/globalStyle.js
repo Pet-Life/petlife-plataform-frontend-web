@@ -57,6 +57,13 @@ const GlobalStyles = createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
   }
+  button {
+    outline-color: transparent;
+  }
+
+  input, input:focus {
+    outline-color: transparent;
+  }
 `;
 
 export default GlobalStyles;
