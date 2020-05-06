@@ -1,25 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import api from "../../services/api";
 
 import * as S from "./styled";
 
-import img from "../../assets/racao_1.jpg";
-
 const CardProduct = () => {
+  const [products, setProducts] = useState([]);
+  const shopId = sessionStorage.getItem("shopId");
+
+  useEffect(() => {
+    async function loadProducts() {
+      await api
+        .get(`products/${shopId}`)
+        .then((response) => {
+          setProducts(response.data.products);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+    loadProducts();
+  }, [shopId]);
+
+  console.log(products);
+
   return (
-    <S.Link href="#">
-      <S.CardWrapper>
-        <S.Photo src={img} />
-        <S.StartWrapper>
-          <S.StartIcon />
-          <S.StartIcon />
-          <S.StartIcon />
-          <S.StartIcon />
-          <S.StartIcon />
-        </S.StartWrapper>
-        <S.CardTitle>Ração Special Dog Prime para Cães Adultos</S.CardTitle>
-        <S.Span>R$ 174,00</S.Span>
-      </S.CardWrapper>
-    </S.Link>
+    <>
+      {products &&
+        products.map((product) => (
+          <S.CardWrapper key={product.id}>
+            <S.Photo src={product.photo} />
+            <S.StartWrapper>
+              <S.StartIcon />
+              <S.StartIcon />
+              <S.StartIcon />
+              <S.StartIcon />
+              <S.StartIcon />
+            </S.StartWrapper>
+            <S.CardTitle>{product.name}</S.CardTitle>
+            <S.Span>R$ {product.unityPrice}</S.Span>
+          </S.CardWrapper>
+        ))}
+    </>
   );
 };
 

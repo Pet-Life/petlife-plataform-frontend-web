@@ -9,20 +9,14 @@ import CardCategory from "../../components/CardCategory";
 import CardProduct from "../../components/CardProduct";
 
 const Main = () => {
+  const user = sessionStorage.getItem("user");
   return (
     <>
-      <HeaderMain />
+      <HeaderMain address={user} />
       <Banner />
       <S.SectionMain>
         <CardCategory />
         <S.MainContent>
-          <CardProduct />
-          <CardProduct />
-          <CardProduct />
-          <CardProduct />
-          <CardProduct />
-          <CardProduct />
-          <CardProduct />
           <CardProduct />
         </S.MainContent>
       </S.SectionMain>

@@ -11,6 +11,7 @@ const Modal = ({ setIsOpen }) => {
   const [visi, setVisi] = useState(false);
   const [zipcode, setZipCode] = useState("");
   const [shops, setShops] = useState([]);
+  const [address, setAddress] = useState({});
   const history = useHistory();
 
   function handleClose() {
@@ -23,6 +24,7 @@ const Modal = ({ setIsOpen }) => {
     await api
       .post("/search", { zipcode })
       .then((response) => {
+        setAddress(response.data.address);
         setShops(response.data.shops);
       })
       .catch((err) => {
@@ -31,7 +33,18 @@ const Modal = ({ setIsOpen }) => {
     setVisi(true);
   }
 
-  function handlerStore(event) {
+  function handlerStore(e, id) {
+    e.preventDefault();
+    sessionStorage.setItem(
+      "user",
+      address.address.street +
+        " " +
+        address.address.complement +
+        " " +
+        address.address.district
+    );
+    sessionStorage.setItem("shopId", id);
+    handleClose();
     history.push("/principal");
   }
 
@@ -73,7 +86,7 @@ const Modal = ({ setIsOpen }) => {
                 <S.ButtonConfirmStore
                   key={shop.id}
                   type="button"
-                  onClick={handlerStore}
+                  onClick={(e) => handlerStore(e, shop.id)}
                 >
                   <CardStore
                     logo={shop.avatar}
