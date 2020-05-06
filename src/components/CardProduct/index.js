@@ -25,7 +25,7 @@ const CardProduct = () => {
 
   return (
     <>
-      {products &&
+      {products ? (
         products.map((product) => (
           <S.CardWrapper key={product.id}>
             <S.Photo src={product.photo} />
@@ -39,7 +39,12 @@ const CardProduct = () => {
             <S.CardTitle>{product.name}</S.CardTitle>
             <S.Span>R$ {product.unityPrice}</S.Span>
           </S.CardWrapper>
-        ))}
+        ))
+      ) : (
+        <S.CardWrapper>
+          <p>Nenhum produto cadastrado.</p>
+        </S.CardWrapper>
+      )}
     </>
   );
 };
