@@ -6,7 +6,7 @@ import Modal from "../Modal";
 
 import image from "../../assets/image-1.jpg";
 
-const SectionCep = ({ history }) => {
+const SectionCep = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

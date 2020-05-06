@@ -4,16 +4,20 @@ import { Grade } from "@styled-icons/material";
 
 export const CardWrapper = styled.div`
   width: 220px;
-  height: 245px;
   margin-bottom: 0.8em;
-  padding: 0.2em 0.4em;
+  padding: 1em;
   border: 1px solid ${theme.colorQuinary};
   border-radius: 4px;
   display: flex;
   flex-direction: column;
 `;
 
-export const Link = styled.a``;
+export const Link = styled.button`
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+`;
 
 export const Photo = styled.img`
   display: block;
@@ -37,12 +41,21 @@ export const StartIcon = styled(Grade)`
 `;
 
 export const CardTitle = styled.h2`
-  margin: 0 0 0.5em 0;
-  font-size: 0.96em;
-  color: ${theme.colorPrimary};
+  margin: 0 0 1em 0;
+  font-size: 14px;
+  color: #3c3b3b;
+  line-height: 1.2em;
 `;
 
 export const Span = styled.span`
   font-size: 1em;
   color: ${theme.colorPrimary};
+`;
+
+export const Empty = styled.div``;
+
+export const EmptyText = styled.p`
+  color: ${theme.colorPrimary};
+  font-size: 1.5em;
+  font-weight: bold;
 `;

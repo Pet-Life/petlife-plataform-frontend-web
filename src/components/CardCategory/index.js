@@ -1,24 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import api from "../../services/api";
 
 import * as S from "./styled";
 
 const CardCategory = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    async function laodCategories() {
+      await api
+        .get("/categories")
+        .then((response) => {
+          setCategories(response.data.categories);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+    laodCategories();
+  }, []);
+
   return (
     <S.CardWrapper>
       <S.Title>Categorias</S.Title>
       <S.List>
-        <S.Link href="#">
-          <S.ListItem>Ração e Alimentos</S.ListItem>
-        </S.Link>
-        <S.Link href="#">
-          <S.ListItem>Medicamentos</S.ListItem>
-        </S.Link>
-        <S.Link href="#">
-          <S.ListItem>Briquedos</S.ListItem>
-        </S.Link>
-        <S.Link href="#">
-          <S.ListItem>Higiene</S.ListItem>
-        </S.Link>
+        {categories &&
+          categories.map((category) => (
+            <S.Link key={category.id}>
+              <S.ListItem>{category.name}</S.ListItem>
+            </S.Link>
+          ))}
       </S.List>
     </S.CardWrapper>
   );
