@@ -24,7 +24,7 @@ const Routes = () => {
         <Route path="/entrar" component={Login} />
         <Route path="/cadastro" component={Register} />
         <Route path="/recuperar" component={ResetPassoword} />
-        <Route path="/main" component={Main} />
+        <Route path="/principal" component={Main} />
         <Route path="/petshop/cadastro" component={StoreRegister} />
         <Route path="/petshop/entrar" component={StoreLogin} />
         <Route path="/petshop/dashboard" component={StoreDashboard} />

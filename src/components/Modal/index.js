@@ -32,7 +32,7 @@ const Modal = ({ setIsOpen }) => {
   }
 
   function handlerStore(event) {
-    history.push("/main");
+    history.push("/principal");
   }
 
   return ReactDom.createPortal(
