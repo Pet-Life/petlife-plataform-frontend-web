@@ -12,7 +12,12 @@ export const CardWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const Link = styled.a``;
+export const Link = styled.button`
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+`;
 
 export const Photo = styled.img`
   display: block;
@@ -45,4 +50,12 @@ export const CardTitle = styled.h2`
 export const Span = styled.span`
   font-size: 1em;
   color: ${theme.colorPrimary};
+`;
+
+export const Empty = styled.div``;
+
+export const EmptyText = styled.p`
+  color: ${theme.colorPrimary};
+  font-size: 1.5em;
+  font-weight: bold;
 `;

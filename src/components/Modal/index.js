@@ -53,7 +53,9 @@ const Modal = ({ setIsOpen }) => {
       <S.ModalShadow onClick={handleClose} />
       <S.Modal>
         <S.ModalBanner>
-          <S.TitleModal>Onde você que receber seu pedido?</S.TitleModal>
+          <S.TitleModal>
+            Buscar Petshops proximo a minha localização
+          </S.TitleModal>
         </S.ModalBanner>
         <S.ModalContent>
           <S.FormWrapper onSubmit={handlerSubmit}>

@@ -1,49 +1,60 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import api from "../../services/api";
 
 import * as S from "./styled";
 
 const CardProduct = () => {
   const [products, setProducts] = useState([]);
-  const shopId = sessionStorage.getItem("shopId");
+  const id = sessionStorage.getItem("shopId");
+  const history = useHistory();
 
   useEffect(() => {
     async function loadProducts() {
       await api
-        .get(`products/${shopId}`)
+        .get(`/users/shops/${id}`)
         .then((response) => {
-          setProducts(response.data.products);
+          setProducts(response.data.shop.products);
         })
         .catch((err) => {
           console.log(err);
         });
     }
     loadProducts();
-  }, [shopId]);
+  }, [id]);
 
-  console.log(products);
+  function handlerProducto(e, id) {
+    e.preventDefault();
+    console.log(id);
+    history.push(`/produto/${id}`);
+  }
 
   return (
     <>
-      {products ? (
+      {products.length > 0 ? (
         products.map((product) => (
-          <S.CardWrapper key={product.id}>
-            <S.Photo src={product.photo} />
-            <S.StartWrapper>
-              <S.StartIcon />
-              <S.StartIcon />
-              <S.StartIcon />
-              <S.StartIcon />
-              <S.StartIcon />
-            </S.StartWrapper>
-            <S.CardTitle>{product.name}</S.CardTitle>
-            <S.Span>R$ {product.unityPrice}</S.Span>
-          </S.CardWrapper>
+          <S.Link
+            key={product.id}
+            onClick={(e) => handlerProducto(e, product.id)}
+          >
+            <S.CardWrapper>
+              <S.Photo src={product.photo} />
+              <S.StartWrapper>
+                <S.StartIcon />
+                <S.StartIcon />
+                <S.StartIcon />
+                <S.StartIcon />
+                <S.StartIcon />
+              </S.StartWrapper>
+              <S.CardTitle>{product.name}</S.CardTitle>
+              <S.Span>R$ {product.unityPrice}</S.Span>
+            </S.CardWrapper>
+          </S.Link>
         ))
       ) : (
-        <S.CardWrapper>
-          <p>Nenhum produto cadastrado.</p>
-        </S.CardWrapper>
+        <S.Empty>
+          <S.EmptyText>Nenhum produto cadastrado.</S.EmptyText>
+        </S.Empty>
       )}
     </>
   );

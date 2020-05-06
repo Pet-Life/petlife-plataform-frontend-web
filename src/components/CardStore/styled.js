@@ -18,7 +18,7 @@ export const StoreDetalh = styled.div`
   border: 1px solid ${theme.colorQuinary};
   border-radius: 4px;
   display: grid;
-  grid-template-columns: 45px 1fr;
+  grid-template-columns: 80px 1fr;
   grid-gap: 0.4em;
   align-items: center;
 `;
@@ -30,7 +30,7 @@ export const StoreInfo = styled.div`
 `;
 
 export const StoreLogo = styled.img`
-  width: 45px;
+  width: 75px;
   height: auto;
 `;
 
