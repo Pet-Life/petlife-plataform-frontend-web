@@ -62,7 +62,7 @@ const Modal = ({ setIsOpen }) => {
           <S.StoreWrapper visi={visi}>
             <S.StoreTitle>Selecione um Petshop</S.StoreTitle>
             <br />
-            {shops ? (
+            {shops.length !== 0 && shops ? (
               shops.map((shop) => (
                 <CardStore
                   key={shop.id}
@@ -80,7 +80,7 @@ const Modal = ({ setIsOpen }) => {
                 />
               ))
             ) : (
-              <S.StoreTitle>Nenhum petshop encontrado.</S.StoreTitle>
+              <p>Nenhum petshop encontrado.</p>
             )}
           </S.StoreWrapper>
         </S.ModalContent>
