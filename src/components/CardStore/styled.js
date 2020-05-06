@@ -37,10 +37,12 @@ export const StoreLogo = styled.img`
 export const StoreName = styled.h3`
   color: ${theme.colorPrimary};
   font-size: 1em;
+  text-align: left;
 `;
 
 export const StoreText = styled.p`
   font-size: 14px;
   color: ${theme.colorPrimary};
   line-height: 1.5em;
+  text-align: left;
 `;

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactDom from "react-dom";
+import { useHistory } from "react-router-dom";
 import api from "../../services/api";
 
 import * as S from "./styled";
@@ -10,6 +11,7 @@ const Modal = ({ setIsOpen }) => {
   const [visi, setVisi] = useState(false);
   const [zipcode, setZipCode] = useState("");
   const [shops, setShops] = useState([]);
+  const history = useHistory();
 
   function handleClose() {
     setIsOpen(false);
@@ -27,6 +29,10 @@ const Modal = ({ setIsOpen }) => {
         console.log(err);
       });
     setVisi(true);
+  }
+
+  function handlerStore(event) {
+    history.push("/principal");
   }
 
   return ReactDom.createPortal(
@@ -64,20 +70,25 @@ const Modal = ({ setIsOpen }) => {
             <br />
             {shops.length !== 0 && shops ? (
               shops.map((shop) => (
-                <CardStore
+                <S.ButtonConfirmStore
                   key={shop.id}
-                  logo={shop.avatar}
-                  name={shop.name}
-                  text={
-                    shop.street +
-                    ", " +
-                    shop.district +
-                    ", " +
-                    shop.city +
-                    " - " +
-                    shop.state
-                  }
-                />
+                  type="button"
+                  onClick={handlerStore}
+                >
+                  <CardStore
+                    logo={shop.avatar}
+                    name={shop.name}
+                    text={
+                      shop.street +
+                      ", " +
+                      shop.district +
+                      ", " +
+                      shop.city +
+                      " - " +
+                      shop.state
+                    }
+                  />
+                </S.ButtonConfirmStore>
               ))
             ) : (
               <p>Nenhum petshop encontrado.</p>
