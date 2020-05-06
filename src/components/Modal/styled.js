@@ -88,6 +88,12 @@ export const ConfirmButton = styled.button`
   cursor: pointer;
 `;
 
+export const ButtonConfirmStore = styled.button`
+  background: transparent;
+  border: none;
+  cursor: pointer;
+`;
+
 export const StoreWrapper = styled.div`
   padding: 1em 0;
   display: ${(props) => (props.visi ? "grid" : "none")};
