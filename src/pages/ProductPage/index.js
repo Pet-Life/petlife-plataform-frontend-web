@@ -27,7 +27,6 @@ const ProductPage = ({ match }) => {
     loadProducts();
   }, [id]);
 
-  console.log(product);
   return (
     <>
       <HeaderMain address={user} />
