@@ -4,6 +4,7 @@ import * as S from "./styled";
 
 import Logo from "../Logo";
 import Modal from "../Modal";
+import ModalStore from "../ModalStore";
 
 const HeaderMain = ({ address }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +30,7 @@ const HeaderMain = ({ address }) => {
       <S.IconsWrapper>
         <S.BasketIcon />
         <S.NotificationIcon />
-        <S.StoreIcon />
+        <S.StoreIcon onClick={() => setIsOpen(true)} />
       </S.IconsWrapper>
       {isLogged ? (
         <S.ProfileWrapper>
@@ -39,6 +40,7 @@ const HeaderMain = ({ address }) => {
         <S.ButtonLogin href="/entrar">Entrar</S.ButtonLogin>
       )}
       {isOpen && <Modal setIsOpen={setIsOpen} />}
+      {isOpen && <ModalStore setIsOpen={setIsOpen} />}
     </S.HeaderWrapper>
   );
 };
