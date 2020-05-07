@@ -63,6 +63,11 @@ const ModalStore = ({ setIsOpen }) => {
             </S.Text>
           </S.ContentSecondary>
         </S.ModalContent>
+        <S.ModalFooter>
+          <S.ConfirmClose type="button" onClick={handleClose}>
+            Fechar
+          </S.ConfirmClose>
+        </S.ModalFooter>
       </S.Modal>
     </>,
     document.getElementById("modal-portal-store")

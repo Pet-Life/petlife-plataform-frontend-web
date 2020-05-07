@@ -3,9 +3,9 @@ import { theme } from "../../styles/theme";
 
 export const Modal = styled.div`
   width: 600px;
-  height: 400px;
+  height: 470px;
   max-width: 600px;
-  max-height: 400px;
+  max-height: 470px;
   padding: 0 2em;
   background-color: white;
   position: fixed;
@@ -79,6 +79,24 @@ export const Text = styled.p`
   color: ${theme.colorPrimary};
   font-size: 1em;
   line-height: 1.6em;
+`;
+
+export const ModalFooter = styled.div`
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+`;
+
+export const ConfirmClose = styled.button`
+  width: 220px;
+  height: 42px;
+  background: #219653;
+  color: #fff;
+  font-size: 1em;
+  border: 2px solid #219653;
+  border-radius: 4px;
+  cursor: pointer;
+  max-width: 220px;
 `;
 
 export const ModalShadow = styled.div`
