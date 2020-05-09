@@ -25,7 +25,6 @@ const CardProduct = () => {
 
   function handlerProducto(e, id) {
     e.preventDefault();
-    console.log(id);
     history.push(`/produto/${id}`);
   }
 

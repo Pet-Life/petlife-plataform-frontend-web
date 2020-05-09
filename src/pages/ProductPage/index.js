@@ -7,7 +7,7 @@ import * as S from "./styled";
 import HeaderMain from "../../components/HeaderMain";
 import Footer from "../../components/Footer";
 
-const ProductPage = ({ match }) => {
+const ProductPage = () => {
   const [product, setProduct] = useState({});
   const user = sessionStorage.getItem("user");
   let { id } = useParams();

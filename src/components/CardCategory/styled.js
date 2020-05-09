@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../styles/theme";
-import { CheckBoxOutlineBlank } from "@styled-icons/material";
+import { CheckBoxOutlineBlank, CheckBox } from "@styled-icons/material";
 
 export const CardWrapper = styled.aside`
   border: 1px solid ${theme.colorQuinary};
@@ -37,5 +37,13 @@ export const Span = styled.span`
 export const CheckBoxIcon = styled(CheckBoxOutlineBlank)`
   width: 22px;
   height: 22px;
+  margin-right: 0.5em;
+  color: ${theme.colorPrimary};
+`;
+
+export const CheckIcon = styled(CheckBox)`
+  width: 22px;
+  height: 22px;
+  margin-right: 0.5em;
   color: ${theme.colorPrimary};
 `;
