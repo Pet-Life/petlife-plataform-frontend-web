@@ -33,6 +33,7 @@ const Footer = () => {
       <S.FooterContent>
         <S.Title>Tem um Pet Shop?</S.Title>
         <S.Links href="/petshop/cadastro">Cadastre seu pet shop</S.Links>
+        <S.Links href="/petshop/entrar">Já sou parceiro</S.Links>
       </S.FooterContent>
       <S.FooterContent>
         <S.Title>Contato</S.Title>
