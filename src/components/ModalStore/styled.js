@@ -105,6 +105,6 @@ export const ModalShadow = styled.div`
   width: 100%;
   top: 0px;
   background-color: black;
-  opacity: 0.1;
+  opacity: 0.7;
   z-index: 4;
 `;

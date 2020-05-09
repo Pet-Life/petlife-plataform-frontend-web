@@ -5,9 +5,9 @@ import * as S from "./styled";
 
 import logo from "../../assets/logo.png";
 
-const ModalStore = ({ setIsOpen }) => {
+const ModalStore = ({ setIsOpenStore }) => {
   function handleClose() {
-    setIsOpen(false);
+    setIsOpenStore(false);
   }
 
   return ReactDom.createPortal(

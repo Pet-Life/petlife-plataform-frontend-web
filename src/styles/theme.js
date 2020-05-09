@@ -10,5 +10,6 @@ module.exports = {
     colorQuinary: "#DDD",
     colorSixth: "#EBEAEA",
     colorSeventh: "#E7BD52",
+    colorEighth: "#a6a5a5",
   },
 };

@@ -94,4 +94,9 @@ export const ButtonCar = styled.a`
   font-weight: bold;
   text-align: center;
   transition: all 0.3s;
+
+  &:hover {
+    background: ${theme.colorSecondary};
+    color: ${theme.colorTertiary};
+  }
 `;
