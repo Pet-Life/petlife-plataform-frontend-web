@@ -3,22 +3,23 @@ import { theme } from "../../styles/theme";
 import {
   LocationOn,
   ArrowDropDown,
-  ShoppingBasket,
+  ShoppingCart,
   Notifications,
   Store,
 } from "@styled-icons/material";
 
 export const HeaderWrapper = styled.header`
   height: 80px;
-  padding: 0 60px;
-  border-bottom: 1px solid #ddd;
+  padding: 0.3em 60px;
+  border-bottom: 1px solid ${theme.colorQuinary};
   display: grid;
-  grid-template-columns: 90px 350px auto 1fr 1fr;
+  grid-template-columns: 90px 1fr 15em 15em 10em;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  grid-gap: 2em;
+  justify-items: center;
+  grid-gap: 0.8em;
 
   @media (max-width: 767px) {
     padding: 0 30px;
@@ -26,6 +27,7 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const FormWrapper = styled.div`
+  width: 100%;
   height: 42px;
   background: ${theme.colorSixth};
   border: 1px solid ${theme.colorQuinary};
@@ -44,26 +46,27 @@ export const Input = styled.input`
 `;
 
 export const AddressWrapper = styled.div`
-  width: 100%;
-  height: 42px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0.1em;
 `;
 
 export const Button = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
+  font-size: 1em;
 `;
 
 export const AddressTitle = styled.p`
-  font-size: 1em;
+  font-size: 15px;
   color: ${theme.colorPrimary};
+  text-transform: uppercase;
 `;
 
 export const LocationIcon = styled(LocationOn)`
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   color: ${theme.colorPrimary};
 `;
 
@@ -74,17 +77,16 @@ export const ArrowDropIcon = styled(ArrowDropDown)`
 `;
 
 export const Span = styled.span`
-  font-size: 14px;
+  font-size: 1em;
   color: ${theme.colorPrimary};
-  font-weight: bold;
 `;
 
 export const IconsWrapper = styled.div`
-  width: 120px;
-  height: 42px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.8em;
+  justify-content: center;
+  justify-items: center;
 `;
 
 export const NotificationIcon = styled(Notifications)`
@@ -93,24 +95,25 @@ export const NotificationIcon = styled(Notifications)`
   color: ${theme.colorPrimary};
 `;
 
-export const BasketIcon = styled(ShoppingBasket)`
-  width: 25px;
-  height: 25px;
+export const BasketIcon = styled(ShoppingCart)`
+  width: 28px;
+  height: 28px;
+  margin-right: 0.5em;
   color: ${theme.colorPrimary};
 `;
 
 export const StoreIcon = styled(Store)`
-  width: 25px;
-  height: 25px;
+  width: 28px;
+  height: 28px;
+  margin-right: 0.5em;
   color: ${theme.colorPrimary};
 `;
 
 export const ProfileWrapper = styled.div`
-  width: 120px;
-  height: 42px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  justify-items: center;
 `;
 
 export const ButtonLogin = styled.a`
@@ -130,8 +133,8 @@ export const ButtonLogin = styled.a`
 `;
 
 export const ProfileAvatar = styled.img`
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   background: ${theme.colorPrimary};
   border: 1px solid ${theme.colorPrimary};
   border-radius: 50%;

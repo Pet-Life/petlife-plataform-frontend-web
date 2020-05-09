@@ -35,14 +35,7 @@ const Modal = ({ setIsOpen }) => {
 
   function handlerStore(e, id) {
     e.preventDefault();
-    sessionStorage.setItem(
-      "user",
-      address.address.street +
-        " " +
-        address.address.complement +
-        " " +
-        address.address.district
-    );
+    sessionStorage.setItem("user", address.address.street);
     sessionStorage.setItem("shopId", id);
     handleClose();
     history.push("/principal");

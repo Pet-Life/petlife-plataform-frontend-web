@@ -39,13 +39,6 @@ const CardProduct = () => {
           >
             <S.CardWrapper>
               <S.Photo src={product.photo} />
-              <S.StartWrapper>
-                <S.StartIcon />
-                <S.StartIcon />
-                <S.StartIcon />
-                <S.StartIcon />
-                <S.StartIcon />
-              </S.StartWrapper>
               <S.CardTitle>{product.name}</S.CardTitle>
               <S.Span>R$ {product.unityPrice}</S.Span>
             </S.CardWrapper>

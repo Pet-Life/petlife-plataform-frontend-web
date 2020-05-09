@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import * as S from "./styled";
 
@@ -8,15 +9,20 @@ import ModalStore from "../ModalStore";
 
 const HeaderMain = ({ address }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenStore, setIsOpenStore] = useState(false);
   const isLogged = false;
+  const history = useHistory();
+
+  function handleShopping() {
+    history.push("/carrinho");
+  }
+
   return (
     <S.HeaderWrapper>
       <Logo />
-
       <S.FormWrapper>
         <S.Input type="text" placeholder="O que você procura?" />
       </S.FormWrapper>
-
       <S.AddressWrapper>
         <S.AddressTitle>Local de Entrega</S.AddressTitle>
         <S.Span>
@@ -28,9 +34,16 @@ const HeaderMain = ({ address }) => {
         </S.Span>
       </S.AddressWrapper>
       <S.IconsWrapper>
-        <S.BasketIcon />
-        <S.NotificationIcon />
-        <S.StoreIcon onClick={() => setIsOpen(true)} />
+        <S.Button type="button" onClick={() => handleShopping()}>
+          <S.Span>
+            <S.BasketIcon /> Carrinho
+          </S.Span>
+        </S.Button>
+        <S.Button type="button" onClick={() => setIsOpenStore(true)}>
+          <S.Span>
+            <S.StoreIcon /> Petshop
+          </S.Span>
+        </S.Button>
       </S.IconsWrapper>
       {isLogged ? (
         <S.ProfileWrapper>
@@ -40,7 +53,7 @@ const HeaderMain = ({ address }) => {
         <S.ButtonLogin href="/entrar">Entrar</S.ButtonLogin>
       )}
       {isOpen && <Modal setIsOpen={setIsOpen} />}
-      {isOpen && <ModalStore setIsOpen={setIsOpen} />}
+      {isOpenStore && <ModalStore setIsOpenStore={setIsOpenStore} />}
     </S.HeaderWrapper>
   );
 };

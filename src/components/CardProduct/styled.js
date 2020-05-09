@@ -4,12 +4,12 @@ import { Grade } from "@styled-icons/material";
 
 export const CardWrapper = styled.div`
   width: 220px;
-  margin-bottom: 0.8em;
   padding: 1em;
   border: 1px solid ${theme.colorQuinary};
   border-radius: 4px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0.5em;
 `;
 
 export const Link = styled.button`
@@ -20,10 +20,10 @@ export const Link = styled.button`
 `;
 
 export const Photo = styled.img`
-  display: block;
   width: 140px;
-  height: 140px;
-  margin: 0 auto;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
 `;
 
 export const StartWrapper = styled.div`
