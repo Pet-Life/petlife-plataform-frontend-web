@@ -10,7 +10,9 @@ const ShoppingCardPage = () => {
   return (
     <>
       <HeaderMain address={user} />
-      <h1>Page Shopping Card</h1>
+      <S.PageWrapper>
+        <S.Text>Seu carrinho de compra está vazio.</S.Text>
+      </S.PageWrapper>
       <Footer />
     </>
   );
