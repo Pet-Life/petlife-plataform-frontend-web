@@ -5,6 +5,7 @@ import * as S from "./styled";
 
 const CardCategory = () => {
   const [categories, setCategories] = useState([]);
+  const [isCheck, setIsCheck] = useState(false);
 
   useEffect(() => {
     async function laodCategories() {
@@ -26,8 +27,11 @@ const CardCategory = () => {
       <S.List>
         {categories &&
           categories.map((category) => (
-            <S.Link key={category.id}>
-              <S.ListItem>{category.name}</S.ListItem>
+            <S.Link key={category.id} onClick={() => setIsCheck(true)}>
+              <S.ListItem>
+                {isCheck ? <S.CheckIcon /> : <S.CheckBoxIcon />}
+                {category.name}
+              </S.ListItem>
             </S.Link>
           ))}
       </S.List>

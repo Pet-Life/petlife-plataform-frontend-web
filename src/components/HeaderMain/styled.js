@@ -4,8 +4,10 @@ import {
   LocationOn,
   ArrowDropDown,
   ShoppingCart,
-  Notifications,
   Store,
+  PersonOutline,
+  CardTravel,
+  PowerSettingsNew,
 } from "@styled-icons/material";
 
 export const HeaderWrapper = styled.header`
@@ -89,31 +91,18 @@ export const IconsWrapper = styled.div`
   justify-items: center;
 `;
 
-export const NotificationIcon = styled(Notifications)`
-  width: 25px;
-  height: 25px;
-  color: ${theme.colorPrimary};
-`;
-
 export const BasketIcon = styled(ShoppingCart)`
   width: 28px;
   height: 28px;
-  margin-right: 0.5em;
+  margin-right: 0.2em;
   color: ${theme.colorPrimary};
 `;
 
 export const StoreIcon = styled(Store)`
   width: 28px;
   height: 28px;
-  margin-right: 0.5em;
+  margin-right: 0.2em;
   color: ${theme.colorPrimary};
-`;
-
-export const ProfileWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
-  justify-items: center;
 `;
 
 export const ButtonLogin = styled.a`
@@ -132,10 +121,50 @@ export const ButtonLogin = styled.a`
   }
 `;
 
+export const ProfileWrapper = styled.div`
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  justify-items: center;
+`;
+
 export const ProfileAvatar = styled.img`
   width: 45px;
   height: 45px;
   background: ${theme.colorPrimary};
   border: 1px solid ${theme.colorPrimary};
   border-radius: 50%;
+`;
+
+export const ProfileDropdown = styled.div`
+  position: absolute;
+  top: 3.8em;
+  width: 120px;
+  max-width: 120px;
+  min-height: 200px;
+  padding: 2em;
+  background: ${theme.colorSecondary};
+  border: 1px solid ${theme.colorQuinary};
+  display: ${(props) => (props.openProfile ? "grid" : "none")};
+  grid-template-columns: 1fr;
+  grid-gap: 0.5em;
+`;
+
+export const ProfileIcon = styled(PersonOutline)`
+  width: 28px;
+  height: 28px;
+  color: ${theme.colorPrimary};
+`;
+
+export const NotificationIcon = styled(CardTravel)`
+  width: 28px;
+  height: 28px;
+  color: ${theme.colorPrimary};
+`;
+
+export const CloseIcon = styled(PowerSettingsNew)`
+  width: 28px;
+  height: 28px;
+  color: ${theme.colorPrimary};
 `;

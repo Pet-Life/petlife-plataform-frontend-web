@@ -10,6 +10,7 @@ import ModalStore from "../ModalStore";
 const HeaderMain = ({ address }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenStore, setIsOpenStore] = useState(false);
+  const [isOpenProfile, setIsOpenProfile] = useState(false);
   const isLogged = false;
   const history = useHistory();
 
@@ -47,7 +48,24 @@ const HeaderMain = ({ address }) => {
       </S.IconsWrapper>
       {isLogged ? (
         <S.ProfileWrapper>
-          <S.ProfileAvatar />
+          <S.ProfileAvatar
+            onClick={() => setIsOpenProfile(true)}
+            onClickCapture={() => setIsOpenProfile(false)}
+          />
+          <S.ProfileDropdown
+            className="dropdown-profile"
+            openProfile={isOpenProfile}
+          >
+            <S.Span>
+              <S.ProfileIcon /> Perfil
+            </S.Span>
+            <S.Span>
+              <S.NotificationIcon /> Compras
+            </S.Span>
+            <S.Span>
+              <S.CloseIcon /> Sair
+            </S.Span>
+          </S.ProfileDropdown>
         </S.ProfileWrapper>
       ) : (
         <S.ButtonLogin href="/entrar">Entrar</S.ButtonLogin>
