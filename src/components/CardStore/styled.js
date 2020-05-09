@@ -14,6 +14,7 @@ export const Title = styled.h2`
 `;
 
 export const StoreDetalh = styled.div`
+  min-height: 80px;
   padding: 0.8em 0.3em;
   border: 1px solid ${theme.colorQuinary};
   border-radius: 4px;
