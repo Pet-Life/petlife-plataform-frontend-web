@@ -77,7 +77,7 @@ export const Span = styled.span`
 
 export const Text = styled.p`
   color: ${theme.colorPrimary};
-  font-size: 1em;
+  font-size: 15px;
   line-height: 1.6em;
 `;
 

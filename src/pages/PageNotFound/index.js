@@ -15,7 +15,9 @@ const PageNotFound = () => {
         </S.Menu>
       </S.HeaderWrapper>
       <S.MainWrapper>
-        <S.Title>Ops... Não encontrado o que você estava procurando</S.Title>
+        <S.Title>
+          Ops... Não foi encontrado o que você estava procurando
+        </S.Title>
         <S.Link href="/">Volta para home</S.Link>
       </S.MainWrapper>
       <Footer />

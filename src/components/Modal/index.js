@@ -99,7 +99,7 @@ const Modal = ({ setIsOpen }) => {
                 </S.ButtonConfirmStore>
               ))
             ) : (
-              <p>Nenhum petshop encontrado.</p>
+              <p>Nenhum petshop encontrado</p>
             )}
           </S.StoreWrapper>
         </S.ModalContent>

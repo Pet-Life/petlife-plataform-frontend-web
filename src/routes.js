@@ -10,7 +10,6 @@ import StoreLogin from "./pages/StoreLogin";
 import StoreDashboard from "./pages/StoreDashboard";
 import DashboardProfile from "./pages/DashboardProfile";
 import DashboardProduct from "./pages/DashboardProduct";
-import DashboardOrder from "./pages/DashboardOrder";
 import DashboardSettings from "./pages/DashboardSettings";
 import ProductPage from "./pages/ProductPage";
 import ShoppingCardPage from "./pages/ShoppingCardPage";

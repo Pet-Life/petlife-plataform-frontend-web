@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { theme } from "../../styles/theme";
-import { Notifications } from "@styled-icons/material";
 
 export const HeaderWrapper = styled.header`
   height: 70px;
@@ -13,9 +12,10 @@ export const HeaderWrapper = styled.header`
 
 export const MenuWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 1em;
   align-items: center;
+  justify-items: end;
 `;
 
 export const Button = styled.button`
@@ -28,12 +28,6 @@ export const Button = styled.button`
   font-size: 1em;
   font-weight: bold;
   cursor: pointer;
-`;
-
-export const NotificationIcon = styled(Notifications)`
-  width: 22px;
-  height: 22px;
-  color: ${theme.colorPrimary};
 `;
 
 export const AvatarProfile = styled.img`
