@@ -6,7 +6,12 @@ export const HeaderWrapper = styled.header`
   padding: 5px 60px;
   border-bottom: 1px solid ${theme.colorQuinary};
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+
+  @media (max-width: 767px) {
+    padding: 5px 15px;
+    justify-items: center;
+  }
 `;
 
 export const LoginWrapper = styled.div`
@@ -15,6 +20,10 @@ export const LoginWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
+
+  @media (max-width: 767px) {
+    padding: 5em 15px;
+  }
 `;
 
 export const Form = styled.form`
@@ -28,6 +37,10 @@ export const Form = styled.form`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 0.6em;
+
+  @media (max-width: 767px) {
+    width: 85%;
+  }
 `;
 
 export const TitleForm = styled.h2`
@@ -67,4 +80,10 @@ export const Link = styled.a`
   &:hover {
     color: ${theme.colorTertiary};
   }
+`;
+
+export const TextError = styled.span`
+  display: ${(props) => (props.visiError ? "block" : "none")};
+  color: red;
+  font-size: 12px;
 `;

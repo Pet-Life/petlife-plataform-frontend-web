@@ -57,9 +57,15 @@ export const Span = styled.span`
 
 export const SearchContainer = styled.div`
   width: 75%;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5em;
   align-items: center;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const Button = styled.button`
@@ -89,6 +95,10 @@ export const ButtonSecondary = styled.button`
   font-size: 16px;
   color: ${theme.colorSecondary};
   cursor: pointer;
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 export const SpanSecondary = styled.span`
