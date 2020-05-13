@@ -20,7 +20,8 @@ export const Label = styled.label`
 export const LabelThumbnail = styled.label`
   margin-bottom: 0.5em;
   border: 1px dashed ${theme.colorQuinary};
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   height: 160px;
   display: flex;
   justify-content: center;

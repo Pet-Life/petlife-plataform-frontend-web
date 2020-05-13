@@ -45,7 +45,11 @@ const DashboardProduct = () => {
           <s.Form>
             <s.LabelThumbnail
               id="thumbnail"
-              style={{ background: `url(${preview})` }}
+              style={{
+                background: `url(${preview})`,
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+              }}
               className={thumbnail ? "has-thumbnail" : ""}
             >
               Imagem do Produto:

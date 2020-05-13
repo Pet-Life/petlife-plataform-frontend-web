@@ -24,7 +24,7 @@ const DashboardProfile = () => {
         <S.LayoutMain>
           <S.TitlePage>Meus dados</S.TitlePage>
           <s.Form>
-            <s.Label
+            <s.LabelThumbnail
               id="thumbnail"
               style={{ background: `url(${preview})` }}
               className={thumbnail ? "has-thumbnail" : ""}
@@ -35,7 +35,7 @@ const DashboardProfile = () => {
                 onChange={(event) => setThumbnail(event.target.files[0])}
               />
               <s.Img src={camera} alt="selecione a imagem" />
-            </s.Label>
+            </s.LabelThumbnail>
             <s.Label>Nome do Petshop:</s.Label>
             <s.Input type="text" placeholder="nome do seu petshop" />
             <s.Label>CNPJ:</s.Label>
