@@ -5,9 +5,22 @@ import * as S from "./styled";
 import Logo from "../../components/Logo";
 import FooterSecondary from "../../components/FooterSecondary";
 
-const StoreLogin = () => {
+const StoreLogin = ({ history }) => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [visiError, setVisiError] = React.useState(false);
+  let errors = {};
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    if (email.length <= 0 && password.length <= 0) {
+      errors = {
+        error: "os campos não podem está vazios!",
+      };
+      setVisiError(true);
+    }
+  }
 
   return (
     <>
@@ -15,8 +28,9 @@ const StoreLogin = () => {
         <Logo />
       </S.HeaderWrapper>
       <S.LoginWrapper>
-        <S.Form>
+        <S.Form onSubmit={handleSubmit}>
           <S.TitleForm>Gerencie sua loja</S.TitleForm>
+          <S.TextError visiError={visiError}>texto{errors.error}</S.TextError>
           <S.Input
             type="email"
             placeholder="Seu e-mail"

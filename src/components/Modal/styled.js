@@ -20,6 +20,13 @@ export const Modal = styled.div`
   align-items: center;
   overflow-x: hidden;
   overflow-y: initial;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
 `;
 
 export const ModalBanner = styled.div`
@@ -30,6 +37,11 @@ export const ModalBanner = styled.div`
 export const TitleModal = styled.h2`
   color: ${theme.colorPrimary};
   font-size: 1.3em;
+
+  @media (max-width: 767px) {
+    text-align: center;
+    line-height: 1.5em;
+  }
 `;
 
 export const ModalContent = styled.div`
@@ -37,6 +49,10 @@ export const ModalContent = styled.div`
   padding: 1em 1em;
   display: grid;
   grid-template-columns: 1fr;
+
+  @media (max-width: 767px) {
+    justify-items: center;
+  }
 `;
 
 export const ModalFooter = styled.div`
@@ -59,6 +75,11 @@ export const FormWrapper = styled.form`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 0.4em;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    justify-items: center;
+  }
 `;
 
 export const FormContent = styled.div`

@@ -7,6 +7,10 @@ export const HeaderWrapper = styled.header`
   border-bottom: 1px solid ${theme.colorQuinary};
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 767px) {
+    padding: 5px 15px;
+  }
 `;
 
 export const Menu = styled.nav`
@@ -32,6 +36,10 @@ export const MainWrapper = styled.div`
   grid-template-columns: 1fr;
   grid-gap: 2em;
   justify-items: center;
+
+  @media (max-width: 767px) {
+    padding: 2.5em 15px;
+  }
 `;
 
 export const Form = styled.form`
@@ -43,6 +51,10 @@ export const Form = styled.form`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 0.6em;
+
+  @media (max-width: 767px) {
+    width: 90%;
+  }
 `;
 
 export const TitleForm = styled.h2`
