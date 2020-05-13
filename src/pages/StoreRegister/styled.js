@@ -13,7 +13,7 @@ export const Menu = styled.nav`
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
-  text-align: right;
+  justify-items: end;
 `;
 
 export const Link = styled.a`
@@ -50,6 +50,12 @@ export const TitleForm = styled.h2`
   font-size: 1.2em;
   color: ${theme.colorPrimary};
   text-align: center;
+`;
+
+export const FormContent = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5em;
 `;
 
 export const Input = styled.input`
