@@ -14,6 +14,7 @@ import DashboardOrder from "./pages/DashboardOrder";
 import DashboardSettings from "./pages/DashboardSettings";
 import ProductPage from "./pages/ProductPage";
 import ShoppingCardPage from "./pages/ShoppingCardPage";
+import PageNotFound from "./pages/PageNotFound";
 
 import Main from "./pages/Main";
 
@@ -31,10 +32,10 @@ const Routes = () => {
         <Route path="/petshop/dashboard" component={StoreDashboard} />
         <Route path="/petshop/profile" component={DashboardProfile} />
         <Route path="/petshop/produtos" component={DashboardProduct} />
-        <Route path="/petshop/pedidos" component={DashboardOrder} />
         <Route path="/petshop/configuracoes" component={DashboardSettings} />
         <Route path="/produto/:id" component={ProductPage} />
         <Route path="/carrinho" component={ShoppingCardPage} />
+        <Route component={PageNotFound} />
       </Switch>
     </BrowserRouter>
   );
