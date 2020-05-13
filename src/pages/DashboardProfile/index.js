@@ -1,36 +1,53 @@
-import React, { useEffect } from "react";
-import api from "../../services/api";
+import React, { useState, useMemo } from "react";
 
 import * as S from "../../components/LayoutDashboard/styled";
+import * as s from "./styled";
+
+import camera from "../../assets/camera.svg";
 
 import DashboardHeader from "../../components/DashboardHeader";
 import DashboardSideBar from "../../components/DashboardSideBar";
 import Footer from "../../components/Footer";
 
 const DashboardProfile = () => {
-  const [users, setUsers] = React.useState({});
-  useEffect(() => {
-    async function loadUser() {
-      const user = localStorage.getItem("user");
-      console.log(user);
-      const response = await api.get("/users/shops", {
-        headers: { id: user },
-      });
+  const [thumbnail, setThumbnail] = useState(null);
 
-      console.log(response.data);
+  const preview = useMemo(() => {
+    return thumbnail ? URL.createObjectURL(thumbnail) : null;
+  }, [thumbnail]);
 
-      setUsers(response.data.shop);
-    }
-
-    loadUser();
-  }, []);
   return (
     <S.LayoutWrapper>
-      <DashboardHeader avatar={users.avatar} />
+      <DashboardHeader />
       <S.LayoutContent>
         <DashboardSideBar />
         <S.LayoutMain>
           <S.TitlePage>Meus dados</S.TitlePage>
+          <s.Form>
+            <s.Label
+              id="thumbnail"
+              style={{ background: `url(${preview})` }}
+              className={thumbnail ? "has-thumbnail" : ""}
+            >
+              Logo do meu Petshop:
+              <s.Input
+                type="file"
+                onChange={(event) => setThumbnail(event.target.files[0])}
+              />
+              <s.Img src={camera} alt="selecione a imagem" />
+            </s.Label>
+            <s.Label>Nome do Petshop:</s.Label>
+            <s.Input type="text" placeholder="nome do seu petshop" />
+            <s.Label>CNPJ:</s.Label>
+            <s.Input type="text" placeholder="CNPJ do seu petshop" />
+            <s.Label>Telefone:</s.Label>
+            <s.Input type="text" placeholder="Telefone do seu petshop" />
+            <s.Label>Horário de Funcionamento:</s.Label>
+            <s.Input
+              type="text"
+              placeholder="Horário de funcionamento do seu petshop"
+            />
+          </s.Form>
         </S.LayoutMain>
       </S.LayoutContent>
       <Footer />

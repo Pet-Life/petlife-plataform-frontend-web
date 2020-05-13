@@ -10,8 +10,6 @@ const DashboardHeader = ({ avatar }) => {
       <S.HeaderWrapper>
         <Logo />
         <S.MenuWrapper>
-          <S.Button type="button">Ver minha loja</S.Button>
-          <S.NotificationIcon />
           <S.AvatarProfile src={avatar} />
         </S.MenuWrapper>
       </S.HeaderWrapper>
