@@ -47,6 +47,7 @@ const DashboardProfile = () => {
               type="text"
               placeholder="Horário de funcionamento do seu petshop"
             />
+            <s.Button type="submit">Atulizar dados</s.Button>
           </s.Form>
         </S.LayoutMain>
       </S.LayoutContent>

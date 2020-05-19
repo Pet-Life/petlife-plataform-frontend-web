@@ -52,3 +52,14 @@ export const Input = styled.input`
   font-size: 1em;
   color: ${theme.colorPrimary};
 `;
+
+export const Button = styled.button`
+  height: 42px;
+  background: ${theme.colorTertiary};
+  border: 1px solid ${theme.colorTertiary};
+  border-radius: 4px;
+  font-size: 1em;
+  color: ${theme.colorSecondary};
+  font-weight: bold;
+  cursor: pointer;
+`;

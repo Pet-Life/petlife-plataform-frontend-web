@@ -7,7 +7,7 @@ export const Form = styled.form`
   min-width: 400px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 0.5em;
+  grid-gap: 0.8em;
 `;
 
 export const Label = styled.label`
