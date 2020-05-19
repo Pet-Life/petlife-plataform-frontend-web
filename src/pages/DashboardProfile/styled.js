@@ -16,27 +16,26 @@ export const Label = styled.label`
   font-weight: bold;
 `;
 
-export const LabelThumbnail = styled.label.attrs({
-  className: "thumbnail",
-})`
-  margin-bottom: 20px;
+export const LabelThumbnail = styled.label`
+  margin-bottom: 0.5em;
   border: 1px dashed ${theme.colorQuinary};
-  background-size: cover;
-  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
   height: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
-  &#thumbanail input {
+  & > input {
     display: none;
   }
 
-  &#thumbanail.has-thumbnail {
+  & > .has-thumbnail {
     border: 0;
   }
 
-  &#thumbanail.has-thumbnail img {
+  & > .has-thumbnail img {
     display: none;
   }
 `;
@@ -52,4 +51,15 @@ export const Input = styled.input`
   border-radius: 4px;
   font-size: 1em;
   color: ${theme.colorPrimary};
+`;
+
+export const Button = styled.button`
+  height: 42px;
+  background: ${theme.colorTertiary};
+  border: 1px solid ${theme.colorTertiary};
+  border-radius: 4px;
+  font-size: 1em;
+  color: ${theme.colorSecondary};
+  font-weight: bold;
+  cursor: pointer;
 `;

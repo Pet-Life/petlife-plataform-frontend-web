@@ -45,7 +45,11 @@ const DashboardProduct = () => {
           <s.Form>
             <s.LabelThumbnail
               id="thumbnail"
-              style={{ background: `url(${preview})` }}
+              style={{
+                background: `url(${preview})`,
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+              }}
               className={thumbnail ? "has-thumbnail" : ""}
             >
               Imagem do Produto:
@@ -95,7 +99,7 @@ const DashboardProduct = () => {
               value={quantity}
               onChange={(event) => setQuantity(event.target.value)}
             />
-            <s.Label>Categoria:</s.Label>
+            <s.Label>Categoria do Produto:</s.Label>
             <s.Select className="select-category">
               <s.Option>Selecione uma categoria</s.Option>
               {categories &&
