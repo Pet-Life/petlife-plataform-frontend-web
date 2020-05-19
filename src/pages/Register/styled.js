@@ -1,24 +1,25 @@
 import styled from "styled-components";
 import { theme } from "../../styles/theme";
 
-export const RegisterWrapper = styled.div`
-  height: 100vh;
-  padding: 25px ${theme.spaceBig};
-  background: ${theme.colorQuaternary};
-  display: flex;
-  align-items: center;
+export const HeaderWrapper = styled.header`
+  height: 70px;
+  padding: 5px 60px;
+  border-bottom: 1px solid ${theme.colorQuinary};
+  display: grid;
+  grid-template-columns: 1fr;
 
-  @media (max-width: 952px) {
-    height: 100%;
-    padding: 15px 30px;
-    flex-direction: column;
+  @media (max-width: 767px) {
+    padding: 5px 15px;
   }
 `;
 
 export const RegisterContent = styled.div`
-  width: 50%;
-  display: flex;
-  flex-direction: column;
+  padding: 2em 60px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
 
   @media (max-width: 952px) {
     width: 100%;
@@ -26,27 +27,18 @@ export const RegisterContent = styled.div`
   }
 `;
 
-export const Image = styled.img`
-  width: 553px;
-  height: 390px;
-  margin: 1em 0 1em 0;
-
-  @media (max-width: 767px) {
-    width: 298px;
-    height: 192px;
-  }
-`;
-
 export const Form = styled.form`
-  width: 55%;
+  width: 450px;
+  max-width: 450px;
+  min-width: 450px;
+  min-height: 400px;
   padding: 30px 40px 10px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background: ${theme.colorSecondary};
   border-radius: 8px;
-  box-shadow: 9px 9px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.3);
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
 
   @media (max-width: 767px) {
     width: 80%;
@@ -77,7 +69,7 @@ export const Input = styled.input`
 
 export const Link = styled.a`
   margin-bottom: 1.2em;
-  font-size: 12px;
+  font-size: 14px;
   color: ${theme.colorPrimary};
   line-height: 15px;
 `;

@@ -3,15 +3,13 @@ import React from "react";
 import * as S from "./styled";
 
 import Logo from "../../components/Logo";
-import image from "../../assets/image-2.jpg";
 
 const Login = () => {
   return (
-    <S.LoginWrapper>
-      <S.LoginContent>
+    <>
+      <S.HeaderWrapper>
         <Logo />
-        <S.Image src={image} />
-      </S.LoginContent>
+      </S.HeaderWrapper>
       <S.LoginContent>
         <S.Form>
           <S.Title>Entrar</S.Title>
@@ -22,7 +20,7 @@ const Login = () => {
           <S.Link href="/cadastro">Não tem conta? Crie uma!</S.Link>
         </S.Form>
       </S.LoginContent>
-    </S.LoginWrapper>
+    </>
   );
 };
 

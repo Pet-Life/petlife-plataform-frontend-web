@@ -3,15 +3,13 @@ import React from "react";
 import * as S from "./styled";
 
 import Logo from "../../components/Logo";
-import image from "../../assets/image-2.jpg";
 
 const Register = () => {
   return (
-    <S.RegisterWrapper>
-      <S.RegisterContent>
+    <>
+      <S.HeaderWrapper>
         <Logo />
-        <S.Image src={image} />
-      </S.RegisterContent>
+      </S.HeaderWrapper>
       <S.RegisterContent>
         <S.Form>
           <S.Title>Cadastra-se</S.Title>
@@ -23,7 +21,7 @@ const Register = () => {
           <S.Link href="/entrar">Já tenho uma conta. Entrar</S.Link>
         </S.Form>
       </S.RegisterContent>
-    </S.RegisterWrapper>
+    </>
   );
 };
 
