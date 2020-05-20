@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import * as S from "./styled";
 
 import Logo from "../../components/Logo";
+import FooterSecondary from "../../components/FooterSecondary";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -34,6 +35,7 @@ const Login = () => {
           <S.Link href="/cadastro">Não tem conta? Crie uma!</S.Link>
         </S.Form>
       </S.LoginContent>
+      <FooterSecondary />
     </>
   );
 };

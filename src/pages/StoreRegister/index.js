@@ -1,5 +1,4 @@
 import React from "react";
-import api from "../../services/api";
 
 import * as S from "./styled";
 
@@ -9,24 +8,11 @@ import FooterSecondary from "../../components/FooterSecondary";
 const StoreRegister = ({ history }) => {
   const [name, setName] = React.useState("");
   const [cnpj, setCnpj] = React.useState("");
-  const [zipcode, setZipcode] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
   async function handlerSubmit(event) {
     event.preventDefault();
-
-    const response = await api.post("/users/shops/signup", {
-      name,
-      cnpj,
-      zipcode,
-      email,
-      password,
-    });
-
-    const { id } = response.data.shop;
-
-    localStorage.setItem("user", id);
 
     history.push("/petshop/dashboard");
   }
