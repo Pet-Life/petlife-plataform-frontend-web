@@ -64,10 +64,20 @@ export const TitleForm = styled.h2`
   text-align: center;
 `;
 
+export const Label = styled.label`
+  color: ${theme.colorPrimary};
+  font-size: 14px;
+  font-weight: bold;
+`;
+
 export const FormContent = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.5em;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const Input = styled.input`

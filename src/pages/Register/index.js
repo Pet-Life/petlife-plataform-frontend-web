@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import api from "../../services/api";
 
 import * as S from "./styled";
 
 import Logo from "../../components/Logo";
+import FooterSecondary from "../../components/FooterSecondary";
 
 const Register = ({ history }) => {
   const [name, setName] = useState("");
@@ -76,6 +76,7 @@ const Register = ({ history }) => {
           <S.Link href="/entrar">Já tenho uma conta. Entrar</S.Link>
         </S.Form>
       </S.RegisterContent>
+      <FooterSecondary />
     </>
   );
 };

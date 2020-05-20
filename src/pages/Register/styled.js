@@ -10,6 +10,7 @@ export const HeaderWrapper = styled.header`
 
   @media (max-width: 767px) {
     padding: 5px 15px;
+    justify-items: center;
   }
 `;
 
@@ -20,11 +21,6 @@ export const RegisterContent = styled.div`
   justify-content: center;
   justify-items: center;
   align-items: center;
-
-  @media (max-width: 952px) {
-    width: 100%;
-    align-items: center;
-  }
 `;
 
 export const Form = styled.form`
@@ -41,7 +37,9 @@ export const Form = styled.form`
   justify-items: center;
 
   @media (max-width: 767px) {
-    width: 80%;
+    width: 70vw;
+    max-width: 70vw;
+    min-width: 70vw;
   }
 `;
 

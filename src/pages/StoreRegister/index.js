@@ -1,5 +1,4 @@
 import React from "react";
-import api from "../../services/api";
 
 import * as S from "./styled";
 
@@ -9,24 +8,11 @@ import FooterSecondary from "../../components/FooterSecondary";
 const StoreRegister = ({ history }) => {
   const [name, setName] = React.useState("");
   const [cnpj, setCnpj] = React.useState("");
-  const [zipcode, setZipcode] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
   async function handlerSubmit(event) {
     event.preventDefault();
-
-    const response = await api.post("/users/shops/signup", {
-      name,
-      cnpj,
-      zipcode,
-      email,
-      password,
-    });
-
-    const { id } = response.data.shop;
-
-    localStorage.setItem("user", id);
 
     history.push("/petshop/dashboard");
   }
@@ -41,30 +27,41 @@ const StoreRegister = ({ history }) => {
       <S.MainWrapper>
         <S.Form onSubmit={handlerSubmit}>
           <S.TitleForm>Cadastrar meu Pet Shop</S.TitleForm>
+          <S.Label>Nome do Petshop:</S.Label>
           <S.Input
             type="text"
-            placeholder="Nome do Pet Shop"
+            placeholder="Nome do seu PetShop"
             value={name}
             onChange={(event) => setName(event.target.value)}
           />
+          <S.Label>CNPJ:</S.Label>
           <S.Input
             type="text"
-            placeholder="CNPJ"
+            placeholder="Seu CNPJ"
             value={cnpj}
             onChange={(event) => setCnpj(event.target.value)}
           />
-          <S.Input
-            type="zipcode"
-            placeholder="Informe o CEP de endereço do Pet Shop"
-            value={zipcode}
-            onChange={(event) => setZipcode(event.target.value)}
-          />
+          <S.Label>Endereço:</S.Label>
+          <S.FormContent>
+            <S.Input type="text" placeholder="Logradouro" />
+            <S.Input type="text" placeholder="Número" />
+          </S.FormContent>
+          <S.FormContent>
+            <S.Input type="text" placeholder="Bairro" />
+            <S.Input type="text" placeholder="Complemento" />
+          </S.FormContent>
+          <S.FormContent>
+            <S.Input type="text" placeholder="Cidade" />
+            <S.Input type="text" placeholder="Estado" />
+          </S.FormContent>
+          <S.Label>Email:</S.Label>
           <S.Input
             type="email"
-            placeholder="E-mail"
+            placeholder="Seu e-mail"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
           />
+          <S.Label>Senha:</S.Label>
           <S.Input
             type="password"
             placeholder="Senha"
