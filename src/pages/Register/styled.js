@@ -86,3 +86,9 @@ export const Button = styled.button`
   border-radius: 4px;
   cursor: pointer;
 `;
+
+export const ErrorText = styled.span`
+  margin-bottom: 0.5em;
+  font-size: 14px;
+  color: red;
+`;

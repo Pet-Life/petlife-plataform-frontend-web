@@ -103,6 +103,11 @@ const Modal = ({ setIsOpen }) => {
             )}
           </S.StoreWrapper>
         </S.ModalContent>
+        <S.ModalFooter>
+          <S.ButtonClose type="button" onClick={() => setIsOpen(false)}>
+            Fechar
+          </S.ButtonClose>
+        </S.ModalFooter>
       </S.Modal>
     </>,
     document.getElementById("modal-portal")

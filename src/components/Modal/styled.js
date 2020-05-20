@@ -4,7 +4,7 @@ import { LocationOn } from "@styled-icons/material";
 
 export const Modal = styled.div`
   width: 600px;
-  height: 370px;
+  height: 340px;
   max-width: 600px;
   max-height: 400px;
   padding: 0 2em;
@@ -22,10 +22,8 @@ export const Modal = styled.div`
   overflow-y: initial;
 
   @media (max-width: 767px) {
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 75vw;
+    min-height: 50vh;
   }
 `;
 
@@ -41,6 +39,7 @@ export const TitleModal = styled.h2`
   @media (max-width: 767px) {
     text-align: center;
     line-height: 1.5em;
+    font-size: 1.2em;
   }
 `;
 
@@ -56,9 +55,22 @@ export const ModalContent = styled.div`
 `;
 
 export const ModalFooter = styled.div`
+  width: 100%;
   padding: 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
+`;
+
+export const ButtonClose = styled.button`
+  width: 170px;
+  height: 42px;
+  background: ${theme.colorTertiary};
+  font-size: 1em;
+  color: ${theme.colorSecondary};
+  border: 2px solid ${theme.colorTertiary};
+  border-radius: 4px;
+  cursor: pointer;
 `;
 
 export const ModalShadow = styled.div`
@@ -77,20 +89,19 @@ export const FormWrapper = styled.form`
   grid-gap: 0.4em;
 
   @media (max-width: 767px) {
-    width: 100%;
-    justify-items: center;
+    width: 80vw;
   }
 `;
 
 export const FormContent = styled.div`
+  width: 100%;
   display: ${(props) => (props.visi ? "none" : "grid")};
   grid-template-columns: ${(props) => (props.secondary ? "1fr 1fr" : "1fr")};
-  grid-gap: 0.2em;
+  grid-gap: 0.8em;
 `;
 
 export const Input = styled.input`
   height: 38px;
-  margin-bottom: 0.3em;
   padding: 0 20px;
   background: ${theme.colorSecondary};
   color: ${theme.colorPrimary};
