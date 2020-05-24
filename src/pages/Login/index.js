@@ -30,7 +30,6 @@ const Login = () => {
             value={password}
             onChange={(event) => setPassword(event.target.value)}
           />
-          <S.Link href="/recuperar">Esqueceu sua senha?</S.Link>
           <S.Button type="submit">Entrar</S.Button>
           <S.Link href="/cadastro">Novo por aqui? Cadastre-se </S.Link>
         </S.Form>

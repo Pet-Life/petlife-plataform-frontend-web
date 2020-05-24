@@ -4,7 +4,6 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import ResetPassoword from "./pages/ResetPassword";
 import StoreRegister from "./pages/StoreRegister";
 import StoreLogin from "./pages/StoreLogin";
 import StoreDashboard from "./pages/StoreDashboard";
@@ -24,7 +23,6 @@ const Routes = () => {
         <Route path="/" exact component={Home} />
         <Route path="/entrar" component={Login} />
         <Route path="/cadastro" component={Register} />
-        <Route path="/recuperar" component={ResetPassoword} />
         <Route path="/principal" component={Main} />
         <Route path="/petshop/cadastro" component={StoreRegister} />
         <Route path="/petshop/entrar" component={StoreLogin} />
