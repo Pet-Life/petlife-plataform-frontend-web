@@ -43,7 +43,6 @@ const StoreLogin = ({ history }) => {
             value={password}
             onChange={(event) => setPassword(event.target.valeu)}
           />
-          <S.Link href="#">Esqueceu sua senha?</S.Link>
           <S.ButtonRegister type="submit">Entrar</S.ButtonRegister>
           <S.Link href="/petshop/cadastro">
             Ainda não possui cadastro? Cadastre seu Pet Shop
