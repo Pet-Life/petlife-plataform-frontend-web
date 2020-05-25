@@ -50,9 +50,14 @@ export const TitleForm = styled.h2`
   text-align: center;
 `;
 
+export const TextError = styled.span`
+  color: #ff4040;
+  font-size: 12px;
+  font-weight: bold;
+`;
+
 export const Input = styled.input`
   height: 38px;
-  margin-bottom: 0.6em;
   padding: 0 20px;
   background: ${theme.colorSecondary};
   border: 1px solid ${theme.colorQuinary};
@@ -80,10 +85,4 @@ export const Link = styled.a`
   &:hover {
     color: ${theme.colorTertiary};
   }
-`;
-
-export const TextError = styled.span`
-  display: ${(props) => (props.visiError ? "block" : "none")};
-  color: red;
-  font-size: 12px;
 `;
