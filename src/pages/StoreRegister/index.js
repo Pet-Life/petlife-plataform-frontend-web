@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+
+import { Context } from "../../Context/AuthContext";
 
 import * as S from "./styled";
 
@@ -10,12 +12,16 @@ import Loader from "../../components/Loader";
 const StoreRegister = ({ history }) => {
   const [isLoading, setIsLoading] = useState(false);
   const { register, handleSubmit, errors } = useForm();
+  const { authenticated } = useContext(Context);
+
+  console.debug("register", authenticated);
 
   const onSubmit = (data) => {
     setIsLoading(true);
     console.log(
       data.street + data.number + data.district + data.city + data.state
     );
+
     history.push("/petshop/entrar");
     setIsLoading(false);
   };

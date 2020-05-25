@@ -1,5 +1,7 @@
-import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import React, { useContext } from "react";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+
+import { Context } from "./Context/AuthContext";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -13,26 +15,51 @@ import DashboardSettings from "./pages/DashboardSettings";
 import ProductPage from "./pages/ProductPage";
 import ShoppingCardPage from "./pages/ShoppingCardPage";
 import PageNotFound from "./pages/PageNotFound";
-
 import Main from "./pages/Main";
+
+function CustomRoute({ isPrivate, ...rest }) {
+  const { authenticated } = useContext(Context);
+
+  if (isPrivate && !authenticated) {
+    return <Redirect to="/petshop/entrar" />;
+  }
+
+  return <Route {...rest} />;
+}
 
 const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/entrar" component={Login} />
-        <Route path="/cadastro" component={Register} />
-        <Route path="/principal" component={Main} />
-        <Route path="/petshop/cadastro" component={StoreRegister} />
-        <Route path="/petshop/entrar" component={StoreLogin} />
-        <Route path="/petshop/dashboard" component={StoreDashboard} />
-        <Route path="/petshop/profile" component={DashboardProfile} />
-        <Route path="/petshop/produtos" component={DashboardProduct} />
-        <Route path="/petshop/configuracoes" component={DashboardSettings} />
-        <Route path="/produto/:id" component={ProductPage} />
-        <Route path="/carrinho" component={ShoppingCardPage} />
-        <Route component={PageNotFound} />
+        <CustomRoute path="/" exact component={Home} />
+        <CustomRoute path="/entrar" component={Login} />
+        <CustomRoute path="/cadastro" component={Register} />
+        <CustomRoute path="/principal" component={Main} />
+        <CustomRoute path="/petshop/cadastro" component={StoreRegister} />
+        <CustomRoute path="/petshop/entrar" component={StoreLogin} />
+        <CustomRoute
+          isPrivate
+          path="/petshop/dashboard"
+          component={StoreDashboard}
+        />
+        <CustomRoute
+          isPrivate
+          path="/petshop/profile"
+          component={DashboardProfile}
+        />
+        <CustomRoute
+          isPrivate
+          path="/petshop/produtos"
+          component={DashboardProduct}
+        />
+        <CustomRoute
+          isPrivate
+          path="/petshop/configuracoes"
+          component={DashboardSettings}
+        />
+        <CustomRoute path="/produto/:id" component={ProductPage} />
+        <CustomRoute path="/carrinho" component={ShoppingCardPage} />
+        <CustomRoute component={PageNotFound} />
       </Switch>
     </BrowserRouter>
   );
