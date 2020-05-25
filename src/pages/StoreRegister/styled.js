@@ -57,6 +57,22 @@ export const Form = styled.form`
   }
 `;
 
+export const FormGroup = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0.5em;
+`;
+
+export const FormContent = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5em;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
 export const TitleForm = styled.h2`
   margin-bottom: 1.2em;
   font-size: 1.2em;
@@ -70,19 +86,14 @@ export const Label = styled.label`
   font-weight: bold;
 `;
 
-export const FormContent = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 0.5em;
-
-  @media (max-width: 767px) {
-    grid-template-columns: 1fr;
-  }
+export const TextError = styled.span`
+  color: #ff4040;
+  font-size: 12px;
+  font-weight: bold;
 `;
 
 export const Input = styled.input`
   height: 38px;
-  margin-bottom: 0.6em;
   padding: 0 20px;
   background: ${theme.colorSecondary};
   border: 1px solid ${theme.colorQuinary};
