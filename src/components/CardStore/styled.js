@@ -10,13 +10,13 @@ export const StoreContent = styled.div`
 
 export const Title = styled.h2`
   font-size: 1.1em;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
 `;
 
 export const StoreDetalh = styled.div`
   min-height: 80px;
   padding: 0.8em 0.3em;
-  border: 1px solid ${theme.colorQuinary};
+  border: 1px solid ${theme.color.quinary};
   border-radius: 4px;
   display: grid;
   grid-template-columns: 80px 1fr;
@@ -36,14 +36,14 @@ export const StoreLogo = styled.img`
 `;
 
 export const StoreName = styled.h3`
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 1em;
   text-align: left;
 `;
 
 export const StoreText = styled.p`
   font-size: 14px;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   line-height: 1.5em;
   text-align: left;
 `;

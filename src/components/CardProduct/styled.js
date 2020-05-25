@@ -5,7 +5,7 @@ import { Grade } from "@styled-icons/material";
 export const CardWrapper = styled.div`
   width: 220px;
   padding: 1em;
-  border: 1px solid ${theme.colorQuinary};
+  border: 1px solid ${theme.color.quinary};
   border-radius: 4px;
   display: grid;
   grid-template-columns: 1fr;
@@ -37,25 +37,25 @@ export const StartWrapper = styled.div`
 export const StartIcon = styled(Grade)`
   width: 20px;
   height: 20px;
-  color: ${theme.colorSeventh};
+  color: ${theme.color.seventh};
 `;
 
 export const CardTitle = styled.h2`
   margin: 0 0 1em 0;
   font-size: 14px;
-  color: #3c3b3b;
+  color: ${theme.color.primary};
   line-height: 1.2em;
 `;
 
 export const Span = styled.span`
   font-size: 1em;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
 `;
 
 export const Empty = styled.div``;
 
 export const EmptyText = styled.p`
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 1.5em;
   font-weight: bold;
 `;

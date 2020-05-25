@@ -15,7 +15,7 @@ export const FooterContent = styled.div`
 `;
 
 export const FooterText = styled.p`
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 1em;
   text-align: center;
 `;
@@ -23,5 +23,5 @@ export const FooterText = styled.p`
 export const HeartIcon = styled(Heart)`
   width: 15px;
   height: 15px;
-  color: #cc0000;
+  color: ${theme.color.ninth};
 `;

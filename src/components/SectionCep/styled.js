@@ -41,7 +41,7 @@ export const TitleContent = styled.h2`
   margin-bottom: 2em;
   display: block;
   font-size: 1.5em;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   text-align: center;
   line-height: 1.8em;
 
@@ -52,7 +52,7 @@ export const TitleContent = styled.h2`
 `;
 
 export const Span = styled.span`
-  color: #219653;
+  color: ${theme.color.tertiary};
 `;
 
 export const SearchContainer = styled.div`
@@ -72,11 +72,11 @@ export const Button = styled.button`
   width: 350px;
   height: 48px;
   padding: 0 20px;
-  background: ${theme.colorSecondary};
-  border: 1px solid ${theme.colorQuinary};
+  background: ${theme.color.secondary};
+  border: 1px solid ${theme.color.quinary};
   border-radius: 4px;
   font-size: 16px;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   text-align: left;
   transition: all 0.3s;
   cursor: pointer;
@@ -89,11 +89,11 @@ export const Button = styled.button`
 export const ButtonSecondary = styled.button`
   width: 100px;
   height: 48px;
-  background: ${theme.colorTertiary};
-  border: 1px solid ${theme.colorTertiary};
+  background: ${theme.color.tertiary};
+  border: 1px solid ${theme.color.tertiary};
   border-radius: 4px;
   font-size: 16px;
-  color: ${theme.colorSecondary};
+  color: ${theme.color.secondary};
   cursor: pointer;
 
   @media (max-width: 767px) {
@@ -103,13 +103,13 @@ export const ButtonSecondary = styled.button`
 
 export const SpanSecondary = styled.span`
   margin-right: 0.5em;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
 `;
 
 export const SearchIcon = styled(Search)`
   width: 28px;
   height: 28px;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
 `;
 
 export const Links = styled.a`
@@ -117,7 +117,7 @@ export const Links = styled.a`
   margin-bottom: 2em;
   font-size: 14px;
   text-align: center;
-  color: #3c3b3b;
+  color: ${theme.color.primary};
   transition: all 0.3s;
 
   &:hover {

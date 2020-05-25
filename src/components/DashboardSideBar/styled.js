@@ -9,8 +9,8 @@ import {
 
 export const SidebarWrapper = styled.aside`
   align-items: center;
-  border-right: 1px solid ${theme.colorQuinary};
-  background: ${theme.colorSecondary};
+  border-right: 1px solid ${theme.color.quinary};
+  background: ${theme.color.secondary};
   display: flex;
   flex-direction: column;
   padding: 2rem 0;
@@ -26,30 +26,30 @@ export const Menu = styled.nav`
 export const DashboardIcon = styled(Dashboard)`
   width: 22px;
   height: 22px;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
 `;
 
 export const AssignIcon = styled(AssignmentInd)`
   width: 22px;
   height: 22px;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
 `;
 
 export const BusinessIcon = styled(BusinessCenter)`
   width: 22px;
   height: 22px;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
 `;
 
 export const SettingsIcon = styled(Settings)`
   width: 22px;
   height: 22px;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
 `;
 
 export const Link = styled.a``;
 
 export const Span = styled.span`
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 1em;
 `;

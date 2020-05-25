@@ -13,12 +13,12 @@ export const LayoutContent = styled.div`
 `;
 
 export const LayoutMain = styled.main`
-  background: ${theme.colorSecondary};
+  background: ${theme.color.secondary};
   padding: 2em 1.5em;
 `;
 
 export const TitlePage = styled.h3`
   margin-bottom: 1.2em;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 1.1em;
 `;

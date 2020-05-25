@@ -29,11 +29,11 @@ export const Modal = styled.div`
 
 export const ModalBanner = styled.div`
   padding: 1.2em 1.5em;
-  background: ${theme.colorSecondary};
+  background: ${theme.color.secondary};
 `;
 
 export const TitleModal = styled.h2`
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 1.3em;
 
   @media (max-width: 767px) {
@@ -65,10 +65,10 @@ export const ModalFooter = styled.div`
 export const ButtonClose = styled.button`
   width: 170px;
   height: 42px;
-  background: ${theme.colorTertiary};
+  background: ${theme.color.tertiary};
   font-size: 1em;
-  color: ${theme.colorSecondary};
-  border: 2px solid ${theme.colorTertiary};
+  color: ${theme.color.secondary};
+  border: 2px solid ${theme.color.tertiary};
   border-radius: 4px;
   cursor: pointer;
 `;
@@ -103,19 +103,19 @@ export const FormContent = styled.div`
 export const Input = styled.input`
   height: 38px;
   padding: 0 20px;
-  background: ${theme.colorSecondary};
-  color: ${theme.colorPrimary};
+  background: ${theme.color.secondary};
+  color: ${theme.color.primary};
   font-size: 1em;
-  border: 1px solid ${theme.colorQuinary};
+  border: 1px solid ${theme.color.quinary};
   border-radius: 4px;
 `;
 
 export const ConfirmButton = styled.button`
   height: 38px;
-  background: ${theme.colorTertiary};
-  color: ${theme.colorSecondary};
+  background: ${theme.color.tertiary};
+  color: ${theme.color.secondary};
   font-size: 1em;
-  border: 2px solid ${theme.colorTertiary};
+  border: 2px solid ${theme.color.tertiary};
   border-radius: 4px;
   cursor: pointer;
 `;
@@ -135,7 +135,7 @@ export const StoreWrapper = styled.div`
 
 export const StoreTitle = styled.h4`
   margin-bottom: 1em;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 1em;
 `;
 
@@ -149,24 +149,24 @@ export const AddressInfo = styled.div`
 export const LocationIcon = styled(LocationOn)`
   width: 28px;
   height: 28px;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
 `;
 
 export const AddressText = styled.p`
   font-size: 0.9em;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   line-height: 1.2em;
 `;
 
 export const LinkText = styled.a`
   margin: 2em 0;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 14px;
   font-weight: bold;
   text-align: center;
   transition: all 0.6s;
 
   &:hover {
-    color: ${theme.colorTertiary};
+    color: ${theme.color.tertiary};
   }
 `;
