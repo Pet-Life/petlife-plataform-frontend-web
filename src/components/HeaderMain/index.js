@@ -14,6 +14,10 @@ const HeaderMain = ({ address }) => {
   const isLogged = false;
   const history = useHistory();
 
+  if (!address) {
+    setTimeout(() => setIsOpen(true), 1000);
+  }
+
   function handleShopping() {
     history.push("/carrinho");
   }

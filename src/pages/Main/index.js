@@ -9,6 +9,9 @@ import CardProduct from "../../components/CardProduct";
 
 const Main = () => {
   const user = sessionStorage.getItem("user");
+  if (!user) {
+    console.log("ok");
+  }
   return (
     <>
       <HeaderMain address={user} />
