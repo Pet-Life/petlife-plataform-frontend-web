@@ -131,6 +131,10 @@ export const StoreWrapper = styled.div`
   display: ${(props) => (props.visi ? "grid" : "none")};
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.2em;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const StoreTitle = styled.h4`

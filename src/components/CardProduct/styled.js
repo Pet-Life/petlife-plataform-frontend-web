@@ -10,6 +10,10 @@ export const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 0.5em;
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 export const Link = styled.button`
@@ -17,6 +21,11 @@ export const Link = styled.button`
   border: none;
   cursor: pointer;
   text-align: left;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    margin: 0.5em auto;
+  }
 `;
 
 export const Photo = styled.img`

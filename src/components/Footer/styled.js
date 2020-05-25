@@ -11,7 +11,7 @@ export const FooterWrapper = styled.footer`
   justify-content: space-between;
 
   @media (max-width: 920px) {
-    padding: 35px 30px;
+    padding: 35px 15px;
     flex-direction: column;
   }
 `;
