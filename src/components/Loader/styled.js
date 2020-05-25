@@ -37,11 +37,11 @@ export const Modal = styled.div`
 
 export const ModalBanner = styled.div`
   padding: 1.2em 1.5em;
-  background: ${theme.colorSecondary};
+  background: ${theme.color.secondary};
 `;
 
 export const TitleModal = styled.h2`
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 1.3em;
 
   @media (max-width: 767px) {
@@ -97,10 +97,10 @@ export const LaoderWrapper = styled.div.attrs({ className: "ring" })`
     width: 64px;
     height: 64px;
     margin: 8px;
-    border: 8px solid ${theme.colorTertiary};
+    border: 8px solid ${theme.color.tertiary};
     border-radius: 50%;
     animation: ${animation} 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: ${theme.colorTertiary} transparent transparent transparent;
+    border-color: ${theme.color.tertiary} transparent transparent transparent;
 
     :nth-child(1) {
       animation-delay: -0.45s;

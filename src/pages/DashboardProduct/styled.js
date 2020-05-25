@@ -12,14 +12,14 @@ export const Form = styled.form`
 
 export const Label = styled.label`
   margin-bottom: 0.5em;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 14px;
   font-weight: bold;
 `;
 
 export const LabelThumbnail = styled.label`
   margin-bottom: 0.5em;
-  border: 1px dashed ${theme.colorQuinary};
+  border: 1px dashed ${theme.color.quinary};
   background-size: contain;
   background-repeat: no-repeat;
   height: 160px;
@@ -45,30 +45,30 @@ export const Img = styled.img``;
 
 export const TextArea = styled.textarea`
   margin-bottom: 0.5em;
-  max-height: 250px;
+  max-width: 250px;
+  max-height: 150px;
   min-height: 250px;
   min-height: 150px;
-  max-height: 150px;
 `;
 
 export const Input = styled.input`
   margin-bottom: 0.5em;
   padding: 0 20px;
   height: 42px;
-  background: ${theme.colorSecondary};
-  border: 1px solid ${theme.colorQuinary};
+  background: ${theme.color.secondary};
+  border: 1px solid ${theme.color.quinary};
   border-radius: 4px;
   font-size: 1em;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
 `;
 
 export const Button = styled.button`
   height: 42px;
-  background: ${theme.colorTertiary};
-  border: 1px solid ${theme.colorTertiary};
+  background: ${theme.color.tertiary};
+  border: 1px solid ${theme.color.tertiary};
   border-radius: 4px;
   font-size: 1em;
-  color: ${theme.colorSecondary};
+  color: ${theme.color.secondary};
   font-weight: bold;
   cursor: pointer;
 `;
@@ -76,13 +76,13 @@ export const Button = styled.button`
 export const Select = styled.select`
   padding: 0.2em 20px;
   height: 42px;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 1em;
-  border: 1px solid ${theme.colorQuinary};
+  border: 1px solid ${theme.color.quinary};
 `;
 
 export const Option = styled.option`
   margin-bottom: 0.5em;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 1em;
 `;

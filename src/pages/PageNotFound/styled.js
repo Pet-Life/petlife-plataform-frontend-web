@@ -4,7 +4,7 @@ import { theme } from "../../styles/theme";
 export const HeaderWrapper = styled.header`
   height: 70px;
   padding: 5px 60px;
-  border-bottom: 1px solid ${theme.colorQuinary};
+  border-bottom: 1px solid ${theme.color.quinary};
   display: grid;
   grid-template-columns: 1fr 1fr;
 
@@ -21,12 +21,12 @@ export const Menu = styled.nav`
 `;
 
 export const Link = styled.a`
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 16px;
   font-weight: bold;
 
   &:hover {
-    color: ${theme.colorTertiary};
+    color: ${theme.color.tertiary};
   }
 `;
 
@@ -46,6 +46,6 @@ export const MainWrapper = styled.div`
 export const Title = styled.h2`
   margin-bottom: 1.2em;
   font-size: 1.2em;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   text-align: center;
 `;

@@ -16,7 +16,7 @@ export const TitleWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  border-top: 1px solid ${theme.colorQuinary};
+  border-top: 1px solid ${theme.color.quinary};
 `;
 
 export const SectionContent = styled.div`
@@ -36,7 +36,7 @@ export const Title = styled.h2`
   margin-top: 1.3em;
   margin-bottom: 2.3em;
   font-size: 1.6em;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   text-align: center;
 `;
 
@@ -50,17 +50,17 @@ export const TitleWork = styled.h3`
   margin-top: 1.6em;
   margin-bottom: 1.6em;
   font-size: 1.1em;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   transition: all 0.3s;
 
   &:hover {
-    color: ${theme.colorTertiary};
+    color: ${theme.color.tertiary};
   }
 `;
 
 export const Text = styled.p`
   font-size: 15px;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   text-align: center;
   line-height: 1.5em;
 `;

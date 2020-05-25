@@ -9,7 +9,7 @@ export const PageWrapper = styled.div`
 `;
 
 export const Text = styled.p`
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 1.5em;
   text-align: center;
 `;

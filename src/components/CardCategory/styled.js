@@ -3,7 +3,7 @@ import { theme } from "../../styles/theme";
 import { CheckBoxOutlineBlank, CheckBox } from "@styled-icons/material";
 
 export const CardWrapper = styled.aside`
-  border: 1px solid ${theme.colorQuinary};
+  border: 1px solid ${theme.color.quinary};
   display: flex;
   flex-direction: column;
   padding: 2rem 1em;
@@ -13,7 +13,7 @@ export const CardWrapper = styled.aside`
 
 export const Title = styled.h3`
   font-size: 1.1em;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
 `;
 
 export const List = styled.ul`
@@ -26,7 +26,7 @@ export const Link = styled.a``;
 
 export const ListItem = styled.li`
   margin-bottom: 1em;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 1em;
 `;
 
@@ -38,12 +38,12 @@ export const CheckBoxIcon = styled(CheckBoxOutlineBlank)`
   width: 22px;
   height: 22px;
   margin-right: 0.5em;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
 `;
 
 export const CheckIcon = styled(CheckBox)`
   width: 22px;
   height: 22px;
   margin-right: 0.5em;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
 `;

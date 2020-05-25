@@ -23,7 +23,7 @@ export const Modal = styled.div`
 
 export const ModalBanner = styled.div`
   padding: 1.2em 1.5em;
-  background: ${theme.colorSecondary};
+  background: ${theme.color.secondary};
 `;
 
 export const ModalContent = styled.div`
@@ -35,7 +35,7 @@ export const ModalContent = styled.div`
 `;
 
 export const TitleModal = styled.h2`
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 1.3em;
 `;
 
@@ -70,13 +70,13 @@ export const StoreLogo = styled.img`
 `;
 
 export const Span = styled.span`
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 1em;
   font-weight: bold;
 `;
 
 export const Text = styled.p`
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 15px;
   line-height: 1.6em;
 `;
@@ -90,10 +90,10 @@ export const ModalFooter = styled.div`
 export const ConfirmClose = styled.button`
   width: 220px;
   height: 42px;
-  background: #219653;
-  color: #fff;
+  background: ${theme.color.tertiary};
+  color: ${theme.color.secondary};
   font-size: 1em;
-  border: 2px solid #219653;
+  border: 2px solid ${theme.color.tertiary};
   border-radius: 4px;
   cursor: pointer;
   max-width: 220px;

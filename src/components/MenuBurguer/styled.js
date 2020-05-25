@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../styles/theme";
 import { Menu, Close } from "@styled-icons/material";
 
 export const MenuWrapper = styled.div`
@@ -20,7 +21,7 @@ export const Button = styled.button`
 export const MenuIcon = styled(Menu)`
   width: 30px;
   height: 30px;
-  color: #3c3b3b;
+  color: ${theme.color.primary};
 `;
 
 export const MenuContent = styled.nav`
@@ -44,7 +45,7 @@ export const LinksWrapper = styled.div`
   top: 0;
   right: 0;
   left: 0;
-  background: #fff;
+  background: ${theme.color.secondary};
   display: flex;
   flex-direction: column;
   transform: ${(props) => (props.open ? "translateX(0)" : "translate(-100%)")};
@@ -57,19 +58,19 @@ export const CloseIcon = styled(Close)`
   height: 25px;
   top: 1em;
   right: 5em;
-  color: #3c3b3b;
+  color: ${theme.color.primary};
 `;
 
 export const Links = styled.a`
   margin-bottom: 1.5625em;
   font-size: 1em;
-  color: #3c3b3b;
+  color: ${theme.color.primary};
 
   &:hover {
     background: none;
   }
 
   &:last-child {
-    color: #219653;
+    color: ${theme.color.tertiary};
   }
 `;

@@ -34,7 +34,7 @@ export const SectionContent = styled.div`
 export const Title = styled.h2`
   margin-bottom: 2.3em;
   font-size: 1.6em;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   text-align: center;
 `;
 
@@ -46,10 +46,10 @@ export const Image = styled.img`
 
 export const TitleCategory = styled.h3`
   font-size: 1.1em;
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   transition: all 0.3s;
 
   &:hover {
-    color: ${theme.colorTertiary};
+    color: ${theme.color.tertiary};
   }
 `;

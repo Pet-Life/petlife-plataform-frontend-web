@@ -21,7 +21,7 @@ export const ProductPhoto = styled.img`
 `;
 
 export const ProductTitle = styled.h2`
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 1em;
   line-height: 1.2em;
 `;
@@ -34,12 +34,12 @@ export const DescriptionWrapper = styled.div`
 `;
 
 export const TitleDescription = styled.h3`
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 1em;
 `;
 
 export const DescriptionText = styled.p`
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 16px;
   line-height: 1.5em;
 `;
@@ -48,7 +48,7 @@ export const PaymentWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 2em;
-  border: 1px solid #ddd;
+  border: 1px solid ${theme.color.quinary};
   padding: 2.5em 2em;
   border-radius: 4px;
   align-items: center;
@@ -56,13 +56,13 @@ export const PaymentWrapper = styled.div`
 `;
 
 export const PaymentSpan = styled.span`
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 1em;
   font-weight: bold;
 `;
 
 export const PaymentText = styled.span`
-  color: ${theme.colorPrimary};
+  color: ${theme.color.primary};
   font-size: 14px;
 `;
 
@@ -70,16 +70,16 @@ export const ButtonBuy = styled.a`
   width: 200px;
   padding: 10px;
   font-size: 1em;
-  color: ${theme.colorTertiary};
-  border: 2px solid #219653;
+  color: ${theme.color.tertiary};
+  border: 2px solid ${theme.color.tertiary};
   border-radius: 4px;
   font-weight: bold;
   text-align: center;
   transition: all 0.3s;
 
   &:hover {
-    background: ${theme.colorTertiary};
-    color: ${theme.colorSecondary};
+    background: ${theme.color.tertiary};
+    color: ${theme.color.secondary};
   }
 `;
 
@@ -87,16 +87,16 @@ export const ButtonCar = styled.a`
   width: 200px;
   padding: 10px;
   font-size: 1em;
-  background: ${theme.colorTertiary};
-  color: ${theme.colorSecondary};
-  border: 2px solid #219653;
+  background: ${theme.color.tertiary};
+  color: ${theme.color.secondary};
+  border: 2px solid ${theme.color.tertiary};
   border-radius: 4px;
   font-weight: bold;
   text-align: center;
   transition: all 0.3s;
 
   &:hover {
-    background: ${theme.colorSecondary};
-    color: ${theme.colorTertiary};
+    background: ${theme.color.secondary};
+    color: ${theme.color.tertiary};
   }
 `;

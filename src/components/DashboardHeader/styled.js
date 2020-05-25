@@ -4,7 +4,7 @@ import { theme } from "../../styles/theme";
 export const HeaderWrapper = styled.header`
   height: 70px;
   padding: 5px 60px;
-  border-bottom: 1px solid ${theme.colorQuinary};
+  border-bottom: 1px solid ${theme.color.quinary};
   display: grid;
   grid-template-columns: 80% 1fr;
   align-items: center;
@@ -21,10 +21,10 @@ export const MenuWrapper = styled.div`
 export const Button = styled.button`
   width: 150px;
   height: 42px;
-  background: ${theme.colorSecondary};
-  border: 2px solid ${theme.colorTertiary};
+  background: ${theme.color.secondary};
+  border: 2px solid ${theme.color.tertiary};
   border-radius: 4px;
-  color: ${theme.colorTertiary};
+  color: ${theme.color.tertiary};
   font-size: 1em;
   font-weight: bold;
   cursor: pointer;
