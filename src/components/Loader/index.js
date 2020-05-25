@@ -7,12 +7,18 @@ const Loader = ({ setIsLoading }) => {
   return ReactDOM.createPortal(
     <>
       <S.ModalShadow setIsLoading={setIsLoading} />
-      <S.LaoderWrapper setIsLoading={setIsLoading}>
-        <S.LoaderContent />
-        <S.LoaderContent />
-        <S.LoaderContent />
-        <S.LoaderContent />
-      </S.LaoderWrapper>
+      <S.Modal>
+        <S.ModalBanner></S.ModalBanner>
+        <S.ModalContent>
+          <S.LaoderWrapper setIsLoading={setIsLoading}>
+            <S.LoaderContent />
+            <S.LoaderContent />
+            <S.LoaderContent />
+            <S.LoaderContent />
+          </S.LaoderWrapper>
+        </S.ModalContent>
+        <S.ModalFooter></S.ModalFooter>
+      </S.Modal>
     </>,
     document.getElementById("loading")
   );

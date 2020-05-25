@@ -10,6 +10,66 @@ const animation = keyframes`
   }
 `;
 
+export const Modal = styled.div`
+  width: 600px;
+  height: 340px;
+  max-width: 600px;
+  max-height: 400px;
+  padding: 0 2em;
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 5;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: initial;
+
+  @media (max-width: 767px) {
+    max-width: 75vw;
+    min-height: 50vh;
+  }
+`;
+
+export const ModalBanner = styled.div`
+  padding: 1.2em 1.5em;
+  background: ${theme.colorSecondary};
+`;
+
+export const TitleModal = styled.h2`
+  color: ${theme.colorPrimary};
+  font-size: 1.3em;
+
+  @media (max-width: 767px) {
+    text-align: center;
+    line-height: 1.5em;
+    font-size: 1.2em;
+  }
+`;
+
+export const ModalContent = styled.div`
+  width: 100%;
+  padding: 1em 1em;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (max-width: 767px) {
+    justify-items: center;
+  }
+`;
+
+export const ModalFooter = styled.div`
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const ModalShadow = styled.div`
   position: fixed;
   display: ${(props) => (props.isLoading ? "flex" : "none")};
