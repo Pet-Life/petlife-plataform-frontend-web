@@ -9,6 +9,10 @@ export const CardWrapper = styled.aside`
   padding: 2rem 1em;
   width: 15%;
   height: 200px;
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 export const Title = styled.h3`

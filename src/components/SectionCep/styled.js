@@ -7,7 +7,7 @@ export const SectionWrapper = styled.section`
   display: flex;
 
   @media (max-width: 952px) {
-    padding: 45px 30px 0 30px;
+    padding: 45px 15px 0 15px;
     flex-direction: column;
   }
 `;

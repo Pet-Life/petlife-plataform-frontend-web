@@ -24,7 +24,9 @@ export const HeaderWrapper = styled.header`
   grid-gap: 0.8em;
 
   @media (max-width: 767px) {
-    padding: 0 30px;
+    padding: 0.3em 15px;
+    grid-template-columns: 80px 12em 5em;
+    grid-gap: 0.3em;
   }
 `;
 
@@ -36,6 +38,10 @@ export const FormWrapper = styled.div`
   border-radius: 4px;
   display: flex;
   align-items: center;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const Input = styled.input`
@@ -64,23 +70,41 @@ export const AddressTitle = styled.p`
   font-size: 15px;
   color: ${theme.color.primary};
   text-transform: uppercase;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
 `;
 
 export const LocationIcon = styled(LocationOn)`
   width: 20px;
   height: 20px;
   color: ${theme.color.primary};
+
+  @media (max-width: 767px) {
+    width: 18px;
+    height: 18px;
+  }
 `;
 
 export const ArrowDropIcon = styled(ArrowDropDown)`
   width: 28px;
   height: 28px;
   color: ${theme.color.primary};
+
+  @media (max-width: 767px) {
+    width: 22px;
+    height: 22px;
+  }
 `;
 
 export const Span = styled.span`
   font-size: 1em;
   color: ${theme.color.primary};
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
 `;
 
 export const IconsWrapper = styled.div`
@@ -89,6 +113,10 @@ export const IconsWrapper = styled.div`
   grid-gap: 0.8em;
   justify-content: center;
   justify-items: center;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const BasketIcon = styled(ShoppingCart)`
@@ -119,6 +147,10 @@ export const ButtonLogin = styled.a`
     background: ${theme.color.tertiary};
     color: ${theme.color.secondary};
   }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const ProfileWrapper = styled.div`
@@ -127,6 +159,10 @@ export const ProfileWrapper = styled.div`
   grid-template-columns: 1fr;
   justify-content: center;
   justify-items: center;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const ProfileAvatar = styled.img`

@@ -8,7 +8,7 @@ export const Section = styled.section`
   justify-content: space-between;
 
   @media (max-width: 952px) {
-    padding: 45px 30px;
+    padding: 45px 15px;
   }
 `;
 

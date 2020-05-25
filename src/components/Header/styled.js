@@ -10,7 +10,7 @@ export const HeaderWrapper = styled.header`
   align-items: center;
 
   @media (max-width: 767px) {
-    padding: 0 30px;
+    padding: 0 15px;
   }
 `;
 
