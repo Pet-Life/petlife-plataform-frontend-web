@@ -1,4 +1,5 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 
 import * as S from "./styled";
 
@@ -6,21 +7,11 @@ import Logo from "../../components/Logo";
 import FooterSecondary from "../../components/FooterSecondary";
 
 const StoreLogin = ({ history }) => {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [visiError, setVisiError] = React.useState(false);
-  let errors = {};
+  const { register, handleSubmit, errors } = useForm();
 
-  function handleSubmit(event) {
-    event.preventDefault();
-
-    if (email.length <= 0 && password.length <= 0) {
-      errors = {
-        error: "os campos não podem está vazios!",
-      };
-      setVisiError(true);
-    }
-  }
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   return (
     <>
@@ -28,21 +19,40 @@ const StoreLogin = ({ history }) => {
         <Logo />
       </S.HeaderWrapper>
       <S.LoginWrapper>
-        <S.Form onSubmit={handleSubmit}>
+        <S.Form
+          id="form-login"
+          className="form-login"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <S.TitleForm>Gerencie sua loja</S.TitleForm>
-          <S.TextError visiError={visiError}>texto{errors.error}</S.TextError>
           <S.Input
             type="email"
+            id="email"
+            name="email"
             placeholder="Seu e-mail"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
+            ref={register({
+              required: "Campo obrigatorio",
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                message: "Informe um e-mail valido",
+              },
+            })}
           />
+          {errors.email && (
+            <S.TextError className="error">{errors.email.message}</S.TextError>
+          )}
           <S.Input
             type="senha"
+            id="password"
+            name="password"
             placeholder="Sua senha"
-            value={password}
-            onChange={(event) => setPassword(event.target.valeu)}
+            ref={register({ required: "Campo obrigatorio" })}
           />
+          {errors.password && (
+            <S.TextError className="error">
+              {errors.password.message}
+            </S.TextError>
+          )}
           <S.ButtonRegister type="submit">Entrar</S.ButtonRegister>
           <S.Link href="/petshop/cadastro">
             Ainda não possui cadastro? Cadastre seu Pet Shop
