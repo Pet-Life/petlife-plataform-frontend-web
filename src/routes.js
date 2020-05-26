@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { Router, Switch, Route, Redirect } from "react-router-dom";
 
+import history from "./history";
 import { Context } from "./Context/AuthContext";
 
 import Home from "./pages/Home";
@@ -29,7 +30,7 @@ function CustomRoute({ isPrivate, ...rest }) {
 
 const Routes = () => {
   return (
-    <BrowserRouter>
+    <Router history={history}>
       <Switch>
         <CustomRoute path="/" exact component={Home} />
         <CustomRoute path="/entrar" component={Login} />
@@ -61,7 +62,7 @@ const Routes = () => {
         <CustomRoute path="/carrinho" component={ShoppingCardPage} />
         <CustomRoute component={PageNotFound} />
       </Switch>
-    </BrowserRouter>
+    </Router>
   );
 };
 

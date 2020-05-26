@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import api from "../../services/api";
+
+import { Context } from "../../Context/AuthContext";
 
 import * as S from "./styled";
 
@@ -11,31 +12,13 @@ import Loader from "../../components/Loader";
 const StoreRegister = ({ history }) => {
   const [isLoading, setIsLoading] = useState(false);
   const { register, handleSubmit, errors } = useForm();
+  const { handleRegisterShop } = useContext(Context);
 
   const onSubmit = async (data) => {
-    const newData = new FormData();
     const zipcode =
       data.street + " " + data.district + " " + data.city + " " + data.state;
 
-    newData.append("name", data.name);
-    newData.append("cnpj", data.cnpj);
-    newData.append("zipcode", zipcode);
-    newData.append("email", data.email);
-    newData.append("password", data.password);
-
-    console.log(data.name);
-
-    await api
-      .post("users/shops/signup", {
-        name: data.name,
-        cnpj: data.cnpj,
-        zipcode: zipcode,
-        email: data.email,
-        password: data.password,
-      })
-      .then((response) => console.log(response.data))
-      .catch((response) => console.log(response.statusCode));
-    console.log();
+    handleRegisterShop(data, zipcode);
 
     history.push("/petshop/entrar");
   };

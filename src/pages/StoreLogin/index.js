@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
+
+import { Context } from "../../Context/AuthContext";
 
 import * as S from "./styled";
 
 import Logo from "../../components/Logo";
 import FooterSecondary from "../../components/FooterSecondary";
 
-const StoreLogin = ({ history }) => {
+const StoreLogin = () => {
   const { register, handleSubmit, errors } = useForm();
+  const { loading, hanldeLoginShop } = useContext(Context);
+
+  if (loading) {
+    return <p>Carregando...</p>;
+  }
 
   const onSubmit = (data) => {
-    console.log(data);
+    hanldeLoginShop(data);
   };
 
   return (
@@ -42,10 +49,12 @@ const StoreLogin = ({ history }) => {
             <S.TextError className="error">{errors.email.message}</S.TextError>
           )}
           <S.Input
-            type="senha"
+            type="password"
             id="password"
             name="password"
             placeholder="Sua senha"
+            autoComplete="none"
+            autoCorrect="none"
             ref={register({ required: "Campo obrigatorio" })}
           />
           {errors.password && (
