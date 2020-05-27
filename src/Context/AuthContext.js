@@ -51,9 +51,43 @@ function AuthProvider({ children }) {
     history.push("/petshop/dashboard");
   }
 
+  // petshop create product
+  async function handleRegisterProduct(data) {
+    const response = await api.post("products", {
+      photo: data.thumbnail,
+      name: data.name,
+      description: data.description,
+      manufacturer: data.manufacturer,
+      unityPrice: data.unityPrice,
+      quantity: data.quantity,
+      status: "em estoque",
+    });
+
+    if (!response) {
+      console.log("error login");
+    }
+
+    history.push("/petshop/dashboard");
+  }
+
+  // petshop loading products
+  async function loadProducts(id) {
+    await api
+      .get("products", { id: id })
+      .then((response) => console.log)
+      .catch(console.log);
+  }
+
   return (
     <Context.Provider
-      value={{ authenticated, loading, handleRegisterShop, hanldeLoginShop }}
+      value={{
+        authenticated,
+        loading,
+        handleRegisterShop,
+        hanldeLoginShop,
+        handleRegisterProduct,
+        loadProducts,
+      }}
     >
       {children}
     </Context.Provider>

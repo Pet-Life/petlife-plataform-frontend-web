@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import * as S from "./styled";
 
@@ -7,6 +7,11 @@ import Footer from "../../components/Footer";
 
 const ShoppingCardPage = () => {
   const user = sessionStorage.getItem("user");
+  const shopId = sessionStorage.getItem("shopId");
+  const products = localStorage.getItem("cart");
+
+  console.log(products);
+
   return (
     <>
       <HeaderMain address={user} />

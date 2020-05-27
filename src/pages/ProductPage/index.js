@@ -11,6 +11,7 @@ const ProductPage = () => {
   const [product, setProduct] = useState({});
   const user = sessionStorage.getItem("user");
   let { id } = useParams();
+  let listProducts = [];
 
   useEffect(() => {
     async function loadProducts() {
@@ -26,6 +27,12 @@ const ProductPage = () => {
     }
     loadProducts();
   }, [id]);
+
+  function handleAdd(product) {
+    const cart = localStorage["cart"] ? JSON.parse(localStorage["cart"]) : [];
+    cart.push({ product: product, qtd: 1 });
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
 
   return (
     <>
@@ -48,8 +55,9 @@ const ProductPage = () => {
               Quantidade em estoque: {product.quantity}
             </S.PaymentText>
           )}
-          <S.ButtonCar href="#">Adiciona ao carrinho</S.ButtonCar>
-          <S.ButtonBuy href="#">Comprar agora</S.ButtonBuy>
+          <S.ButtonCar type="button" onClick={() => handleAdd(product)}>
+            Adiciona ao carrinho
+          </S.ButtonCar>
         </S.PaymentWrapper>
       </S.ProductWrapper>
       <Footer />

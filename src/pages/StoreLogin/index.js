@@ -10,11 +10,7 @@ import FooterSecondary from "../../components/FooterSecondary";
 
 const StoreLogin = () => {
   const { register, handleSubmit, errors } = useForm();
-  const { loading, hanldeLoginShop } = useContext(Context);
-
-  if (loading) {
-    return <p>Carregando...</p>;
-  }
+  const { hanldeLoginShop } = useContext(Context);
 
   const onSubmit = (data) => {
     hanldeLoginShop(data);
