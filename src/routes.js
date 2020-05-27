@@ -19,7 +19,11 @@ import PageNotFound from "./pages/PageNotFound";
 import Main from "./pages/Main";
 
 function CustomRoute({ isPrivate, ...rest }) {
-  const { authenticated } = useContext(Context);
+  const { loading, authenticated } = useContext(Context);
+
+  if (loading) {
+    return <p>Carregando...</p>;
+  }
 
   if (isPrivate && !authenticated) {
     return <Redirect to="/petshop/entrar" />;

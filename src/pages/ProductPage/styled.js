@@ -66,24 +66,7 @@ export const PaymentText = styled.span`
   font-size: 14px;
 `;
 
-export const ButtonBuy = styled.a`
-  width: 200px;
-  padding: 10px;
-  font-size: 1em;
-  color: ${theme.color.tertiary};
-  border: 2px solid ${theme.color.tertiary};
-  border-radius: 4px;
-  font-weight: bold;
-  text-align: center;
-  transition: all 0.3s;
-
-  &:hover {
-    background: ${theme.color.tertiary};
-    color: ${theme.color.secondary};
-  }
-`;
-
-export const ButtonCar = styled.a`
+export const ButtonCar = styled.button`
   width: 200px;
   padding: 10px;
   font-size: 1em;
@@ -94,6 +77,7 @@ export const ButtonCar = styled.a`
   font-weight: bold;
   text-align: center;
   transition: all 0.3s;
+  cursor: pointer;
 
   &:hover {
     background: ${theme.color.secondary};

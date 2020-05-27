@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../../styles/theme";
 
-export const Table = styled.table`
+export const Table = styled.tbody`
   width: 100%;
   border-collapse: collapse;
   border: 1px solid ${theme.color.quinary};

@@ -10,7 +10,7 @@ import DashboardHeader from "../../components/DashboardHeader";
 import DashboardSideBar from "../../components/DashboardSideBar";
 import Footer from "../../components/Footer";
 
-const DashboardProduct = () => {
+const DashboardProduct = ({ history }) => {
   const [thumbnail, setThumbnail] = useState(null);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -18,6 +18,7 @@ const DashboardProduct = () => {
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(0);
   const [categories, setCategories] = useState([]);
+  const [selectId, setSelectId] = useState(1);
 
   const preview = useMemo(() => {
     return thumbnail ? URL.createObjectURL(thumbnail) : null;
@@ -33,7 +34,27 @@ const DashboardProduct = () => {
     laodCategories();
   }, []);
 
-  categories.map((category) => console.log(category));
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    const data = new FormData();
+    const shopToken = localStorage.getItem("shopToken");
+
+    data.append("photo", thumbnail);
+    data.append("name", name);
+    data.append("description", description);
+    data.append("manufacturer", manufacturer);
+    data.append("unityPrice", price);
+    data.append("quantity", quantity);
+    data.append("categoryId", selectId);
+    data.append("status", "em estoque");
+
+    api.defaults.headers.authorization = `Bearer ${JSON.parse(shopToken)}`;
+
+    await api.post("products", data);
+
+    history.push("/petshop/dashboard");
+  }
 
   return (
     <S.LayoutWrapper>
@@ -42,7 +63,7 @@ const DashboardProduct = () => {
         <DashboardSideBar />
         <S.LayoutMain>
           <S.TitlePage>Cadastrar Produtos</S.TitlePage>
-          <s.Form>
+          <s.Form onSubmit={handleSubmit}>
             <s.LabelThumbnail
               id="thumbnail"
               style={{
@@ -100,11 +121,17 @@ const DashboardProduct = () => {
               onChange={(event) => setQuantity(event.target.value)}
             />
             <s.Label>Categoria do Produto:</s.Label>
-            <s.Select className="select-category">
+            <s.Select
+              className="select-category"
+              value={selectId}
+              onChange={(event) => setSelectId(event.target.value)}
+            >
               <s.Option>Selecione uma categoria</s.Option>
               {categories &&
                 categories.map((category) => (
-                  <s.Option key={category.id}>{category.name}</s.Option>
+                  <s.Option key={category.id} value={category.id}>
+                    {category.name}
+                  </s.Option>
                 ))}
             </s.Select>
             <s.Button type="submit">Cadastrar</s.Button>
