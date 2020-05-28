@@ -6,7 +6,7 @@ const Menu = () => {
   return (
     <MenuWrapper>
       <LinkMenu href="/petshop/cadastro" target="_blank">
-        Pet Shop
+        Sou um Pet Shop
       </LinkMenu>
       <LinkMenu href="/entrar">Entrar</LinkMenu>
     </MenuWrapper>
