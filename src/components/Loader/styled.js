@@ -81,8 +81,22 @@ export const ModalShadow = styled.div`
   z-index: 7;
 `;
 
+export const LoaderContainer = styled.div`
+  display: ${(props) => (props.isLoading ? "block" : "none")};
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 8;
+  opacity: 1;
+  background: #fff;
+`;
+
 export const LaoderWrapper = styled.div.attrs({ className: "ring" })`
-  display: ${(props) => (props.isLoading ? "inline-block" : "none")};
+  display: ${(props) => (props.isLoading ? "block" : "none")};
   position: fixed;
   width: 80px;
   height: 80px;

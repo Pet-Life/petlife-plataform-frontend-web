@@ -61,9 +61,6 @@ const GlobalStyles = createGlobalStyle`
     outline-color: transparent;
   }
 
-  input, input:focus {
-    outline-color: transparent;
-  }
 `;
 
 export default GlobalStyles;

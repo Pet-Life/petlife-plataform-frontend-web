@@ -45,6 +45,7 @@ function AuthProvider({ children }) {
     }
 
     localStorage.setItem("shopToken", JSON.stringify(response.data.token));
+    localStorage.setItem("petshop", JSON.stringify(response.data.shop));
     api.defaults.headers.authorization = `Bearer ${response.data.token}`;
     setAuthenticated(true);
 
@@ -70,12 +71,39 @@ function AuthProvider({ children }) {
     history.push("/petshop/dashboard");
   }
 
-  // petshop loading products
-  async function loadProducts(id) {
+  // consumer register
+  async function handleRegisterConsumer(data) {
     await api
-      .get("products", { id: id })
-      .then((response) => console.log)
-      .catch(console.log);
+      .post("users/consumers/signup", {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        password: data.password,
+      })
+      .then((response) => {
+        console.log(response.statusText, response.statusText);
+      })
+      .catch((err) => console.log(err));
+  }
+
+  // consumer login
+  async function handleLoginConsumer(data) {
+    await api
+      .post("users/consumers/auth/login", {
+        email: data.email,
+        password: data.password,
+      })
+      .then((response) => {
+        localStorage.setItem("consumerToken", JSON.parse(response.data.token));
+        localStorage.setItem(
+          "consumerData",
+          JSON.parse(response.data.consumer)
+        );
+        api.defaults.headers.authorization = `Bearer ${response.data.token}`;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   return (
@@ -86,7 +114,7 @@ function AuthProvider({ children }) {
         handleRegisterShop,
         hanldeLoginShop,
         handleRegisterProduct,
-        loadProducts,
+        handleRegisterConsumer,
       }}
     >
       {children}

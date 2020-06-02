@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { useForm } from "react-hook-form";
+
+import { Context } from "../../Context/AuthContext";
 
 import * as S from "./styled";
 
@@ -6,27 +9,14 @@ import Logo from "../../components/Logo";
 import FooterSecondary from "../../components/FooterSecondary";
 
 const Register = ({ history }) => {
-  const [name, setName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({});
+  const { register, handleSubmit, errors } = useForm();
+  const { handleRegisterConsumer } = useContext(Context);
 
-  async function handleSubmit(e) {
-    e.preventDefault();
+  const onSubmit = async (data) => {
+    handleRegisterConsumer(data);
 
-    if (!name && !lastName && !email && !password) {
-      setErrors({ error: "os campos não podem está vazio." });
-    } else if (!name) {
-      setErrors({ error: "o campo nome não podem está vazio." });
-    } else if (!lastName) {
-      setErrors({ error: "o campo sobrenome não podem está vazio." });
-    } else if (!email) {
-      setErrors({ error: "o campo email não podem está vazio." });
-    } else if (!password) {
-      setErrors({ error: "o campo senha não podem está vazio." });
-    }
-  }
+    history.push("/petshop/entrar");
+  };
 
   return (
     <>
@@ -34,42 +24,68 @@ const Register = ({ history }) => {
         <Logo />
       </S.HeaderWrapper>
       <S.RegisterContent>
-        <S.Form onSubmit={handleSubmit}>
+        <S.Form
+          id="form-register"
+          className="form-register"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <S.Title>Cadastra-se</S.Title>
-          {errors && <S.ErrorText>{errors.error}</S.ErrorText>}
+          {errors && <S.TextError>{errors.error}</S.TextError>}
           <S.Input
             type="text"
-            id="name"
-            name="name"
+            id="firstName"
+            name="firstName"
             placeholder="Nome"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
+            ref={register({ required: "Campo obrigatório" })}
           />
+          {errors.firstName && (
+            <S.TextError className="error">
+              {errors.firstName.message}
+            </S.TextError>
+          )}
           <S.Input
             type="text"
             id="lastname"
             name="lastname"
             placeholder="Sobrenome"
-            value={lastName}
-            onChange={(event) => setLastName(event.target.value)}
+            ref={register({ required: "Campo obrigatório" })}
           />
+          {errors.lastName && (
+            <S.TextError className="error">
+              {errors.lastName.message}
+            </S.TextError>
+          )}
           <S.Input
             type="email"
             id="email"
             name="email"
             placeholder="E-mail"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
+            ref={register({
+              required: "Campo obrigatório",
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                message: "Informe um e-mail valido",
+              },
+            })}
           />
+          {errors.email && (
+            <S.TextError className="error">{errors.email.message}</S.TextError>
+          )}
           <S.Input
             type="password"
             id="password"
             name="password"
             autoComplete="off"
             placeholder="Senha"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
+            ref={register({
+              required: "Campo obrigatorio",
+            })}
           />
+          {errors.password && (
+            <S.TextError className="error">
+              {errors.password.message}
+            </S.TextError>
+          )}
           <S.Button type="submit" className="btn">
             Cadastrar
           </S.Button>

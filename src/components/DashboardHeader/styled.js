@@ -30,8 +30,35 @@ export const Button = styled.button`
   cursor: pointer;
 `;
 
-export const AvatarProfile = styled.img`
+export const AvatarWraper = styled.div`
+  position: relative;
   width: 60px;
   height: 60px;
-  border-radius: 50px;
+  background: ${theme.color.secondary};
+  border: 1px solid ${theme.color.primary};
+  border-radius: 50%;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  cursor: pointer;
+`;
+
+export const AvatarProfile = styled.img`
+  width: 50px;
+  height: auto;
+`;
+
+export const DropdownProfile = styled.div`
+  display: ${(props) => (props.isOpenProfile ? "grid" : "none")};
+  position: absolute;
+  top: 4.4em;
+  width: 100px;
+  max-width: 100px;
+  min-height: 200px;
+  padding: 2em;
+  background: ${theme.color.secondary};
+  border: 1px solid ${theme.color.quinary};
+  grid-template-columns: 1fr;
+  grid-gap: 0.5em;
 `;

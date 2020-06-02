@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import * as S from "./styled";
 
@@ -7,16 +7,26 @@ import Footer from "../../components/Footer";
 
 const ShoppingCardPage = () => {
   const user = sessionStorage.getItem("user");
-  const shopId = sessionStorage.getItem("shopId");
-  const products = localStorage.getItem("cart");
-
-  console.log(products);
+  const cart = JSON.parse(localStorage.getItem("cart"));
+  const [products, setProducts] = useState(cart);
 
   return (
     <>
       <HeaderMain address={user} />
       <S.PageWrapper>
-        <S.Text>Seu carrinho de compra está vazio.</S.Text>
+        {!products ? (
+          <S.Text>Seu carrinho de compra está vazio.</S.Text>
+        ) : (
+          products.map((product) => (
+            <S.List>
+              <S.ListItem key={product.product.id}>
+                <S.Header src={product.product.photo} />
+                <S.SpanTitle>{product.product.name}</S.SpanTitle>
+                <S.SpanTitle>R$ {product.product.unityPrice}</S.SpanTitle>
+              </S.ListItem>
+            </S.List>
+          ))
+        )}
       </S.PageWrapper>
       <Footer />
     </>
