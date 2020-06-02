@@ -21,6 +21,7 @@ export const Link = styled.button`
   border: none;
   cursor: pointer;
   text-align: left;
+  margin-bottom: 0.5em;
 
   @media (max-width: 767px) {
     width: 100%;

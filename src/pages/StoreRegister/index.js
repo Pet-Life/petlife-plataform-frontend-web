@@ -7,10 +7,8 @@ import * as S from "./styled";
 
 import Logo from "../../components/Logo";
 import FooterSecondary from "../../components/FooterSecondary";
-import Loader from "../../components/Loader";
 
 const StoreRegister = ({ history }) => {
-  const [isLoading, setIsLoading] = useState(false);
   const { register, handleSubmit, errors } = useForm();
   const { handleRegisterShop } = useContext(Context);
 
@@ -32,7 +30,6 @@ const StoreRegister = ({ history }) => {
         </S.Menu>
       </S.HeaderWrapper>
       <S.MainWrapper>
-        {isLoading && <Loader setIsLoading={setIsLoading} />}
         <S.Form
           id="form-register"
           className="form-register"

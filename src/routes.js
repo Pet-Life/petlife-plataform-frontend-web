@@ -4,6 +4,7 @@ import { Router, Switch, Route, Redirect } from "react-router-dom";
 import history from "./history";
 import { Context } from "./Context/AuthContext";
 
+import Loader from "./components/Loader";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -22,7 +23,7 @@ function CustomRoute({ isPrivate, ...rest }) {
   const { loading, authenticated } = useContext(Context);
 
   if (loading) {
-    return <p>Carregando...</p>;
+    return <Loader isLoading={loading} />;
   }
 
   if (isPrivate && !authenticated) {

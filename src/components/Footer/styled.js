@@ -11,7 +11,7 @@ export const FooterWrapper = styled.footer`
   justify-content: space-between;
 
   @media (max-width: 920px) {
-    padding: 35px 15px;
+    padding: 0.5em 0;
     flex-direction: column;
   }
 `;
@@ -24,6 +24,7 @@ export const FooterContent = styled.div`
   @media (max-width: 952px) {
     width: 100%;
     margin-bottom: 1.5em;
+    align-items: center;
   }
 `;
 
@@ -35,7 +36,6 @@ export const Title = styled.h3`
 
 export const Links = styled.a`
   margin-right: 1.2em;
-  margin-bottom: 0.4em;
   font-size: 14px;
   color: ${theme.color.primary};
   line-height: 1.9em;
@@ -51,12 +51,27 @@ export const Text = styled.p`
   font-size: 14px;
   color: ${theme.color.primary};
   line-height: 1.9em;
+
+  @media (max-width: 920px) {
+    text-align: center;
+
+    &.column-about-text {
+      width: 20em;
+    }
+  }
 `;
 
 export const SocialWrapper = styled.div`
   width: 100%;
   margin-top: 1.5em;
   display: flex;
+
+  @media (max-width: 920px) {
+    justify-content: center;
+    &.wrapper-social > a {
+      margin-right: 1em;
+    }
+  }
 `;
 
 export const FacebookIcon = styled(Facebook)`

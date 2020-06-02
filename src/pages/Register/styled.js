@@ -34,7 +34,6 @@ export const Form = styled.form`
   box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.3);
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: center;
 
   @media (max-width: 767px) {
     width: 70vw;
@@ -47,6 +46,7 @@ export const Title = styled.h2`
   margin-bottom: 1.4em;
   font-size: 1.5em;
   color: ${theme.color.primary};
+  text-align: center;
 `;
 
 export const Input = styled.input`
@@ -85,8 +85,9 @@ export const Button = styled.button`
   cursor: pointer;
 `;
 
-export const ErrorText = styled.span`
+export const TextError = styled.span`
   margin-bottom: 0.5em;
-  font-size: 14px;
-  color: red;
+  color: ${theme.color.ninth};
+  font-size: 12px;
+  font-weight: bold;
 `;

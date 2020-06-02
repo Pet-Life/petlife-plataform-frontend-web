@@ -11,6 +11,7 @@ function App() {
       <GlobalStyles />
       <div id="modal-portal" />
       <div id="modal-portal-store" />
+      <div id="modal-portal-update-product" />
       <div id="loading" />
       <Routes />
     </AuthProvider>
