@@ -26,6 +26,7 @@ function AuthProvider({ children }) {
         name: data.name,
         cnpj: data.cnpj,
         zipcode: zipcode,
+        number: data.number,
         email: data.email,
         password: data.password,
       })

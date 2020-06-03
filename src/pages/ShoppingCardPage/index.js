@@ -22,7 +22,10 @@ const ShoppingCardPage = () => {
               <S.ListItem key={product.product.id}>
                 <S.Header src={product.product.photo} />
                 <S.SpanTitle>{product.product.name}</S.SpanTitle>
-                <S.SpanTitle>R$ {product.product.unityPrice}</S.SpanTitle>
+                <S.SpanTitle>
+                  Preço: R$ {product.product.unityPrice}
+                </S.SpanTitle>
+                <S.ButtonRemove>Excluir</S.ButtonRemove>
               </S.ListItem>
             </S.List>
           ))
