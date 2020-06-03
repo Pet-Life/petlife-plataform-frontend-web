@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 import * as S from "./styled";
 
@@ -6,14 +6,18 @@ import Logo from "../../components/Logo";
 
 const DashboardHeader = ({ avatar }) => {
   const [isOpenProfile, setIsOpenProfile] = useState(false);
+  const container = useRef();
 
   const handleClickProfile = () => {
-    return setIsOpenProfile(true);
+    setIsOpenProfile(true);
   };
 
   const handleClickProfileOutside = (event) => {
-    if (event.current && !event.current(event.target)) {
-      return setIsOpenProfile(false);
+    if (
+      event.container.current &&
+      !event.container.current.containers(event.target)
+    ) {
+      setIsOpenProfile(false);
     }
   };
 
@@ -23,6 +27,7 @@ const DashboardHeader = ({ avatar }) => {
         <Logo />
         <S.MenuWrapper>
           <S.AvatarWraper
+            ref={container}
             onClick={handleClickProfile}
             onAuxClick={(event) => handleClickProfileOutside}
           >

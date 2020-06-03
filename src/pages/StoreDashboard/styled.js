@@ -2,13 +2,15 @@ import styled from "styled-components";
 import { theme } from "../../styles/theme";
 
 export const Table = styled.tbody`
-  width: 100%;
+  max-width: 100%;
   border-collapse: collapse;
   border: 1px solid ${theme.color.quinary};
+  table-layout: fixed;
 `;
 
 export const TableTr = styled.tr`
   font-size: 15px;
+  word-wrap: break-word;
   &:nth-child() {
     background: ${theme.color.eighth};
   }
@@ -21,16 +23,20 @@ export const TableTh = styled.th`
   font-size: 15px;
   border: 1px solid ${theme.color.quinary};
   text-align: left;
+  word-wrap: break-word;
 `;
 
 export const TableTd = styled.td`
   padding: 1em;
   font-size: 15px;
   border: 1px solid ${theme.color.quinary};
+  word-wrap: break-word;
+  white-space: unset;
 `;
 
 export const ButtonRemove = styled.button`
-  width: 70px;
+  margin-bottom: 0.5em;
+  width: 100%;
   height: 35px;
   margin-left: 0.2em;
   background: ${theme.color.tertiary};
@@ -45,4 +51,9 @@ export const ButtonRemove = styled.button`
     background: ${theme.color.secondary};
     color: ${theme.color.tertiary};
   }
+`;
+
+export const ProductImage = styled.img`
+  width: 40px;
+  height: 40px;
 `;

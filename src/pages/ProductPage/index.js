@@ -11,7 +11,6 @@ const ProductPage = () => {
   const [product, setProduct] = useState({});
   const user = sessionStorage.getItem("user");
   let { id } = useParams();
-  let listProducts = [];
 
   useEffect(() => {
     async function loadProducts() {

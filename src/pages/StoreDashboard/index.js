@@ -29,6 +29,11 @@ const StoreDashboard = () => {
     loadProducts();
   }, [shop.id]);
 
+  function handleUpdate(product) {
+    localStorage.setItem("productId", JSON.stringify(product));
+    setIsOpen(true);
+  }
+
   async function handleRemoveProduct(id) {
     await api
       .delete(`products/${id}`)
@@ -50,7 +55,9 @@ const StoreDashboard = () => {
           <s.Table>
             <s.TableTr>
               <s.TableTh>ID</s.TableTh>
+              <s.TableTh>Foto Produto</s.TableTh>
               <s.TableTh>Nome do Produto</s.TableTh>
+              <s.TableTh>Descrição</s.TableTh>
               <s.TableTh>Fabricante</s.TableTh>
               <s.TableTh>Preço Unitário</s.TableTh>
               <s.TableTh>Quantidade</s.TableTh>
@@ -60,14 +67,18 @@ const StoreDashboard = () => {
               products.map((product) => (
                 <s.TableTr key={product.id}>
                   <s.TableTd>{product.id}</s.TableTd>
+                  <s.TableTd>
+                    <s.ProductImage src={product.photo} />
+                  </s.TableTd>
                   <s.TableTd>{product.name}</s.TableTd>
+                  <s.TableTd>{product.description}</s.TableTd>
                   <s.TableTd>{product.manufacturer}</s.TableTd>
                   <s.TableTd>{product.unityPrice}</s.TableTd>
                   <s.TableTd>{product.quantity}</s.TableTd>
                   <s.TableTd>
                     <s.ButtonRemove
                       type="button"
-                      onClick={() => setIsOpen(true)}
+                      onClick={() => handleUpdate(product)}
                     >
                       Editar
                     </s.ButtonRemove>
