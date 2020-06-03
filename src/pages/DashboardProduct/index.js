@@ -19,6 +19,7 @@ const DashboardProduct = ({ history }) => {
   const [quantity, setQuantity] = useState(0);
   const [categories, setCategories] = useState([]);
   const [selectId, setSelectId] = useState(1);
+  const shop = JSON.parse(localStorage.getItem("petshop"));
 
   const preview = useMemo(() => {
     return thumbnail ? URL.createObjectURL(thumbnail) : null;
@@ -51,18 +52,18 @@ const DashboardProduct = ({ history }) => {
 
     api.defaults.headers.authorization = `Bearer ${JSON.parse(shopToken)}`;
 
-    await api.post("products", data);
-
+    const response = await api.post("products", data);
+    console.log(response.statusText);
     history.push("/petshop/dashboard");
   }
 
   return (
     <S.LayoutWrapper>
-      <DashboardHeader />
+      <DashboardHeader avatar={shop.avatar} />
       <S.LayoutContent>
         <DashboardSideBar />
         <S.LayoutMain>
-          <S.TitlePage>Cadastrar Produtos</S.TitlePage>
+          <S.TitlePage>Cadastrar Produto</S.TitlePage>
           <s.Form onSubmit={handleSubmit}>
             <s.LabelThumbnail
               id="thumbnail"

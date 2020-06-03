@@ -1,54 +1,55 @@
-import React, { useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
+import api from "../../services/api";
 
 import * as S from "../../components/LayoutDashboard/styled";
 import * as s from "./styled";
-
-import camera from "../../assets/camera.svg";
 
 import DashboardHeader from "../../components/DashboardHeader";
 import DashboardSideBar from "../../components/DashboardSideBar";
 import Footer from "../../components/Footer";
 
 const DashboardProfile = () => {
-  const [thumbnail, setThumbnail] = useState(null);
+  const petshop = JSON.parse(localStorage.getItem("petshop"));
+  const [shop, setShop] = useState({});
 
-  const preview = useMemo(() => {
-    return thumbnail ? URL.createObjectURL(thumbnail) : null;
-  }, [thumbnail]);
+  useEffect(() => {
+    async function loadShop() {
+      setShop(petshop);
+    }
+    loadShop();
+  }, [petshop]);
 
   return (
     <S.LayoutWrapper>
-      <DashboardHeader />
+      <DashboardHeader avatar={shop.avatar} />
       <S.LayoutContent>
         <DashboardSideBar />
         <S.LayoutMain>
           <S.TitlePage>Meus dados</S.TitlePage>
-          <s.Form>
-            <s.LabelThumbnail
-              id="thumbnail"
-              style={{ background: `url(${preview})` }}
-              className={thumbnail ? "has-thumbnail" : ""}
-            >
-              Logo do meu Petshop:
-              <s.Input
-                type="file"
-                onChange={(event) => setThumbnail(event.target.files[0])}
-              />
-              <s.Img src={camera} alt="selecione a imagem" />
-            </s.LabelThumbnail>
-            <s.Label>Nome do Petshop:</s.Label>
-            <s.Input type="text" placeholder="nome do seu petshop" />
-            <s.Label>CNPJ:</s.Label>
-            <s.Input type="text" placeholder="CNPJ do seu petshop" />
-            <s.Label>Telefone:</s.Label>
-            <s.Input type="text" placeholder="Telefone do seu petshop" />
-            <s.Label>Horário de Funcionamento:</s.Label>
-            <s.Input
-              type="text"
-              placeholder="Horário de funcionamento do seu petshop"
-            />
-            <s.Button type="submit">Atulizar dados</s.Button>
-          </s.Form>
+          <s.Text>
+            <s.Span>Nome do Petshop:</s.Span> {shop.name}
+          </s.Text>
+          <s.Text>
+            <s.Span>E-mail:</s.Span> {shop.email}
+          </s.Text>
+          <s.Text>
+            <s.Span>CNPJ: </s.Span>
+            {shop.cnpj}
+          </s.Text>
+          <s.Text>
+            <s.Span>Telefone: </s.Span> {shop.phone}
+          </s.Text>
+          <s.Text>
+            <s.Span>Endereço:</s.Span>
+          </s.Text>
+          <s.Text>
+            {shop.street} {shop.number}, {shop.district}, {shop.city} -{" "}
+            {shop.state}
+          </s.Text>
+          <s.Text>
+            <s.Span>Horário de Funcionamento:</s.Span>
+          </s.Text>
+          <s.Text>{shop.businessHours}</s.Text>
         </S.LayoutMain>
       </S.LayoutContent>
       <Footer />
