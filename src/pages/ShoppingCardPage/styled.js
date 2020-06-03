@@ -27,7 +27,7 @@ export const ListItem = styled.li`
   color: ${theme.color.primary};
   border-bottom: 1px solid ${theme.color.quinary};
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
 
   align-items: center;
 `;
@@ -46,9 +46,16 @@ export const SpanTitle = styled.span`
 export const ButtonRemove = styled.button`
   width: 100px;
   height: 36px;
+  margin-left: 0.5em;
   color: ${theme.color.secondary};
   font-size: 1em;
   background: ${theme.color.tertiary};
   border: 1px solid ${theme.color.tertiary};
   border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background: ${theme.color.secondary};
+    color: ${theme.color.tertiary};
+  }
 `;
