@@ -19,6 +19,19 @@ function AuthProvider({ children }) {
     setLoading(false);
   }, []);
 
+  useEffect(() => {
+    const consumerToken = localStorage.getItem("consumerToken");
+
+    if (consumerToken) {
+      api.defaults.headers.authorization = `Bearer ${JSON.parse(
+        consumerToken
+      )}`;
+      setAuthenticated(true);
+    }
+
+    setLoading(false);
+  }, []);
+
   // register a petshop
   async function handleRegisterShop(data, zipcode) {
     await api
@@ -82,7 +95,8 @@ function AuthProvider({ children }) {
         password: data.password,
       })
       .then((response) => {
-        console.log(response.statusText, response.statusText);
+        console.log(response.status, response.statusText);
+        console.log(response.data);
       })
       .catch((err) => console.log(err));
   }
@@ -95,12 +109,17 @@ function AuthProvider({ children }) {
         password: data.password,
       })
       .then((response) => {
-        localStorage.setItem("consumerToken", JSON.parse(response.data.token));
+        localStorage.setItem(
+          "consumerToken",
+          JSON.stringify(response.data.token)
+        );
         localStorage.setItem(
           "consumerData",
-          JSON.parse(response.data.consumer)
+          JSON.stringify(response.data.consumer)
         );
         api.defaults.headers.authorization = `Bearer ${response.data.token}`;
+        console.log(response.status);
+        history.push("/principal");
       })
       .catch((err) => {
         console.log(err);
@@ -116,6 +135,7 @@ function AuthProvider({ children }) {
         hanldeLoginShop,
         handleRegisterProduct,
         handleRegisterConsumer,
+        handleLoginConsumer,
       }}
     >
       {children}

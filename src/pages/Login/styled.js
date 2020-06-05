@@ -34,7 +34,6 @@ export const Form = styled.form`
   box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.3);
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: center;
 
   @media (max-width: 767px) {
     width: 70vw;
@@ -47,13 +46,14 @@ export const Title = styled.h2`
   margin-bottom: 1.4em;
   font-size: 1.5em;
   color: ${theme.color.primary};
+  text-align: center;
 `;
 
 export const Input = styled.input`
   width: 90%;
   height: 42px;
   padding: 0 20px;
-  margin-bottom: 1.2em;
+  margin-bottom: 0.5em;
   background: ${theme.color.secondary};
   font-size: 1em;
   color: ${theme.color.primary};
@@ -83,4 +83,10 @@ export const Button = styled.button`
   border: 2px solid ${theme.color.tertiary};
   border-radius: 4px;
   cursor: pointer;
+`;
+
+export const TextError = styled.span`
+  color: ${theme.color.ninth};
+  font-size: 12px;
+  font-weight: bold;
 `;
