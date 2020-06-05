@@ -11,7 +11,8 @@ const HeaderMain = ({ address }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenStore, setIsOpenStore] = useState(false);
   const [isOpenProfile, setIsOpenProfile] = useState(false);
-  const isLogged = false;
+  const consumerToken = JSON.parse(localStorage.getItem("consumerToken"));
+  const consumerData = JSON.parse(localStorage.getItem("consumerData"));
   const history = useHistory();
 
   if (!address) {
@@ -50,9 +51,10 @@ const HeaderMain = ({ address }) => {
           </S.Span>
         </S.Button>
       </S.IconsWrapper>
-      {isLogged ? (
+      {consumerToken && consumerData ? (
         <S.ProfileWrapper>
           <S.ProfileAvatar
+            src={consumerData.avatar}
             onClick={() => setIsOpenProfile(true)}
             onClickCapture={() => setIsOpenProfile(false)}
           />

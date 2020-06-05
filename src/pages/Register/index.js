@@ -15,7 +15,9 @@ const Register = ({ history }) => {
   const onSubmit = async (data) => {
     handleRegisterConsumer(data);
 
-    history.push("/petshop/entrar");
+    console.log(data);
+
+    history.push("/entrar");
   };
 
   return (
@@ -45,8 +47,8 @@ const Register = ({ history }) => {
           )}
           <S.Input
             type="text"
-            id="lastname"
-            name="lastname"
+            id="lastName"
+            name="lastName"
             placeholder="Sobrenome"
             ref={register({ required: "Campo obrigatório" })}
           />
