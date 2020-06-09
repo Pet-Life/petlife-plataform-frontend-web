@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useMemo } from "react";
 import ReactDom from "react-dom";
-import history from "../../history";
 import api from "../../services/api";
 
 import * as S from "./styled";

@@ -20,8 +20,9 @@ export const Label = styled.label`
 export const LabelThumbnail = styled.label`
   margin-bottom: 0.5em;
   border: 1px dashed ${theme.color.quinary};
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center !important;
   height: 160px;
   display: flex;
   justify-content: center;
@@ -45,10 +46,11 @@ export const Img = styled.img``;
 
 export const TextArea = styled.textarea`
   margin-bottom: 0.5em;
-  max-width: 250px;
+  max-width: 400px;
   max-height: 150px;
   min-height: 250px;
   min-height: 150px;
+  min-width: 100%;
 `;
 
 export const Input = styled.input`

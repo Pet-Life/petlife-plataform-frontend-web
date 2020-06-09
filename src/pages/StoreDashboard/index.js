@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import api from "../../services/api";
-import history from "../../history";
 
 import * as S from "../../components/LayoutDashboard/styled";
 import * as s from "./styled";
@@ -53,47 +52,49 @@ const StoreDashboard = () => {
           <S.TitlePage>Dashboard</S.TitlePage>
           <S.TitlePage>Produtos em estoque</S.TitlePage>
           <s.Table>
-            <s.TableTr>
-              <s.TableTh>ID</s.TableTh>
-              <s.TableTh>Foto Produto</s.TableTh>
-              <s.TableTh>Nome do Produto</s.TableTh>
-              <s.TableTh>Descrição</s.TableTh>
-              <s.TableTh>Fabricante</s.TableTh>
-              <s.TableTh>Preço Unitário</s.TableTh>
-              <s.TableTh>Quantidade</s.TableTh>
-              <s.TableTh>Ações</s.TableTh>
-            </s.TableTr>
-            {products ? (
-              products.map((product) => (
-                <s.TableTr key={product.id}>
-                  <s.TableTd>{product.id}</s.TableTd>
-                  <s.TableTd>
-                    <s.ProductImage src={product.photo} />
-                  </s.TableTd>
-                  <s.TableTd>{product.name}</s.TableTd>
-                  <s.TableTd>{product.description}</s.TableTd>
-                  <s.TableTd>{product.manufacturer}</s.TableTd>
-                  <s.TableTd>{product.unityPrice}</s.TableTd>
-                  <s.TableTd>{product.quantity}</s.TableTd>
-                  <s.TableTd>
-                    <s.ButtonRemove
-                      type="button"
-                      onClick={() => handleUpdate(product)}
-                    >
-                      Editar
-                    </s.ButtonRemove>
-                    <s.ButtonRemove
-                      type="button"
-                      onClick={() => handleRemoveProduct(product.id)}
-                    >
-                      Excluir
-                    </s.ButtonRemove>
-                  </s.TableTd>
-                </s.TableTr>
-              ))
-            ) : (
-              <p>Nenhum produto cadastro.</p>
-            )}
+            <s.TableTbody>
+              <s.TableTr>
+                <s.TableTh>ID</s.TableTh>
+                <s.TableTh>Foto Produto</s.TableTh>
+                <s.TableTh>Nome do Produto</s.TableTh>
+                <s.TableTh>Descrição</s.TableTh>
+                <s.TableTh>Fabricante</s.TableTh>
+                <s.TableTh>Preço Unitário</s.TableTh>
+                <s.TableTh>Quantidade</s.TableTh>
+                <s.TableTh>Ações</s.TableTh>
+              </s.TableTr>
+              {products ? (
+                products.map((product) => (
+                  <s.TableTr key={product.id}>
+                    <s.TableTd>{product.id}</s.TableTd>
+                    <s.TableTd>
+                      <s.ProductImage src={product.photo} />
+                    </s.TableTd>
+                    <s.TableTd>{product.name}</s.TableTd>
+                    <s.TableTd>{product.description}</s.TableTd>
+                    <s.TableTd>{product.manufacturer}</s.TableTd>
+                    <s.TableTd>{product.unityPrice}</s.TableTd>
+                    <s.TableTd>{product.quantity}</s.TableTd>
+                    <s.TableTd>
+                      <s.ButtonRemove
+                        type="button"
+                        onClick={() => handleUpdate(product)}
+                      >
+                        Editar
+                      </s.ButtonRemove>
+                      <s.ButtonRemove
+                        type="button"
+                        onClick={() => handleRemoveProduct(product.id)}
+                      >
+                        Excluir
+                      </s.ButtonRemove>
+                    </s.TableTd>
+                  </s.TableTr>
+                ))
+              ) : (
+                <p>Nenhum produto cadastro.</p>
+              )}
+            </s.TableTbody>
           </s.Table>
           {isOpen && <UpdateProduct setIsOpen={setIsOpen} />}
         </S.LayoutMain>
