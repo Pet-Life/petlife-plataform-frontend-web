@@ -9,12 +9,13 @@ import CardProduct from "../../components/CardProduct";
 
 const Main = () => {
   const user = sessionStorage.getItem("user");
+  const shop = sessionStorage.getItem("shopId");
   if (!user) {
     console.log("ok");
   }
   return (
     <>
-      <HeaderMain address={user} />
+      <HeaderMain address={user} shop={shop} />
       <S.SectionMain>
         <CardCategory />
         <S.MainContent>

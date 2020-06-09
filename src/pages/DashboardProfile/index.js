@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import api from "../../services/api";
 
 import * as S from "../../components/LayoutDashboard/styled";
 import * as s from "./styled";

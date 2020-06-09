@@ -129,7 +129,7 @@ export const ButtonConfirmStore = styled.button`
 export const StoreWrapper = styled.div`
   padding: 1em 0;
   display: ${(props) => (props.visi ? "grid" : "none")};
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 0.2em;
 
   @media (max-width: 767px) {
@@ -173,4 +173,16 @@ export const LinkText = styled.a`
   &:hover {
     color: ${theme.color.tertiary};
   }
+`;
+
+export const Text = styled.p`
+  color: ${theme.color.primary};
+  font-size: 1em;
+  line-height: 1.2em;
+`;
+
+export const TextSmall = styled.p`
+  color: ${theme.color.primary};
+  font-size: 1em;
+  line-height: 1em;
 `;

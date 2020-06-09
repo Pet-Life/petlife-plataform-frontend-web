@@ -7,7 +7,7 @@ import Logo from "../Logo";
 import Modal from "../Modal";
 import ModalStore from "../ModalStore";
 
-const HeaderMain = ({ address }) => {
+const HeaderMain = ({ address, shop }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenStore, setIsOpenStore] = useState(false);
   const [isOpenProfile, setIsOpenProfile] = useState(false);
@@ -15,7 +15,7 @@ const HeaderMain = ({ address }) => {
   const consumerData = JSON.parse(localStorage.getItem("consumerData"));
   const history = useHistory();
 
-  if (!address) {
+  if (!address && !shop) {
     setTimeout(() => setIsOpen(true), 1000);
   }
 

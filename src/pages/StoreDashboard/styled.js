@@ -1,12 +1,14 @@
 import styled from "styled-components";
 import { theme } from "../../styles/theme";
 
-export const Table = styled.tbody`
+export const Table = styled.table`
   max-width: 100%;
   border-collapse: collapse;
   border: 1px solid ${theme.color.quinary};
   table-layout: fixed;
 `;
+
+export const TableTbody = styled.tbody``;
 
 export const TableTr = styled.tr`
   font-size: 15px;

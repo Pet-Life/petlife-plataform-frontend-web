@@ -75,6 +75,15 @@ const Modal = ({ setIsOpen }) => {
           </S.LinkText>
           <S.StoreWrapper visi={visi}>
             <S.StoreTitle>Selecione um Petshop</S.StoreTitle>
+            {address.address && (
+              <>
+                <S.TextSmall>Próximo ao endereço: </S.TextSmall>
+                <S.Text>
+                  {address.address.street}, {address.address.district} -{" "}
+                  {address.address.city} - {address.address.state}
+                </S.Text>
+              </>
+            )}
             <br />
             {shops.length !== 0 && shops ? (
               shops.map((shop) => (
@@ -99,7 +108,7 @@ const Modal = ({ setIsOpen }) => {
                 </S.ButtonConfirmStore>
               ))
             ) : (
-              <p>Nenhum petshop encontrado no raio de 20km.</p>
+              <S.Text>Nenhum petshop encontrado no raio de 20km.</S.Text>
             )}
           </S.StoreWrapper>
         </S.ModalContent>

@@ -69,8 +69,6 @@ const DashboardProduct = ({ history }) => {
               id="thumbnail"
               style={{
                 background: `url(${preview})`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
               }}
               className={thumbnail ? "has-thumbnail" : ""}
             >

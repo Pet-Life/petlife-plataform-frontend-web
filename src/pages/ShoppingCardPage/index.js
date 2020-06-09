@@ -8,7 +8,7 @@ import Footer from "../../components/Footer";
 const ShoppingCardPage = () => {
   const user = sessionStorage.getItem("user");
   const cart = JSON.parse(localStorage.getItem("cart"));
-  const [products, setProducts] = useState(cart);
+  const [products] = useState(cart);
 
   return (
     <>

@@ -22,6 +22,10 @@ export const StoreDetalh = styled.div`
   grid-template-columns: 80px 1fr;
   grid-gap: 0.4em;
   align-items: center;
+
+  &:hover {
+    border-color: ${theme.color.tertiary};
+  }
 `;
 
 export const StoreInfo = styled.div`

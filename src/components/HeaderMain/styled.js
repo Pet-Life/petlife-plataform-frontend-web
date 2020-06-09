@@ -168,7 +168,6 @@ export const ProfileWrapper = styled.div`
 export const ProfileAvatar = styled.img`
   width: 45px;
   height: 45px;
-  background: ${theme.color.primary};
   border: 1px solid ${theme.color.primary};
   border-radius: 50%;
 `;
