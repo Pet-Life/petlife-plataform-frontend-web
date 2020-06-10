@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useContext, useState, createRef } from "react";
 import { useParams } from "react-router-dom";
 import api from "../../services/api";
+import { CartContext } from "../../Context/CartContext";
 
 import * as S from "./styled";
 
@@ -9,8 +10,13 @@ import Footer from "../../components/Footer";
 
 const ProductPage = () => {
   const [product, setProduct] = useState({});
+  const { addProduct, cartItems, increase } = useContext(CartContext);
   const user = sessionStorage.getItem("user");
   let { id } = useParams();
+  const isInCart = (product) => {
+    return !!cartItems.find((item) => item.id === product.id);
+  };
+  const ref = createRef();
 
   useEffect(() => {
     async function loadProducts() {
@@ -26,12 +32,6 @@ const ProductPage = () => {
     }
     loadProducts();
   }, [id]);
-
-  function handleAdd(product) {
-    const cart = localStorage["cart"] ? JSON.parse(localStorage["cart"]) : [];
-    cart.push({ product: product, qtd: 1 });
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }
 
   return (
     <>
@@ -54,9 +54,16 @@ const ProductPage = () => {
               Quantidade em estoque: {product.quantity}
             </S.PaymentText>
           )}
-          <S.ButtonCar type="button" onClick={() => handleAdd(product)}>
-            Adiciona ao carrinho
-          </S.ButtonCar>
+          {isInCart(product) && (
+            <S.ButtonPlus ref={ref} onClick={() => increase(product)}>
+              Adicionar mais
+            </S.ButtonPlus>
+          )}
+          {!isInCart(product) && (
+            <S.ButtonCar ref={ref} onClick={() => addProduct(product)}>
+              Adicionar ao carrinho
+            </S.ButtonCar>
+          )}
         </S.PaymentWrapper>
       </S.ProductWrapper>
       <Footer />

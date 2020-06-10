@@ -5,7 +5,7 @@ import { MenuWrapper, LinkMenu } from "./styled";
 const Menu = () => {
   return (
     <MenuWrapper>
-      <LinkMenu href="/petshop/cadastro" target="_blank">
+      <LinkMenu href="/petshop/entrar" target="_blank">
         Pet Shop
       </LinkMenu>
       <LinkMenu href="/entrar">Entrar</LinkMenu>

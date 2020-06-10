@@ -31,17 +31,19 @@ const CartContextProvider = ({ children }) => {
     dispatch({ type: "CLEAR" });
   };
 
-  const contextValue = {
-    removeProduct,
-    addProduct,
-    increase,
-    decrease,
-    clearCart,
-    ...state,
-  };
-
   return (
-    <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
+    <CartContext.Provider
+      value={{
+        removeProduct,
+        addProduct,
+        increase,
+        decrease,
+        clearCart,
+        ...state,
+      }}
+    >
+      {children}
+    </CartContext.Provider>
   );
 };
 

@@ -84,3 +84,22 @@ export const ButtonCar = styled.button`
     color: ${theme.color.tertiary};
   }
 `;
+
+export const ButtonPlus = styled.button`
+  width: 200px;
+  padding: 10px;
+  font-size: 1em;
+  background: ${theme.color.tertiary};
+  color: ${theme.color.secondary};
+  border: 2px solid ${theme.color.tertiary};
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background: ${theme.color.secondary};
+    color: ${theme.color.tertiary};
+  }
+`;
