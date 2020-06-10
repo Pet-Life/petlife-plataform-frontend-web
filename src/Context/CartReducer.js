@@ -7,12 +7,9 @@ const storage = (cartItems) => {
 
 export const sumItems = (cartItems) => {
   storage(cartItems);
-  let itemCount = cartItems.reduce(
-    (total, product) => total + product.quantify,
-    0
-  );
+  let itemCount = cartItems.reduce((total, product) => total + product.qtd, 0);
   let total = cartItems
-    .reduce((total, product) => total + product.price * product.quantify, 0)
+    .reduce((total, product) => total + product.unityPrice * product.qtd, 0)
     .toFixed(2);
   return { itemCount, total };
 };
@@ -21,7 +18,8 @@ export const CartReducer = (state, action) => {
   switch (action.type) {
     case "ADD_ITEM":
       if (!state.cartItems.find((item) => item.id === action.payload.id)) {
-        state.cartItems.push({ ...action.payload, quantify: 1 });
+        state.cartItems.push({ ...action.payload, qtd: 1 });
+        window.location.reload();
       }
       return {
         ...state,
@@ -30,6 +28,7 @@ export const CartReducer = (state, action) => {
       };
 
     case "REMOVE_ITEM":
+      window.location.reload();
       return {
         ...state,
         ...sumItems(
@@ -43,7 +42,8 @@ export const CartReducer = (state, action) => {
     case "INCREASE":
       state.cartItems[
         state.cartItems.findIndex((item) => item.id === action.payload.id)
-      ].quantify++;
+      ].qtd += 1;
+      window.location.reload();
       return {
         ...state,
         ...sumItems(state.cartItems),
@@ -53,7 +53,8 @@ export const CartReducer = (state, action) => {
     case "DECREASE":
       state.cartItems[
         state.cartItems.findIndex((item) => item.id === action.payload.id)
-      ].quantify--;
+      ].qtd--;
+      window.location.reload();
       return {
         ...state,
         ...sumItems(state.cartItems),
@@ -61,6 +62,7 @@ export const CartReducer = (state, action) => {
       };
 
     case "CLEAR":
+      window.location.reload();
       return {
         cartItems: [],
         ...sumItems([]),
