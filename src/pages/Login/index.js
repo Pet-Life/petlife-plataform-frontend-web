@@ -70,7 +70,7 @@ const Login = ({ history }) => {
             </S.TextError>
           )}
           <S.Button type="submit">Entrar</S.Button>
-          <S.Link href="/cadastro">Não tem conta? Crie uma!</S.Link>
+          <S.Link href="/cadastro">Novo por aqui? Cadastre-se </S.Link>
         </S.Form>
       </S.LoginContent>
       <FooterSecondary />

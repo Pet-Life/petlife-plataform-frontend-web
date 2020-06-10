@@ -49,7 +49,7 @@ const StoreDashboard = () => {
       <S.LayoutContent>
         <DashboardSideBar />
         <S.LayoutMain>
-          <S.TitlePage>Dashboard</S.TitlePage>
+          <S.TitlePage>Dashboard - {shop.name}</S.TitlePage>
           <S.TitlePage>Produtos em estoque</S.TitlePage>
           <s.Table>
             <s.TableTbody>
