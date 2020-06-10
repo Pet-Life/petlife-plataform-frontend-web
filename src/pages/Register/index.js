@@ -15,8 +15,11 @@ const Register = ({ history }) => {
   const onSubmit = async (data) => {
     handleRegisterConsumer(data);
 
+<<<<<<< Updated upstream
     console.log(data);
 
+=======
+>>>>>>> Stashed changes
     history.push("/entrar");
   };
 
@@ -31,7 +34,7 @@ const Register = ({ history }) => {
           className="form-register"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <S.Title>Cadastra-se</S.Title>
+          <S.Title>Cadastre-se</S.Title>
           {errors && <S.TextError>{errors.error}</S.TextError>}
           <S.Input
             type="text"
@@ -91,7 +94,7 @@ const Register = ({ history }) => {
           <S.Button type="submit" className="btn">
             Cadastrar
           </S.Button>
-          <S.Link href="/entrar">Já tenho uma conta. Entrar</S.Link>
+          <S.Link href="/entrar">Já tenho uma conta</S.Link>
         </S.Form>
       </S.RegisterContent>
       <FooterSecondary />
