@@ -67,6 +67,7 @@ const ShoppingCardPage = () => {
                   <S.Button type="button" onClick={clearCart}>
                     Limpar carrinho
                   </S.Button>
+                  <S.LinkMenu href="/pagamento.html">Finalizar Compra</S.LinkMenu>
                 </S.TotalWrapper>
               )}
             </>

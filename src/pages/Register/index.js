@@ -15,11 +15,6 @@ const Register = ({ history }) => {
   const onSubmit = async (data) => {
     handleRegisterConsumer(data);
 
-<<<<<<< Updated upstream
-    console.log(data);
-
-=======
->>>>>>> Stashed changes
     history.push("/entrar");
   };
 
