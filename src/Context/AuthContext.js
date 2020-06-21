@@ -12,7 +12,7 @@ function AuthProvider({ children }) {
     const shopToken = localStorage.getItem("shopToken");
 
     if (shopToken) {
-      api.defaults.headers.authorization = `Bearer ${JSON.parse(shopToken)}`;
+      api.defaults.headers.Authorization = `Bearer ${JSON.parse(shopToken)}`;
       setAuthenticated(true);
     }
 
@@ -43,7 +43,10 @@ function AuthProvider({ children }) {
         email: data.email,
         password: data.password,
       })
-      .then((response) => console.log(response.data))
+      .then((response) => {
+        console.log(response.statusCode);
+        history.push("/petshop/entrar");
+      })
       .catch((response) => console.log(response.statusCode));
   }
 
@@ -60,10 +63,18 @@ function AuthProvider({ children }) {
 
     localStorage.setItem("shopToken", JSON.stringify(response.data.token));
     localStorage.setItem("petshop", JSON.stringify(response.data.shop));
-    api.defaults.headers.authorization = `Bearer ${response.data.token}`;
+    api.defaults.headers.Authorization = `Bearer ${response.data.token}`;
     setAuthenticated(true);
 
     history.push("/petshop/dashboard");
+  }
+
+  // petshop logout
+  function handleLogoutShop() {
+    setAuthenticated(false);
+    localStorage.removeItem("shopToken");
+    api.defaults.headers.Authorization = undefined;
+    history.push("/petshop/entrar");
   }
 
   // petshop create product
@@ -133,6 +144,7 @@ function AuthProvider({ children }) {
         loading,
         handleRegisterShop,
         hanldeLoginShop,
+        handleLogoutShop,
         handleRegisterProduct,
         handleRegisterConsumer,
         handleLoginConsumer,

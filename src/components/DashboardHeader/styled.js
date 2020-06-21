@@ -8,6 +8,10 @@ export const HeaderWrapper = styled.header`
   display: grid;
   grid-template-columns: 80% 1fr;
   align-items: center;
+
+  @media (max-width: 767px) {
+    padding: 0.3em 15px;
+  }
 `;
 
 export const MenuWrapper = styled.div`

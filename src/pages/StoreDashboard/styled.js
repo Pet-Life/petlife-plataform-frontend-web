@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { theme } from "../../styles/theme";
 
+export const TableWrapper = styled.div`
+  overflow-x: auto;
+  width: 100%;
+`;
+
 export const Table = styled.table`
   max-width: 100%;
   border-collapse: collapse;

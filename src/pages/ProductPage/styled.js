@@ -6,6 +6,11 @@ export const ProductWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 340px;
   grid-gap: 1em;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    padding: 1em;
+  }
 `;
 
 export const ProductContent = styled.div`
@@ -13,6 +18,10 @@ export const ProductContent = styled.div`
   grid-template-columns: 30% 70%;
   grid-gap: 0.8em;
   align-items: center;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ProductPhoto = styled.img`

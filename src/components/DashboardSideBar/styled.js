@@ -5,6 +5,7 @@ import {
   AssignmentInd,
   BusinessCenter,
   Settings,
+  PowerSettingsNew as Power,
 } from "@styled-icons/material";
 
 export const SidebarWrapper = styled.aside`
@@ -21,6 +22,10 @@ export const Menu = styled.nav`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1em;
+
+  @media (max-width: 767px) {
+    width: 85%;
+  }
 `;
 
 export const DashboardIcon = styled(Dashboard)`
@@ -47,9 +52,24 @@ export const SettingsIcon = styled(Settings)`
   color: ${theme.color.primary};
 `;
 
+export const PowerIcon = styled(Power)`
+  width: 22px;
+  height: 22px;
+  color: ${theme.color.primary};
+`;
+
 export const Link = styled.a``;
 
 export const Span = styled.span`
   color: ${theme.color.primary};
   font-size: 1em;
+`;
+
+export const ButtonLogout = styled.button`
+  height: 38px;
+  color: ${theme.color.primary};
+  font-size: 1em;
+  background: ${theme.color.secondary};
+  border: 1px solid ${theme.color.primary};
+  cursor: pointer;
 `;

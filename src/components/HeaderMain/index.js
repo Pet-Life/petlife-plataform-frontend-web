@@ -10,7 +10,6 @@ import ModalStore from "../ModalStore";
 const HeaderMain = ({ address, shop }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenStore, setIsOpenStore] = useState(false);
-  const [isOpenProfile, setIsOpenProfile] = useState(false);
   const consumerToken = JSON.parse(localStorage.getItem("consumerToken"));
   const consumerData = JSON.parse(localStorage.getItem("consumerData"));
   const history = useHistory();
@@ -25,7 +24,7 @@ const HeaderMain = ({ address, shop }) => {
 
   return (
     <S.HeaderWrapper>
-      <Logo />
+      <Logo className="logo-header" />
       <S.FormWrapper>
         <S.Input type="text" placeholder="O que você procura?" />
       </S.FormWrapper>
@@ -53,25 +52,7 @@ const HeaderMain = ({ address, shop }) => {
       </S.IconsWrapper>
       {consumerToken && consumerData ? (
         <S.ProfileWrapper>
-          <S.ProfileAvatar
-            src={consumerData.avatar}
-            onClick={() => setIsOpenProfile(true)}
-            onClickCapture={() => setIsOpenProfile(false)}
-          />
-          <S.ProfileDropdown
-            className="dropdown-profile"
-            openProfile={isOpenProfile}
-          >
-            <S.Span>
-              <S.ProfileIcon /> Perfil
-            </S.Span>
-            <S.Span>
-              <S.NotificationIcon /> Compras
-            </S.Span>
-            <S.Span>
-              <S.CloseIcon /> Sair
-            </S.Span>
-          </S.ProfileDropdown>
+          <S.ProfileAvatar src={consumerData.avatar} />
         </S.ProfileWrapper>
       ) : (
         <S.ButtonLogin href="/entrar">Entrar</S.ButtonLogin>

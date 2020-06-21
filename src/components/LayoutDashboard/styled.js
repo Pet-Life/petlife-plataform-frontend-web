@@ -10,6 +10,12 @@ export const LayoutContent = styled.div`
   display: grid;
   grid-template-columns: 15% 1fr;
   grid-gap: 0.5em;
+  overflow-x: auto;
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const LayoutMain = styled.main`

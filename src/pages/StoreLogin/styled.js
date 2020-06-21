@@ -40,6 +40,7 @@ export const Form = styled.form`
 
   @media (max-width: 767px) {
     width: 85%;
+    padding: 2em 1em;
   }
 `;
 
@@ -81,6 +82,7 @@ export const Link = styled.a`
   color: ${theme.color.primary};
   font-size: 14px;
   text-align: center;
+  line-height: 1.3em;
 
   &:hover {
     color: ${theme.color.tertiary};

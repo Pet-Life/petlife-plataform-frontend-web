@@ -12,7 +12,8 @@ export const CardWrapper = styled.div`
   grid-gap: 0.5em;
 
   @media (max-width: 767px) {
-    width: 100%;
+    width: 90%;
+    max-width: 90%;
   }
 `;
 

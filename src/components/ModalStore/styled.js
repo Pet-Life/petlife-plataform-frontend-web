@@ -19,6 +19,11 @@ export const Modal = styled.div`
   align-items: center;
   overflow-x: hidden;
   overflow-y: initial;
+
+  @media (max-width: 767px) {
+    max-width: 75vw;
+    min-height: 50vh;
+  }
 `;
 
 export const ModalBanner = styled.div`
@@ -47,6 +52,11 @@ export const Content = styled.div`
   justify-items: center;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    justify-items: initial;
+  }
 `;
 
 export const ContentSecondary = styled.div`
@@ -61,6 +71,11 @@ export const ContentSecondary = styled.div`
   &:last-child {
     justify-content: start;
     justify-items: start;
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    justify-items: initial;
   }
 `;
 

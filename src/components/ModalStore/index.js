@@ -22,8 +22,6 @@ const ModalStore = ({ setIsOpenStore }) => {
     loadShops();
   }, [id]);
 
-  console.log(shop);
-
   function handleClose() {
     setIsOpenStore(false);
   }
@@ -56,7 +54,7 @@ const ModalStore = ({ setIsOpenStore }) => {
             <S.Text>
               <S.Span>Telefone:</S.Span>
               <br />
-              (00) 00000-000
+              {shop.phone}
             </S.Text>
           </S.ContentSecondary>
           <S.ContentSecondary>

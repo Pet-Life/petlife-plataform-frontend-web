@@ -23,7 +23,7 @@ const MenuBurguer = () => {
           <Button onClick={() => setOpenMenu(false)}>
             <CloseIcon />
           </Button>
-          <Links href="/petshop/cadastro">Pet Shop</Links>
+          <Links href="/petshop/entrar">Sou um Pet Shop</Links>
           <Links href="/entrar">Entrar</Links>
         </LinksWrapper>
       </MenuContent>

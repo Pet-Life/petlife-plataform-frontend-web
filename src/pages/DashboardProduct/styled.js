@@ -8,6 +8,11 @@ export const Form = styled.form`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 0.8em;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    min-width: 100%;
+  }
 `;
 
 export const Label = styled.label`

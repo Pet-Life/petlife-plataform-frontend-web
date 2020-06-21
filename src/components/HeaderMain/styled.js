@@ -25,7 +25,7 @@ export const HeaderWrapper = styled.header`
 
   @media (max-width: 767px) {
     padding: 0.3em 15px;
-    grid-template-columns: 80px 12em 5em;
+    grid-template-columns: 20% 40% 40%;
     grid-gap: 0.3em;
   }
 `;
@@ -57,6 +57,10 @@ export const AddressWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 0.1em;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const Button = styled.button`
@@ -115,7 +119,6 @@ export const IconsWrapper = styled.div`
   justify-items: center;
 
   @media (max-width: 767px) {
-    display: none;
   }
 `;
 
@@ -124,6 +127,12 @@ export const BasketIcon = styled(ShoppingCart)`
   height: 28px;
   margin-right: 0.2em;
   color: ${theme.color.primary};
+
+  @media (max-width: 767px) {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.2em;
+  }
 `;
 
 export const StoreIcon = styled(Store)`
@@ -131,6 +140,12 @@ export const StoreIcon = styled(Store)`
   height: 28px;
   margin-right: 0.2em;
   color: ${theme.color.primary};
+
+  @media (max-width: 767px) {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.2em;
+  }
 `;
 
 export const ButtonLogin = styled.a`
@@ -149,7 +164,7 @@ export const ButtonLogin = styled.a`
   }
 
   @media (max-width: 767px) {
-    display: none;
+    padding: 10px 15px;
   }
 `;
 
@@ -161,7 +176,6 @@ export const ProfileWrapper = styled.div`
   justify-items: center;
 
   @media (max-width: 767px) {
-    display: none;
   }
 `;
 

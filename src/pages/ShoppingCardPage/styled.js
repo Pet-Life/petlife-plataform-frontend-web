@@ -7,6 +7,11 @@ export const PageWrapper = styled.div`
   display: grid;
   grid-template-columns: 80% 20%;
   grid-gap: 0.5em;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    padding: 0.8em;
+  }
 `;
 
 export const Text = styled.p`
@@ -18,9 +23,6 @@ export const Text = styled.p`
 
 export const ProductWrapper = styled.div`
   width: 100%;
-  height: 145px;
-  max-height: 145px;
-  min-height: 145px;
   border: 1px solid ${theme.color.quinary};
   border-radius: 4px;
   display: grid;
@@ -35,10 +37,14 @@ export const ProductContent = styled.div`
   justify-content: center;
   justify-items: center;
   align-items: center;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ImageWrapper = styled.div`
-  padding: 1em;
+  padding: 0.3em;
 `;
 
 export const ProductImage = styled.img`
@@ -47,7 +53,7 @@ export const ProductImage = styled.img`
 `;
 
 export const TitleWrapper = styled.div`
-  padding: 1em;
+  padding: 0.3em;
 `;
 
 export const ProductTitle = styled.h3`
@@ -63,11 +69,11 @@ export const Span = styled.span`
 `;
 
 export const QuantifyWrapper = styled.div`
-  padding: 1em;
+  padding: 0.3em;
 `;
 
 export const ButtonWrapper = styled.div`
-  padding: 1em;
+  padding: 0.3em;
 `;
 
 export const ButtonRemove = styled.button`
@@ -88,7 +94,6 @@ export const ButtonRemove = styled.button`
 `;
 
 export const TotalWrapper = styled.div`
-  width: 100%;
   height: 220px;
   max-height: 220px;
   min-height: 220px;
@@ -125,28 +130,21 @@ export const LinkMenu = styled.a`
   font-size: 1em;
   color: ${theme.color.primary};
   transition: all 0.6s;
-
   &:hover {
     color: ${theme.color.tertiary};
   }
-
   &:last-child {
     margin-right: 0;
-    padding: 10px 40px;
+    padding: 10px 20px;
     font-size: 1.125em;
     color: ${theme.color.tertiary};
     border: 2px solid ${theme.color.tertiary};
     border-radius: 4px;
     font-weight: bold;
     transition: all 0.6s;
-
     &:hover {
       background: ${theme.color.tertiary};
       color: ${theme.color.secondary};
     }
-  }
-
-  @media (max-width: 952px) {
-    display: none;
   }
 `;

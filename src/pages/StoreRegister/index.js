@@ -17,8 +17,6 @@ const StoreRegister = ({ history }) => {
       data.street + " " + data.district + " " + data.city + " " + data.state;
 
     handleRegisterShop(data, zipcode);
-
-    history.push("/petshop/entrar");
   };
 
   return (
@@ -177,6 +175,16 @@ const StoreRegister = ({ history }) => {
               autoCorrect="none"
               ref={register({
                 required: "Campo obrigatorio",
+                minLength: {
+                  value: 8,
+                  message:
+                    "A senha tem que ter no mínimo 8 caracteres e máximo 16.",
+                },
+                maxLength: {
+                  value: 16,
+                  message:
+                    "A senha tem que ter no mínimo 8 caracteres e máximo 16.",
+                },
               })}
             />
             {errors.password && (
